@@ -142,3 +142,4 @@ with open("backend/Bank_column_mapping.json", "w", encoding="utf-8") as f:
     json.dump(mapping_results, f, indent=2, ensure_ascii=False)
 
 print(f"✅ Column mapping results saved to Bank_column_mapping.json")
+print("Hi")

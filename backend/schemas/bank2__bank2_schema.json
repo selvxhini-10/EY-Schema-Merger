@@ -1,0 +1,1161 @@
+{
+  "bank": "Bank2",
+  "source_file": "Bank2_Schema.xlsx",
+  "tables": {
+    "Customer": [
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "description",
+        "displayName": "description",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_last_name_surname_or_family_name_of_the_client",
+        "displayName": "The last name, surname, or family name of the client.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_migration_event_encoded_key_associated_with_a_client",
+        "displayName": "The migration event encoded key associated with a client.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_client_s_preferred_language_this_will_determine_the_language_for_the_reports_schedules_and_account_statements_you_generate_for_the_client",
+        "displayName": "The client's preferred language. This will determine the language for the reports, schedules, and account statements you generate for the client.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_additional_notes_about_a_client",
+        "displayName": "The additional notes about a client.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_client_s_gender",
+        "displayName": "The client's gender",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_client_s_email_address",
+        "displayName": "The client's email address.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_encoded_key_of_the_client_which_is_unique_and_generated",
+        "displayName": "The encoded key of the client, which is unique and generated.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_id_of_the_client_which_can_be_generated_and_customized_but_must_be_unique",
+        "displayName": "The ID of the client, which can be generated and customized - but must be unique.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_state_of_a_client_it_shows_where_the_client_is_in_the_client_life_cycle",
+        "displayName": "The state of a client. It shows where the client is in the client life cycle.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_encoded_key_of_the_user_a_client_is_assigned_to",
+        "displayName": "The encoded key of the user a client is assigned to.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_client_s_home_phone_number",
+        "displayName": "The client's home phone number.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_date_a_client_was_created",
+        "displayName": "The date a client was created.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_client_s_date_of_birth",
+        "displayName": "The client's date of birth.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_first_name_personal_name_given_name_or_forename_of_the_client",
+        "displayName": "The first name, personal name, given name, or forename of the client.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_client_s_mobile_phone_number",
+        "displayName": "The client's mobile phone number.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_type_of_client",
+        "displayName": "The type of client.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      }
+    ],
+    "Addresses": [
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "description",
+        "displayName": "description",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_city_for_the_address",
+        "displayName": "The city for the address.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_country",
+        "displayName": "The country.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_address_encoded_key_which_is_unique_and_generated",
+        "displayName": "The address encoded key, which is unique and generated.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_first_line_of_the_address",
+        "displayName": "The first line of the address.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_address_parent_key_indicating_the_client_owning_this_address",
+        "displayName": "The address parent key indicating the client owning this address.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_post_code",
+        "displayName": "The post code.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_region_for_the_address",
+        "displayName": "The region for the address.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      }
+    ],
+    "Identifications": [
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "description",
+        "displayName": "description",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_encoded_key_of_the_client_that_owns_this_document",
+        "displayName": "The encoded key of the client that owns this document",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_id_of_the_document",
+        "displayName": "The id of the document",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_type_of_the_document_passport_id_card_drivers_license_etc",
+        "displayName": "The type of the document, Passport, Id card Drivers license, etc.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_encoded_key_of_the_document_generated_unique",
+        "displayName": "The encoded key of the document, generated, unique",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_authority_who_issued_the_document",
+        "displayName": "The authority who issued the document.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_country_where_the_document_was_issued",
+        "displayName": "The country where the document was issued.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_date_when_the_document_was_issued",
+        "displayName": "The date when the document was issued.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "date_when_the_validity_of_the_document_ends",
+        "displayName": "Date when the validity of the document ends",
+        "type": "",
+        "description": "",
+        "sample": ""
+      }
+    ],
+    "Deposit Accounts": [
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "description",
+        "displayName": "description",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_encoded_key_of_the_deposit_account",
+        "displayName": "The encoded key of the deposit account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_id_of_the_deposit_account",
+        "displayName": "The ID of the deposit account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_deposit_account_name",
+        "displayName": "The deposit account name",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_encoded_key_of_the_account_holder",
+        "displayName": "The encoded key of the account holder",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_account_holder_type",
+        "displayName": "The account holder type",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_key_to_the_product_type_that_this_account_is_based_on",
+        "displayName": "The key to the product type that this account is based on",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_state_of_the_deposit_account",
+        "displayName": "The state of the deposit account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_currency_code",
+        "displayName": "The currency code",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_key_of_the_branch_that_this_deposit_account_is_assigned_to",
+        "displayName": "The key of the branch that this deposit account is assigned to",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_date_this_deposit_account_was_created",
+        "displayName": "The date this deposit account was created",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_current_available_balance_for_deposit_transactions",
+        "displayName": "The current available balance for deposit transactions",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_current_balance_of_the_account",
+        "displayName": "The current balance of the account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_locked_amount_that_is_not_available_for_withdrawal_in_the_account",
+        "displayName": "The locked amount that is not available for withdrawal in the account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_overdraft_amount_that_has_been_taken_out_in_the_account",
+        "displayName": "The overdraft amount that has been taken out in the account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "indicates_the_description_of_the_product",
+        "displayName": "Indicates the description of the Product",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "indicates_the_customer_who_is_the_legal_owner_of_the_arrangement_and_is_the_responsible_customer_of_the_contract_with_bank",
+        "displayName": "Indicates the customer who is the legal owner of the arrangement and is the responsible customer of the contract with bank",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_notes_or_description_attached_to_this_object",
+        "displayName": "The notes or description attached to this object",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_date_when_the_account_matures",
+        "displayName": "The date when the account matures",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_date_when_the_deposit_account_was_closed",
+        "displayName": "The date when the deposit account was closed",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_key_of_the_user_that_this_deposit_is_assigned_to",
+        "displayName": "The key of the user that this deposit is assigned to",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_current_available_balance_for_deposit_transactions",
+        "displayName": "The current available balance for deposit transactions",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_amount_of_positive_interest_that_has_been_accrued_in_the_account",
+        "displayName": "The amount of positive interest that has been accrued in the account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_deposit_account_type_and_the_product_that_it_belongs_to",
+        "displayName": "The deposit account type and the product that it belongs to",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_interest_rate_for_the_deposit_account",
+        "displayName": "The interest rate for the deposit account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_interest_payment_point",
+        "displayName": "The interest payment point",
+        "type": "",
+        "description": "",
+        "sample": ""
+      }
+    ],
+    "Loan Accounts": [
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "description",
+        "displayName": "description",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_id_of_the_loan_account",
+        "displayName": "The ID of the loan account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_name_of_the_loan_account",
+        "displayName": "The name of the loan account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_key_for_the_type_of_loan_product_that_this_loan_account_is_based_on",
+        "displayName": "The key for the type of loan product that this loan account is based on",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "fiat_iso_4217_currency_code",
+        "displayName": "Fiat(ISO-4217) currency code",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_encoded_key_of_the_account_holder",
+        "displayName": "The encoded key of the account holder",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_type_of_the_account_holder",
+        "displayName": "The type of the account holder",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_key_of_the_branch_this_loan_account_is_assigned_to",
+        "displayName": "The key of the branch this loan account is assigned to",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_notes_about_this_loan_account",
+        "displayName": "The notes about this loan account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_date_when_the_account_matures",
+        "displayName": "The date when the account matures",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_date_the_loan_account_was_created",
+        "displayName": "The date the loan account was created",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_date_the_loan_was_closed",
+        "displayName": "The date the loan was closed",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_key_of_the_user_this_loan_account_is_assigned_to",
+        "displayName": "The key of the user this loan account is assigned to",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_current_balance_of_the_account",
+        "displayName": "The current balance of the account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_available_balance_of_a_deposit_or_credit_account",
+        "displayName": "The available balance of a deposit or credit account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_interest_rate_for_the_loan_account",
+        "displayName": "The interest rate for the loan account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_possible_values_for_how_we_compute_and_apply_the_interest",
+        "displayName": "The possible values for how we compute and apply the interest",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_interest_application_method",
+        "displayName": "The interest application method",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "adjustable_interest_rates_settings_for_loan_account",
+        "displayName": "Adjustable interest rates settings for loan account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_grace_period_for_loan_repayment",
+        "displayName": "The grace period for loan repayment",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_periodic_payment_amount",
+        "displayName": "The periodic payment amount",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_repayment_installments",
+        "displayName": "The repayment installments",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_repayment_period_unit",
+        "displayName": "The repayment period unit",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "specifies_the_days_of_the_month_when_the_repayment_due_dates_should_be",
+        "displayName": "Specifies the days of the month when the repayment due dates should be.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_repayment_period_count",
+        "displayName": "The repayment period count",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_pmt_is_calculated_as_the_loan_would_have_amortizationperiod_installments",
+        "displayName": "The PMT is calculated as the loan would have [amortizationPeriod] installments.",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_principal_due",
+        "displayName": "The principal due",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_total_principal_owned_by_the_client",
+        "displayName": "The total principal owned by the client",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_interest_due",
+        "displayName": "The interest due",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_fees_due",
+        "displayName": "The fees due",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "represents_the_total_interest_owed_by_the_client",
+        "displayName": "Represents the total interest owed by the client",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_interest_from_arrears_balance",
+        "displayName": "The interest from arrears balance",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_current_balance_of_the_account",
+        "displayName": "The current balance of the account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_amount_of_positive_interest_that_has_been_accrued_in_the_account",
+        "displayName": "The amount of positive interest that has been accrued in the account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_deposit_account_type_and_the_product_that_it_belongs_to",
+        "displayName": "The deposit account type and the product that it belongs to",
+        "type": "",
+        "description": "",
+        "sample": ""
+      }
+    ],
+    "Deposit Account Transactions": [
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "description",
+        "displayName": "description",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_id_of_the_deposit_transaction",
+        "displayName": "The id of the deposit transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_encoded_key_of_the_deposit_transaction",
+        "displayName": "The encoded key of the deposit transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_type_of_deposit_transaction_e_g_deposit_withdrawal_fee_applied",
+        "displayName": "The type of deposit transaction (e.g. DEPOSIT WITHDRAWAL FEE_APPLIED)",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "how_much_was_added_removed_in_account",
+        "displayName": "How much was added/removed in account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_currency_in_which_this_transaction_was_posted",
+        "displayName": "The currency in which this transaction was posted",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_date_when_this_deposit_transaction_was_created",
+        "displayName": "The date when this deposit transaction was created",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "date_of_the_entry_eg_date_of_repayment_or_disbursal_etc",
+        "displayName": "Date of the entry (eg date of repayment or disbursal etc.)",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "extra_notes_about_this_deposit_transaction",
+        "displayName": "Extra notes about this deposit transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_external_id_of_the_deposit_transaction",
+        "displayName": "The external id of the deposit transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_person_that_performed_the_transaction",
+        "displayName": "The person that performed the transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_branch_where_the_transaction_was_performed",
+        "displayName": "The branch where the transaction was performed",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "amount_of_fees_involved_in_a_transaction",
+        "displayName": "Amount of fees involved in a transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "amount_of_interest_involved_in_a_transaction",
+        "displayName": "Amount of interest involved in a transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_tax_rate_that_was_set_or_changed_in_this_transaction",
+        "displayName": "The tax rate that was set or changed in this transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_running_balance_owed_by_deposit",
+        "displayName": "The running balance owed by deposit",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_interest_rate_for_the_deposit_transaction",
+        "displayName": "The interest rate for the deposit transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_id_of_the_transaction_channel",
+        "displayName": "The id of the transaction channel",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_date_when_corresponding_je_is_booked",
+        "displayName": "The date when corresponding JE is booked",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_type_of_the_predefined_fee",
+        "displayName": "The type of the predefined fee",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_name_of_the_predefined_fee",
+        "displayName": "The name of the predefined fee",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_tax_rate_that_was_set_or_changed_in_this_transaction",
+        "displayName": "The tax rate that was set or changed in this transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_available_balance_after_the_transaction",
+        "displayName": "The available balance after the transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_locked_amount_that_is_not_available_for_withdrawal_in_the_account",
+        "displayName": "The locked amount that is not available for withdrawal in the account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_overdraft_amount_that_has_been_taken_out_in_the_account",
+        "displayName": "The overdraft amount that has been taken out in the account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "represents_the_total_interest_owed_by_the_client",
+        "displayName": "Represents the total interest owed by the client",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_overdraft_limit_that_was_set_or_changed_in_this_transaction",
+        "displayName": "The overdraft limit that was set or changed in this transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_key_of_the_parent_deposit_account",
+        "displayName": "The key of the parent deposit account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      }
+    ],
+    "Loan Account Transactions": [
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "nan",
+        "displayName": "nan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "description",
+        "displayName": "description",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_encoded_key_of_the_loan_transaction",
+        "displayName": "The encoded key of the loan transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_id_of_the_loan_transaction",
+        "displayName": "The ID of the loan transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_type_of_loan_transaction_e_g_disbursement_repayment",
+        "displayName": "The type of loan transaction (e.g. DISBURSEMENT, REPAYMENT)",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_amount_that_was_added_or_removed_on_the_loan_account",
+        "displayName": "The amount that was added or removed on the loan account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_currency_in_which_this_transaction_was_posted",
+        "displayName": "The currency in which this transaction was posted",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_date_of_the_entry_in_the_organization_time_format_and_timezone",
+        "displayName": "The date of the entry in the organization time format and timezone",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_notes_or_description_for_the_loan_transaction",
+        "displayName": "The notes or description for the loan transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_external_id_of_the_loan_transaction",
+        "displayName": "The external ID of the loan transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_user_that_performed_the_transaction",
+        "displayName": "The user that performed the transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_branch_where_the_transaction_was_performed",
+        "displayName": "The branch where the transaction was performed",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "how_much_principal_was_added_removed_in_account",
+        "displayName": "How much principal was added/removed in account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "how_much_interest_was_added_removed_in_account",
+        "displayName": "How much interest was added/removed in account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "how_much_fees_was_added_removed_in_account",
+        "displayName": "How much fees was added/removed in account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_running_balance_still_owed_for_the_loan",
+        "displayName": "The running balance still owed for the loan",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_account_redraw_balance_captured_after_the_transaction_update",
+        "displayName": "The account redraw balance captured after the transaction update",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_interest_rate_for_the_loan_transaction",
+        "displayName": "The interest rate for the loan transaction",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_id_of_the_transaction_channel",
+        "displayName": "The id of the transaction channel",
+        "type": "",
+        "description": "",
+        "sample": ""
+      },
+      {
+        "name": "the_key_of_the_parent_loan_account",
+        "displayName": "The key of the parent loan account",
+        "type": "",
+        "description": "",
+        "sample": ""
+      }
+    ]
+  }
+}

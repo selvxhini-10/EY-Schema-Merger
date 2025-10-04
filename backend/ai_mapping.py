@@ -6,7 +6,7 @@ import json
 # ==== CONFIG ====
 FILE1 = "backend/Bank1_Schema_EYExample.json"
 FILE2 = "backend/Bank2_Schema_EYExample.json"
-CONF_THRESHOLD = 20.0
+CONF_THRESHOLD = 60.0
 MODEL_NAME = "all-MiniLM-L6-v2"
 
 # ==== LOAD MODEL ====
@@ -37,7 +37,7 @@ for i, table2 in enumerate(tables2):
     probs = torch.softmax(cosine_scores[i], dim=0)
     best_idx = probs.argmax().item()
     best_score = cosine_scores[i][best_idx].item()
-    confidence = probs[best_idx].item() * 100
+    confidence = best_score * 100
     status = "Needs Review" if confidence < CONF_THRESHOLD else "Confident Match"
     table1 = tables1[best_idx]
 
@@ -103,7 +103,7 @@ def map_columns(list1, list2, text_key=TEXT_KEY, conf_threshold=CONF_THRESHOLD):
         probs = torch.softmax(cosine_scores[i], dim=0)
         best_idx = probs.argmax().item()
         best_score = cosine_scores[i][best_idx].item()
-        confidence = probs[best_idx].item() * 100
+        confidence = best_score * 100
         status = "Needs Review" if confidence < conf_threshold else "Confident Match"
         col1 = list1[best_idx]
 

@@ -5,7 +5,7 @@ from pathlib import Path
 import json
 
 # ✅ Correct import for your schema parser
-from .schema_parser import parse_schema_workbook, save_schema_json
+from schema_parser import parse_schema_workbook, save_schema_json
 
 app = FastAPI(title="EY Schema Merger API")
 

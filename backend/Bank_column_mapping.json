@@ -1,0 +1,350 @@
+{
+  "Customers": [
+    {
+      "bank2_column": {
+        "name": "Customer",
+        "type": "string",
+        "description": "ID assigned to customer",
+        "sample": "CUST-0001"
+      },
+      "best_match_bank1_column": {
+        "name": "Customer_ID",
+        "type": "string",
+        "description": "Unique ID assigned to customer",
+        "sample": "CUST-0001"
+      },
+      "cosine_similarity": 0.8765,
+      "confidence_rating": 87.65,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Name",
+        "type": "string",
+        "description": "Name of the customer",
+        "sample": "Jane Doe"
+      },
+      "best_match_bank1_column": {
+        "name": "Full_Name",
+        "type": "string",
+        "description": "Full name of the customer",
+        "sample": "Jane Doe"
+      },
+      "cosine_similarity": 0.912,
+      "confidence_rating": 91.2,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "DOB",
+        "type": "date",
+        "description": "Birthday of the customer",
+        "sample": "1990-07-11"
+      },
+      "best_match_bank1_column": {
+        "name": "Date_of_Birth",
+        "type": "date",
+        "description": "Date of birth of the customer",
+        "sample": "1990-07-11"
+      },
+      "cosine_similarity": 0.7765,
+      "confidence_rating": 77.65,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Email",
+        "type": "string",
+        "description": "Email of the customer",
+        "sample": "jane.doe@email.com"
+      },
+      "best_match_bank1_column": {
+        "name": "Email",
+        "type": "string",
+        "description": "Email address of the customer",
+        "sample": "jane.doe@email.com"
+      },
+      "cosine_similarity": 0.9399,
+      "confidence_rating": 93.99,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Phone_num",
+        "type": "string",
+        "description": "Phone number",
+        "sample": "+1-416-555-9832"
+      },
+      "best_match_bank1_column": {
+        "name": "Phone",
+        "type": "string",
+        "description": "Registered phone number",
+        "sample": "+1-416-555-9832"
+      },
+      "cosine_similarity": 0.7297,
+      "confidence_rating": 72.97,
+      "status": "Confident Match"
+    }
+  ],
+  "CurSav Account Transactions": [
+    {
+      "bank2_column": {
+        "name": "Txn_ID",
+        "type": "string",
+        "description": "Transaction reference number",
+        "sample": "TXN-9081"
+      },
+      "best_match_bank1_column": {
+        "name": "Txn_ID",
+        "type": "string",
+        "description": "Transaction reference number",
+        "sample": "TXN-9081"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Account_Number",
+        "type": "string",
+        "description": "Linked account number",
+        "sample": "ACC-10293"
+      },
+      "best_match_bank1_column": {
+        "name": "Account_Number",
+        "type": "string",
+        "description": "Linked account number",
+        "sample": "ACC-10293"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Txn_Date",
+        "type": "date",
+        "description": "Date of transaction",
+        "sample": "2024-09-15"
+      },
+      "best_match_bank1_column": {
+        "name": "Txn_Date",
+        "type": "date",
+        "description": "Date of transaction",
+        "sample": "2024-09-15"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Txn_Type",
+        "type": "string",
+        "description": "Type of transaction (Deposit/Withdrawal)",
+        "sample": "Deposit"
+      },
+      "best_match_bank1_column": {
+        "name": "Txn_Type",
+        "type": "string",
+        "description": "Type of transaction (Deposit/Withdrawal)",
+        "sample": "Deposit"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Txn_Amount",
+        "type": "float",
+        "description": "Amount transacted in CAD",
+        "sample": "300.00"
+      },
+      "best_match_bank1_column": {
+        "name": "Txn_Amount",
+        "type": "float",
+        "description": "Amount transacted in CAD",
+        "sample": "300.00"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    }
+  ],
+  "Fixed Term Accounts": [
+    {
+      "bank2_column": {
+        "name": "Term_Account_ID",
+        "type": "string",
+        "description": "Identifier for fixed-term deposit account",
+        "sample": "FT-22091"
+      },
+      "best_match_bank1_column": {
+        "name": "Term_Account_ID",
+        "type": "string",
+        "description": "Identifier for fixed-term deposit account",
+        "sample": "FT-22091"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Customer_ID",
+        "type": "string",
+        "description": "Linked customer ID",
+        "sample": "CUST-0003"
+      },
+      "best_match_bank1_column": {
+        "name": "Customer_ID",
+        "type": "string",
+        "description": "Linked customer ID",
+        "sample": "CUST-0003"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Principal_Amount",
+        "type": "float",
+        "description": "Principal amount deposited",
+        "sample": "10000.00"
+      },
+      "best_match_bank1_column": {
+        "name": "Principal_Amount",
+        "type": "float",
+        "description": "Principal amount deposited",
+        "sample": "10000.00"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Interest_Rate",
+        "type": "float",
+        "description": "Annual interest rate percentage",
+        "sample": "4.25"
+      },
+      "best_match_bank1_column": {
+        "name": "Interest_Rate",
+        "type": "float",
+        "description": "Annual interest rate percentage",
+        "sample": "4.25"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Maturity_Date",
+        "type": "date",
+        "description": "Date of maturity",
+        "sample": "2026-04-01"
+      },
+      "best_match_bank1_column": {
+        "name": "Maturity_Date",
+        "type": "date",
+        "description": "Date of maturity",
+        "sample": "2026-04-01"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    }
+  ],
+  "Loan Accounts": [
+    {
+      "bank2_column": {
+        "name": "Loan_ID",
+        "type": "string",
+        "description": "Unique identifier for loan account",
+        "sample": "LN-1209"
+      },
+      "best_match_bank1_column": {
+        "name": "Loan_ID",
+        "type": "string",
+        "description": "Unique identifier for loan account",
+        "sample": "LN-1209"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Customer_ID",
+        "type": "string",
+        "description": "Customer associated with loan",
+        "sample": "CUST-0002"
+      },
+      "best_match_bank1_column": {
+        "name": "Customer_ID",
+        "type": "string",
+        "description": "Customer associated with loan",
+        "sample": "CUST-0002"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Loan_Type",
+        "type": "string",
+        "description": "Type of loan (Personal, Auto, Home)",
+        "sample": "Home"
+      },
+      "best_match_bank1_column": {
+        "name": "Loan_Type",
+        "type": "string",
+        "description": "Type of loan (Personal, Auto, Home)",
+        "sample": "Home"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Disbursed_Amount",
+        "type": "float",
+        "description": "Amount disbursed",
+        "sample": "200000.00"
+      },
+      "best_match_bank1_column": {
+        "name": "Disbursed_Amount",
+        "type": "float",
+        "description": "Amount disbursed",
+        "sample": "200000.00"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "name": "Interest_Rate",
+        "type": "float",
+        "description": "Interest rate per annum",
+        "sample": "3.9"
+      },
+      "best_match_bank1_column": {
+        "name": "Interest_Rate",
+        "type": "float",
+        "description": "Interest rate per annum",
+        "sample": "3.9"
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    }
+  ]
+}

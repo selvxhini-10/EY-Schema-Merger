@@ -1,48 +1,97 @@
 "use client"
-
 import { Button } from "@/components/ui/button"
 import { Upload, Sparkles, CheckCheck } from "lucide-react"
 import { ExportDialog } from "@/components/export-dialog"
 import { ReportDialog } from "@/components/report-dialog"
 import type { Mapping } from "@/components/schema-mapping-workspace"
+import { useRef, useState } from "react"
+import { Progress } from "@/components/ui/progress"
+import { listZipFiles } from "@/lib/list-zip-files"
+import { fileToCsv } from "@/lib/file-to-csv"
 
-// Mock mappings for the report dialog
-const mockMappings: Mapping[] = [
-  { id: "m1", sourceField: "customer_id", targetField: "CustomerID", confidence: "high", approved: false },
-  { id: "m2", sourceField: "ClientID", targetField: "CustomerID", confidence: "high", approved: false },
-  { id: "m3", sourceField: "full_name", targetField: "FirstName", confidence: "medium", approved: false },
-  { id: "m4", sourceField: "FirstName", targetField: "FirstName", confidence: "high", approved: false },
-  { id: "m5", sourceField: "LastName", targetField: "LastName", confidence: "high", approved: false },
-  { id: "m6", sourceField: "birth_date", targetField: "DateOfBirth", confidence: "high", approved: false },
-  { id: "m7", sourceField: "DOB", targetField: "DateOfBirth", confidence: "high", approved: false },
-  { id: "m8", sourceField: "acct_type", targetField: "AccountType", confidence: "medium", approved: false },
-  { id: "m9", sourceField: "AccountType", targetField: "AccountType", confidence: "high", approved: false },
-  { id: "m10", sourceField: "balance_amt", targetField: "Balance", confidence: "high", approved: false },
-  { id: "m11", sourceField: "CurrentBalance", targetField: "Balance", confidence: "high", approved: false },
-  { id: "m12", sourceField: "branch_code", targetField: "Location", confidence: "low", approved: false },
-  { id: "m13", sourceField: "Region", targetField: "Location", confidence: "medium", approved: false },
-]
+// Remove mockMappings. Bank A/B schema cards will start empty.
+
+
 
 export function TopBar() {
+  const bankAInputRef = useRef<HTMLInputElement>(null)
+  const bankBInputRef = useRef<HTMLInputElement>(null)
+  const [bankAFiles, setBankAFiles] = useState<{ name: string, isFolder: boolean, csv?: string, zipEntries?: string[] }[]>([])
+  const [bankBFiles, setBankBFiles] = useState<{ name: string, isFolder: boolean, csv?: string, zipEntries?: string[] }[]>([])
+  const [showProgress, setShowProgress] = useState(false)
+  const [progress, setProgress] = useState(0)
+
+  // Only show progress bar during upload/conversion
+  const handleUploadProgress = (val: number) => {
+    setShowProgress(val < 100)
+    setProgress(val)
+  }
+  const handleUploadVisible = (visible: boolean) => {
+    setShowProgress(visible)
+    if (!visible) setProgress(0)
+  }
   const handleUploadBankA = () => {
-    console.log("[v0] Upload Bank A schema")
+    bankAInputRef.current?.click()
   }
 
   const handleUploadBankB = () => {
-    console.log("[v0] Upload Bank B schema")
+    bankBInputRef.current?.click()
+  }
+
+  const handleBankAChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files ? Array.from(e.target.files) : []
+    const items: { name: string, isFolder: boolean, csv?: string, zipEntries?: string[] }[] = []
+    for (const file of files) {
+      const isFolder = !!(file.webkitRelativePath && file.webkitRelativePath.split("/").length > 2)
+      let csv: string | undefined = undefined
+      let zipEntries: string[] | undefined = undefined
+      if (file.name.endsWith('.zip')) {
+        try {
+          zipEntries = await listZipFiles(file)
+        } catch {}
+      }
+      try {
+        csv = await fileToCsv(file)
+      } catch {}
+      items.push({ name: isFolder ? file.webkitRelativePath.split("/")[1] : file.name, isFolder, csv, zipEntries })
+    }
+    setBankAFiles(items)
+  }
+
+  const handleBankBChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files ? Array.from(e.target.files) : []
+    const items: { name: string, isFolder: boolean, csv?: string, zipEntries?: string[] }[] = []
+    for (const file of files) {
+      const isFolder = !!(file.webkitRelativePath && file.webkitRelativePath.split("/").length > 2)
+      let csv: string | undefined = undefined
+      let zipEntries: string[] | undefined = undefined
+      if (file.name.endsWith('.zip')) {
+        try {
+          zipEntries = await listZipFiles(file)
+        } catch {}
+      }
+      try {
+        csv = await fileToCsv(file)
+      } catch {}
+      items.push({ name: isFolder ? file.webkitRelativePath.split("/")[1] : file.name, isFolder, csv, zipEntries })
+    }
+    setBankBFiles(items)
   }
 
   const handleRunAIMapping = () => {
+    // AI mapping logic will be implemented here
     console.log("[v0] Run AI mapping")
   }
 
   const handleApproveAll = () => {
+    // Approve all logic
     console.log("[v0] Approve all mappings")
   }
 
   return (
-    <header className="border-b border-border bg-card">
-      <div className="container mx-auto px-6 py-4">
+    <>
+      <header className="border-b border-border bg-card">
+        <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
@@ -57,6 +106,26 @@ export function TopBar() {
           </div>
 
           <div className="flex items-center gap-2">
+            <input
+              ref={bankAInputRef}
+              type="file"
+              style={{ display: 'none' }}
+              multiple
+              onChange={handleBankAChange}
+              accept=".zip,application/zip,application/x-zip-compressed,.json,.csv,.txt"
+              {...({ webkitdirectory: 'true' } as any)}
+              onClick={e => { (e.target as HTMLInputElement).value = '' }}
+            />
+            <input
+              ref={bankBInputRef}
+              type="file"
+              style={{ display: 'none' }}
+              multiple
+              onChange={handleBankBChange}
+              accept=".zip,application/zip,application/x-zip-compressed,.json,.csv,.txt"
+              {...({ webkitdirectory: 'true' } as any)}
+              onClick={e => { (e.target as HTMLInputElement).value = '' }}
+            />
             <Button variant="outline" size="sm" onClick={handleUploadBankA}>
               <Upload className="h-4 w-4 mr-2" />
               Upload Bank A
@@ -65,6 +134,50 @@ export function TopBar() {
               <Upload className="h-4 w-4 mr-2" />
               Upload Bank B
             </Button>
+        {/* Display uploaded Bank A files */}
+        {bankAFiles.length > 0 && (
+          <div className="w-full max-w-xs mt-2">
+            <div className="font-semibold text-xs mb-1">Bank A Uploaded Items:</div>
+            <div className="w-full max-h-32 overflow-auto border rounded bg-background">
+              <ul className="w-full flex flex-col gap-1 p-2">
+                {bankAFiles.map((item, idx) => (
+                  <li key={idx} className="bg-muted rounded px-2 py-1 text-xs max-w-full truncate" title={item.name}>
+                    {item.isFolder ? '📁 ' : '📄 '}{item.name}
+                    {item.zipEntries && item.zipEntries.length > 0 && (
+                      <ul className="ml-4 mt-1 max-h-16 overflow-auto border-l border-border pl-2">
+                        {item.zipEntries.map((entry, i) => (
+                          <li key={i} className="truncate" title={entry}>📄 {entry}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
+        {/* Display uploaded Bank B files */}
+        {bankBFiles.length > 0 && (
+          <div className="w-full max-w-xs mt-2">
+            <div className="font-semibold text-xs mb-1">Bank B Uploaded Items:</div>
+            <div className="w-full max-h-32 overflow-auto border rounded bg-background">
+              <ul className="w-full flex flex-col gap-1 p-2">
+                {bankBFiles.map((item, idx) => (
+                  <li key={idx} className="bg-muted rounded px-2 py-1 text-xs max-w-full truncate" title={item.name}>
+                    {item.isFolder ? '📁 ' : '📄 '}{item.name}
+                    {item.zipEntries && item.zipEntries.length > 0 && (
+                      <ul className="ml-4 mt-1 max-h-16 overflow-auto border-l border-border pl-2">
+                        {item.zipEntries.map((entry, i) => (
+                          <li key={i} className="truncate" title={entry}>📄 {entry}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
             <div className="w-px h-6 bg-border mx-2" />
             <Button size="sm" onClick={handleRunAIMapping}>
               <Sparkles className="h-4 w-4 mr-2" />
@@ -75,10 +188,18 @@ export function TopBar() {
               Approve All
             </Button>
             <ExportDialog />
-            <ReportDialog mappings={mockMappings} />
+            <ReportDialog mappings={[]} />
           </div>
         </div>
       </div>
-    </header>
+      </header>
+      {showProgress && (
+        <div className="w-full bg-card border-b border-border">
+          <div className="container mx-auto px-6 py-2">
+            <Progress value={progress} className="h-2" />
+          </div>
+        </div>
+      )}
+    </>
   )
 }

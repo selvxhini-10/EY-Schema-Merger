@@ -5,7 +5,9 @@ from pathlib import Path
 from typing import Dict, Any, List, Optional
 import pandas as pd
 
-# Known type keywords
+print("Hi")
+
+# Kno   wn type keywords
 TYPE_HINTS = {
     "string", "str", "text", "varchar", "char",
     "int", "integer", "bigint", "smallint",

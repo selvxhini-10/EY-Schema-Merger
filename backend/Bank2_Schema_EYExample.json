@@ -5,31 +5,31 @@
       {
         "name": "Customer",
         "type": "string",
-        "description": "Unique ID assigned to customer",
+        "description": "ID assigned to customer",
         "sample": "CUST-0001"
       },
       {
         "name": "Name",
         "type": "string",
-        "description": "Full name of the customer",
+        "description": "Name of the customer",
         "sample": "Jane Doe"
       },
       {
         "name": "DOB",
         "type": "date",
-        "description": "Date of birth of the customer",
+        "description": "Birthday of the customer",
         "sample": "1990-07-11"
       },
       {
         "name": "Email",
         "type": "string",
-        "description": "Email address of the customer",
+        "description": "Email of the customer",
         "sample": "jane.doe@email.com"
       },
       {
         "name": "Phone_num",
         "type": "string",
-        "description": "Registered phone number",
+        "description": "Phone number",
         "sample": "+1-416-555-9832"
       }
     ],
@@ -49,7 +49,7 @@
       {
         "name": "Type",
         "type": "string",
-        "description": "Type of account (Current/Savings)",
+        "description": "Type of account",
         "sample": "Savings"
       },
       {

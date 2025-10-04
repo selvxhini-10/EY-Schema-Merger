@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/jszip": "^3.4.0",
+    "@types/xlsx": "^0.0.35"
+  }
+}

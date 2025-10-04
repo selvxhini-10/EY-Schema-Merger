@@ -8,12 +8,17 @@ import { useRef, useState } from "react"
 import { Progress } from "@/components/ui/progress"
 import { listZipFiles } from "@/lib/list-zip-files"
 import { fileToCsv } from "@/lib/file-to-csv"
+import { read, utils } from "xlsx"
+import type { SchemaField } from "@/components/schema-mapping-workspace"
 
 // Remove mockMappings. Bank A/B schema cards will start empty.
 
+interface TopBarProps {
+  setBankASchema: React.Dispatch<React.SetStateAction<SchemaField[]>>
+  setBankBSchema: React.Dispatch<React.SetStateAction<SchemaField[]>>
+}
 
-
-export function TopBar() {
+export function TopBar({ setBankASchema, setBankBSchema }: TopBarProps) {
   const bankAInputRef = useRef<HTMLInputElement>(null)
   const bankBInputRef = useRef<HTMLInputElement>(null)
   const [bankAFiles, setBankAFiles] = useState<{ name: string, isFolder: boolean, csv?: string, zipEntries?: string[] }[]>([])
@@ -39,43 +44,100 @@ export function TopBar() {
   }
 
   const handleBankAChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files ? Array.from(e.target.files) : []
-    const items: { name: string, isFolder: boolean, csv?: string, zipEntries?: string[] }[] = []
+    const files = e.target.files ? Array.from(e.target.files) : [];
+    const items: { name: string, isFolder: boolean, csv?: string, zipEntries?: string[], schemaFields?: SchemaField[] }[] = [];
+    let allSchemaFields: SchemaField[] = [];
     for (const file of files) {
-      const isFolder = !!(file.webkitRelativePath && file.webkitRelativePath.split("/").length > 2)
-      let csv: string | undefined = undefined
-      let zipEntries: string[] | undefined = undefined
+      const isFolder = !!(file.webkitRelativePath && file.webkitRelativePath.split("/").length > 2);
+      let csv: string | undefined = undefined;
+      let zipEntries: string[] | undefined = undefined;
+      let schemaFields: SchemaField[] | undefined = undefined;
       if (file.name.endsWith('.zip')) {
         try {
-          zipEntries = await listZipFiles(file)
+          zipEntries = await listZipFiles(file);
         } catch {}
       }
       try {
-        csv = await fileToCsv(file)
+        // Only try to parse schema for supported file types
+        if (file.name.endsWith('.csv') || file.name.endsWith('.xlsx') || file.name.endsWith('.xls')) {
+          const data = await file.arrayBuffer();
+          const workbook = read(new Uint8Array(data), { type: "array" });
+          const sheetName = workbook.SheetNames[0];
+          const sheet = workbook.Sheets[sheetName];
+          const jsonData = utils.sheet_to_json(sheet, { header: 1 });
+          const dataRows = jsonData as any[][];
+          if (dataRows.length > 0 && dataRows[0].length === 1) {
+            schemaFields = dataRows.slice(0).map((row, index) => ({
+              id: `field-${index}`,
+              name: row[0] || `Column-${index}`,
+              type: "string",
+              sampleValue: "",
+            }));
+          } else {
+            schemaFields = dataRows.slice(1).map((row, index) => ({
+              id: `field-${index}`,
+              name: row[0] || `Column-${index}`,
+              type: typeof row[1],
+              sampleValue: row[1]?.toString() || "",
+            }));
+          }
+          // Optionally, merge all fields for the main schema card
+          allSchemaFields = allSchemaFields.concat(schemaFields);
+        }
+        csv = await fileToCsv(file);
       } catch {}
-      items.push({ name: isFolder ? file.webkitRelativePath.split("/")[1] : file.name, isFolder, csv, zipEntries })
+      items.push({ name: isFolder ? file.webkitRelativePath.split("/")[1] : file.name, isFolder, csv, zipEntries, schemaFields });
     }
-    setBankAFiles(items)
+    setBankAFiles(items);
+    // Set the main schema card to show all fields from all files
+    setBankASchema(allSchemaFields);
   }
 
   const handleBankBChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files ? Array.from(e.target.files) : []
-    const items: { name: string, isFolder: boolean, csv?: string, zipEntries?: string[] }[] = []
+    const files = e.target.files ? Array.from(e.target.files) : [];
+    const items: { name: string, isFolder: boolean, csv?: string, zipEntries?: string[], schemaFields?: SchemaField[] }[] = [];
+    let allSchemaFields: SchemaField[] = [];
     for (const file of files) {
-      const isFolder = !!(file.webkitRelativePath && file.webkitRelativePath.split("/").length > 2)
-      let csv: string | undefined = undefined
-      let zipEntries: string[] | undefined = undefined
+      const isFolder = !!(file.webkitRelativePath && file.webkitRelativePath.split("/").length > 2);
+      let csv: string | undefined = undefined;
+      let zipEntries: string[] | undefined = undefined;
+      let schemaFields: SchemaField[] | undefined = undefined;
       if (file.name.endsWith('.zip')) {
         try {
-          zipEntries = await listZipFiles(file)
+          zipEntries = await listZipFiles(file);
         } catch {}
       }
       try {
-        csv = await fileToCsv(file)
+        if (file.name.endsWith('.csv') || file.name.endsWith('.xlsx') || file.name.endsWith('.xls')) {
+          const data = await file.arrayBuffer();
+          const workbook = read(new Uint8Array(data), { type: "array" });
+          const sheetName = workbook.SheetNames[0];
+          const sheet = workbook.Sheets[sheetName];
+          const jsonData = utils.sheet_to_json(sheet, { header: 1 });
+          const dataRows = jsonData as any[][];
+          if (dataRows.length > 0 && dataRows[0].length === 1) {
+            schemaFields = dataRows.slice(0).map((row, index) => ({
+              id: `field-${index}`,
+              name: row[0] || `Column-${index}`,
+              type: "string",
+              sampleValue: "",
+            }));
+          } else {
+            schemaFields = dataRows.slice(1).map((row, index) => ({
+              id: `field-${index}`,
+              name: row[0] || `Column-${index}`,
+              type: typeof row[1],
+              sampleValue: row[1]?.toString() || "",
+            }));
+          }
+          allSchemaFields = allSchemaFields.concat(schemaFields);
+        }
+        csv = await fileToCsv(file);
       } catch {}
-      items.push({ name: isFolder ? file.webkitRelativePath.split("/")[1] : file.name, isFolder, csv, zipEntries })
+      items.push({ name: isFolder ? file.webkitRelativePath.split("/")[1] : file.name, isFolder, csv, zipEntries, schemaFields });
     }
-    setBankBFiles(items)
+    setBankBFiles(items);
+    setBankBSchema(allSchemaFields);
   }
 
   const handleRunAIMapping = () => {
@@ -127,13 +189,14 @@ export function TopBar() {
               onClick={e => { (e.target as HTMLInputElement).value = '' }}
             />
             <Button variant="outline" size="sm" onClick={handleUploadBankA}>
-              <Upload className="h-4 w-4 mr-2" />
+                          <Upload className="h-4 w-4 mr-2" />
               Upload Bank A
             </Button>
             <Button variant="outline" size="sm" onClick={handleUploadBankB}>
               <Upload className="h-4 w-4 mr-2" />
               Upload Bank B
             </Button>
+
         {/* Display uploaded Bank A files */}
         {bankAFiles.length > 0 && (
           <div className="w-full max-w-xs mt-2">

@@ -87,15 +87,12 @@ export function SchemaMappingWorkspace() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <SchemaPanel title="Bank A Schema" fields={bankASchema} color="blue" />
-
               <UnifiedSchemaPanel fields={unifiedSchema} mappings={mappings} onApproveMapping={handleApproveMapping} />
-
               <SchemaPanel title="Bank B Schema" fields={bankBSchema} color="purple" />
             </div>
           </CardContent>
         </Card>
       </div>
-
       <div className="lg:col-span-1">
         <MappingSummary mappings={mappings} />
       </div>

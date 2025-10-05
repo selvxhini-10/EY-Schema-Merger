@@ -4,27 +4,6 @@ import { useState } from "react"
 import { read, utils } from "xlsx"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { SchemaPanel } from "@/components/schema-panel"
-
-// Table info for Bank A and Bank B (from backend folder structure)
-const bankATables = [
-  "Bank1_Mock_CurSav_Accounts",
-  "Bank1_Mock_CurSav_Transactions",
-  "Bank1_Mock_Customer",
-  "Bank1_Mock_FixedTerm_Accounts",
-  "Bank1_Mock_FixedTerm_Transactions",
-  "Bank1_Mock_Loan_Accounts",
-  "Bank1_Mock_Loan_Transactions",
-];
-
-const bankBTables = [
-  "Bank2_Mock_Addresses",
-  "Bank2_Mock_Customer",
-  "Bank2_Mock_Deposit_Accounts",
-  "Bank2_Mock_Deposit_Transactions",
-  "Bank2_Mock_Identifications",
-  "Bank2_Mock_Loan_Accounts",
-  "Bank2_Mock_Loan_Transactions",
-];
 import { UnifiedSchemaPanel } from "@/components/unified-schema-panel"
 import { MappingSummary } from "@/components/mapping-summary"
 import { TopBar } from "@/components/top-bar"
@@ -139,33 +118,10 @@ export function SchemaMappingWorkspace() {
             <TopBar setBankASchema={setBankASchema} setBankBSchema={setBankBSchema} />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
-                <div className="mb-2">
-                  <span className="font-semibold text-blue-700">Bank A Tables:</span>
-                  <div className="space-y-2 mt-1">
-                    {bankATables.map((t) => (
-                      <Card key={t} className="border-l-4 border-l-chart-4 hover:shadow-md transition-shadow">
-                        <CardContent className="p-3 flex items-center">
-                          <span className="font-mono text-xs text-card-foreground truncate">{t}</span>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </div>
+                <SchemaPanel title="Bank A Schema" fields={bankASchema} color="blue" />
               </div>
               <UnifiedSchemaPanel fields={unifiedSchema} mappings={mappings} onApproveMapping={handleApproveMapping} />
               <div>
-                <div className="mb-2">
-                  <span className="font-semibold text-purple-700">Bank B Tables</span>
-                  <div className="space-y-2 mt-1">
-                    {bankBTables.map((t) => (
-                      <Card key={t} className="border-l-4 border-l-chart-1 hover:shadow-md transition-shadow">
-                        <CardContent className="p-3 flex items-center">
-                          <span className="font-mono text-xs text-card-foreground truncate">{t}</span>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </div>
                 <SchemaPanel title="Bank B Schema" fields={bankBSchema} color="purple" />
               </div>
             </div>

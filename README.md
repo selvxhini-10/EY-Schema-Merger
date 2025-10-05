@@ -1,56 +1,56 @@
 Schema Sync – AI-Powered Data Integration for Financial Institutions
-<div align="center"> <img src="frontend/images/SchemaSyncLogo.png" alt="Schema Sync Logo" width="120" height="120"> <h3>Schema Sync – The AI Copilot for Data Integration</h3> <p><em>Unifying financial data across institutions with intelligence, transparency, and speed</em></p> </div>
+<div align="center"> <img src="frontend/images/SchemaSyncLogo.png" alt="Schema Sync Logo" width="120" height="120"> <h3>Schema Sync – The AI Copilot for Data Integration</h3> <p><em>Unifying financial data across institutions with intelligence, transparency, and speed</em></p> <p><strong>Built for the EY Canada Data Integration Challenge – Hack the Valley X</strong></p> </div>
 🌟 Overview
 
-When two banks merge, data chaos follows. Different schemas, formats, and column names make integration slow and error-prone.
-Schema Sync fixes that — it’s an AI-powered copilot that automatically maps, merges, and validates financial datasets from multiple sources, producing a single unified schema with full audit trails and confidence scoring.
+When two banks merge, data chaos follows. Each system has its own schema, column names, and formats — making integration a long, manual process.
+Schema Sync is your AI-powered copilot that automatically maps, merges, and validates financial datasets across institutions, producing a unified schema and full audit trail — in minutes, not days.
 
 It’s like GitHub Copilot — but for data mapping and schema reconciliation.
 
 🎯 Key Features
 
-🤖 AI-Driven Schema Matching – Uses NLP and similarity search (OpenAI embeddings) to match fields across institutions
+🤖 AI Schema Matching – Embedding-based NLP matching using OpenAI for column alignment
 
-📊 Multi-Format Support – Supports Excel, CSV, and JSON files from multiple banks or vendors
+📂 Multi-Format Uploads – Works with CSV, Excel (.xlsx, .xls), and JSON files
 
-🔄 Real-Time Mapping Workspace – Interactive visual UI with confidence scores and drag-and-drop overrides
+🧩 Visual Mapping Workspace – Two schemas side-by-side with drag-to-match + confidence scores
 
-📈 Analytics Dashboard – Data quality KPIs, completeness scores, overlaps, and conflict summaries
+📈 Data Analytics Dashboard – Power BI–style insights with completeness scores, overlaps, and KPIs
 
-📁 Unified Output Generator – Merges data into a clean master schema ready for analysis
+⚙️ Conflict Resolver – Detects mismatched fields, missing data, and format inconsistencies
 
-🧾 Integration Report Builder – Auto-generates mapping documentation and visual analytics snapshots (PDF/Excel)
+🧾 Report Generation – Auto-creates Excel and PDF reports with field mappings and confidence metrics
 
-🛡️ Secure Local Processing – All data handled locally; no cloud uploads required
+🛡️ Secure Local Processing – All data handled locally with full transparency
 
-🎨 Modern UI/UX – Smooth, Power BI-style workspace with Notion-like simplicity
+🎨 Elegant UI – Clean, modern interface built with Next.js, Tailwind, and shadcn/ui
 
 🏗️ Architecture
-Backend (Python + FastAPI)
+Backend (FastAPI + Python)
 
-Schema Parser – Extracts and normalizes columns from uploaded bank datasets
+Schema Parser – Reads and normalizes schema structure
 
-AI Matcher – Embedding-based schema alignment using OpenAI or SBERT
+AI Matcher – Uses embeddings (OpenAI/SBERT) for semantic field pairing
 
-Conflict Resolver – Detects mismatches and suggests resolutions with confidence scores
+Merge Engine – Consolidates data into a unified master schema
 
-Merge Engine – Combines aligned datasets into a unified master table
+Analytics Service – Computes completeness, conflicts, and overlap metrics
 
-Report Generator – Exports Excel, CSV, JSON, and PDF reports with visual analytics
+Report Generator – Produces Excel/PDF outputs with audit trail
 
-Storage Layer – Organized folders per institution for clean separation and traceability
+Storage Layer – Organized directories per institution
 
-Frontend (Next.js + React + Tailwind + shadcn/ui)
+Frontend (Next.js + React + Tailwind)
 
-Step-Based Workflow – Upload → Map → Merge → Analyze → Export
+Step-Based Workflow – Guided stages: Upload → Map → Merge → Analyze → Export
 
-Drag-and-Drop Upload – Intuitive multi-file upload containers for Bank A & Bank B
+Drag-and-Drop Uploads – Two containers for Bank A and Bank B datasets
 
-Mapping Workspace – Side-by-side field comparison with connecting lines
+Dynamic Mapping View – Real-time confidence visualization
 
-Analytics Dashboard – Power BI-style visuals: KPIs, pie charts, completeness scores
+Interactive Dashboard – Live KPIs, charts, and completeness scores
 
-Export Panel – One-click Excel and report generation
+Responsive Design – Optimized for desktop, tablet, and mobile
 
 🚀 Quick Start
 Prerequisites
@@ -61,7 +61,7 @@ Node.js 18+
 
 OpenAI API Key
 
-1️⃣ Clone and Setup
+1️⃣ Clone and Install
 git clone https://github.com/your-username/schema-sync.git
 cd schema-sync
 
@@ -79,68 +79,70 @@ OPENAI_API_KEY=your_openai_api_key_here
 FASTAPI_PORT=8001
 
 3️⃣ Run the App
-# Terminal 1
+# Backend
 cd backend
 uvicorn main:app --reload --port 8001
 
-# Terminal 2
+# Frontend
 cd frontend
 npm run dev
 
-4️⃣ Access the Platform
+4️⃣ Access
 
 Frontend: http://localhost:3000
 
-Backend API: http://localhost:8001
+Backend: http://localhost:8001
 
 Health Check: http://localhost:8001/health
 
 🧭 Usage Guide
-🧩 1. Upload Schemas
+Step 1 – Upload Schemas
 
-Upload master schemas for each bank.
+Upload Bank A and Bank B schema files.
 
-Schema Sync auto-detects fields, types, and format differences.
+Schema Sync auto-detects columns, types, and structures.
 
-🧠 2. AI Mapping
+Step 2 – AI Mapping
 
-AI matcher suggests column pairings with confidence scores.
+View auto-suggested column pairings with confidence scores.
 
-Drag or confirm mappings manually as needed.
+Drag to adjust or approve mappings manually.
 
-🔄 3. Merge Preview
+Step 3 – Merge Preview
 
-View unified table and highlight conflicts or missing data.
+Review unified dataset and flagged inconsistencies.
 
-Real-time metrics: records merged, overlap %, unresolved fields.
+Live metrics: records merged, % overlap, fields unresolved.
 
-📊 4. Analytics
+Step 4 – Analytics Dashboard
 
-Completeness Score Dashboard – visual credit-score-style indicator of data quality.
+Completeness Score gauge
 
-Cross-filtered charts for region, institution, and account type.
+Conflict summaries
 
-📤 5. Export
+Overlap and regional breakdown charts
 
-Download merged Excel/CSV or generate an Integration Report (PDF) with mappings, scores, and visuals.
+Step 5 – Export
+
+Download unified dataset (Excel/CSV)
+
+Generate full Integration Report (PDF) with visual mappings and KPIs
 
 🔧 API Endpoints
 Method	Endpoint	Description
 GET	/health	Server status
 POST	/schemas/parse	Parse uploaded schema
 POST	/upload	Upload data files
-POST	/process/ai-map	Trigger AI mapping
-GET	/download/<filename>	Retrieve merged output
+POST	/process/ai-map	Trigger AI schema mapping
+GET	/download/<filename>	Download unified dataset
 POST	/cleanup	Remove temporary files
-🛠️ Development
-Project Structure
+🧱 Project Structure
 schema-sync/
 ├── backend/
 │   ├── main.py
-│   ├── parser.py
 │   ├── matcher.py
 │   ├── merger.py
-│   ├── requirements.txt
+│   ├── parser.py
 │   └── uploaded_files/
 │       ├── bankA/
 │       └── bankB/
@@ -148,50 +150,35 @@ schema-sync/
 │   ├── pages/
 │   ├── components/
 │   ├── public/images/
-│   ├── styles/
-│   └── package.json
+│   └── styles/
 ├── reports/
-├── .env
 └── README.md
-
-Common Commands
-# Backend
-uvicorn main:app --reload --port 8001
-
-# Frontend
-npm run dev
-
-# Install dependencies
-pip install -r backend/requirements.txt
-npm install
 
 🔒 Security & Privacy
 
-Local Processing Only – No data sent to third parties
+Local-Only Processing – No cloud upload
 
-Auto Cleanup – Temporary files deleted after export
+Strict Validation – File size/type checks
 
-Input Validation – Strict type & size checks
+Auto Cleanup – Deletes temporary data after export
 
-API Key Protection – Stored securely in environment variables
+API Key Security – Stored in .env
 
-Error Sanitization – No sensitive data in logs
+Sanitized Logs – No sensitive data exposure
 
 🐛 Troubleshooting
-Issue	Fix
-Backend not starting	Check Python version ≥ 3.11 and install requirements
-Frontend blank page	Clear cache / run npm run dev
-AI mapping fails	Ensure OPENAI_API_KEY is valid
-File not parsed	Use CSV or Excel files ≤ 50 MB
+Issue	Solution
+Backend fails to start	Reinstall dependencies, check Python 3.11+
+Frontend blank page	Clear cache or rerun npm run dev
+AI Mapping errors	Verify OPENAI_API_KEY is active
+File not recognized	Use CSV or Excel under 50 MB
 🤝 Contributing
 
-Fork the repo
+Fork the repository
 
-Create a branch → git checkout -b feature/new-feature
+Create a feature branch → git checkout -b feature/new-feature
 
-Make changes + add comments
-
-Commit → git commit -m "Add feature"
+Commit changes → git commit -m "Add feature"
 
 Push → git push origin feature/new-feature
 
@@ -200,9 +187,8 @@ Open a Pull Request
 📄 License
 
 Licensed under the MIT License – see LICENSE
-.
 
-📞 Support & Contact
+📞 Contact
 
 GitHub Issues: Schema Sync Repo
 
@@ -210,4 +196,4 @@ Email: support@schemasync.ai
 
 Website: schemasync.ai
 
-<div align="center"> <p><strong>Schema Sync</strong> – Bridging data across banks with AI and trust.</p> <p>Built with ❤️ at Hack the Valley X 2025</p> </div>
+<div align="center"> <p><strong>Schema Sync</strong> – Bridging data across banks with AI and trust.</p> <p>Made with ❤️ at Hack the Valley X 2025</p> </div>

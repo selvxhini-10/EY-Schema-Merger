@@ -29,8 +29,7 @@ def health():
 
 
 @app.post("/schemas/parse")
-async def parse_schemas(files: List[UploadFile] = File(...)) -> Dict[str, 
-Any]:
+async def parse_schemas(files: List[UploadFile] = File(...)) -> Dict[str, Any]:
     """
     Accept schema Excel files, parse them into JSON, save to disk,
     and return a summary of what was parsed.
@@ -44,6 +43,9 @@ Any]:
             # Parse schema workbook → structured JSON
             parsed = parse_schema_workbook(content, f.filename)
 
+            # ✅ Include source filename (needed for naming when saving)
+            parsed["source_file"] = f.filename
+
             # Save parsed JSON to backend/schemas/
             out_path = save_schema_json(parsed, SCHEMA_DIR)
 
@@ -51,11 +53,10 @@ Any]:
             results.append({
                 "file": f.filename,
                 "saved_to": out_path.name,
-                "bank": parsed["bank"],
+                "bank": parsed.get("bank", "Unknown"),
             })
         except Exception as e:
-            # ⚠️ Properly formatted exception message
-            raise HTTPException(status_code=400, detail=f"{f.filename}:{e}")
+            raise HTTPException(status_code=400, detail=f"{f.filename}: {e}")
 
     return {"parsed": results}
 
@@ -74,4 +75,3 @@ def read_schema_json(name: str):
     if not path.exists():
         raise HTTPException(status_code=404, detail=f"{name} not found")
     return json.loads(path.read_text(encoding="utf-8"))
-

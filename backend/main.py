@@ -21,13 +21,6 @@ app.add_middleware(
 # ✅ Directory to store parsed JSON files
 SCHEMA_DIR = Path(__file__).parent / "schemas"
 
-
-@app.get("/health")
-def health():
-    """Simple health check endpoint."""
-    return {"ok": True}
-
-
 @app.post("/schemas/parse")
 async def parse_schemas(files: List[UploadFile] = File(...)) -> Dict[str, Any]:
     """

@@ -4,34 +4,6 @@
   "tables": {
     "Customer": [
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "description",
-        "displayName": "description",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
         "name": "the_last_name_surname_or_family_name_of_the_client",
         "displayName": "The last name, surname, or family name of the client.",
         "type": "",

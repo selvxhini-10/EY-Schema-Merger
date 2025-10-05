@@ -75,3 +75,16 @@ def read_schema_json(name: str):
         raise HTTPException(status_code=404, detail=f"{name} not found")
     return json.loads(path.read_text(encoding="utf-8"))
 
+# app.py
+from ai_mapping import auto_map
+
+# File paths
+BANK1_FILE = "backend/schemas/bank1__bank1_schema.json"
+BANK2_FILE = "backend/schemas/bank2__bank2_schema.json"
+
+app = FastAPI(title="Bank Schema Mapping API")
+
+@app.get("/auto-map-schema")
+def run_auto_mapping():
+    result = auto_map(BANK1_FILE, BANK2_FILE)
+    return result

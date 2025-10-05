@@ -1,4 +1,4 @@
-#!/Users/sansitamalhotra/EY-Schema-Merger/venv/bin/python3
+#!/Users/isabelliu/Documents/GitHub/EY-Schema-Merger/venv/bin/python3.13
 # -*- coding: utf-8 -*-
 import re
 import sys

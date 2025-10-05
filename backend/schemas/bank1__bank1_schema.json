@@ -4,34 +4,6 @@
   "tables": {
     "Customer": [
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "description",
-        "displayName": "description",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
         "name": "the_phone_number_of_the_customer_or_prospect",
         "displayName": "The phone number of the customer or prospect",
         "type": "",

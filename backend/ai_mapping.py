@@ -4,9 +4,9 @@ import json
 
 # *** COMPARING TABLE NAMES ***
 # ==== CONFIG ====
-FILE1 = "backend/Bank1_Schema_EYExample.json"
-FILE2 = "backend/Bank2_Schema_EYExample.json"
-CONF_THRESHOLD = 60.0
+FILE1 = "backend/schemas/bank1__bank1_schema.json"
+FILE2 = "backend/schemas/bank2__bank2_schema.json"
+CONF_THRESHOLD = 75.0
 MODEL_NAME = "all-MiniLM-L6-v2"
 
 # ==== LOAD MODEL ====
@@ -67,12 +67,12 @@ data2["tables"] = renamed_tables
 
 
 # ==== SAVE RESULTS ====
-with open("backend/Bank2_Renamed_Schema.json", "w", encoding="utf-8") as f:
+with open("backend/schemas/bank2_renamed_schema.json", "w", encoding="utf-8") as f:
     json.dump(data2, f, indent=2, ensure_ascii=False)
 
-print("✅ Bank2 tables renamed and saved to Bank2_Renamed_Schema.json")
+print("✅ Bank2 tables renamed and saved to bank2_renamed_schema.json")
 
-with open("backend/Table_name_mapping.json", "w", encoding="utf-8") as f:
+with open("backend/schemas/table_name_mapping.json", "w", encoding="utf-8") as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
 
 print("✅ Table name mapping saved to Table_name_mapping.json")
@@ -80,8 +80,8 @@ print("✅ Table name mapping saved to Table_name_mapping.json")
 # *** COMPARING HEADERS WITHIN EACH MATCHING TABLE ***
 
 # ==== CONFIG ====
-BANK1_FILE = "backend/Bank1_Schema_EYExample.json"
-BANK2_FILE = "backend/Bank2_Renamed_Schema.json"
+BANK1_FILE = "backend/schemas/bank1__bank1_schema.json"
+BANK2_FILE = "backend/schemas/bank2_renamed_schema.json"
 TEXT_KEY = "description"  # field to compare semantically
 
 # ==== HELPER FUNCTION ====
@@ -138,8 +138,7 @@ for table_name, columns2 in bank2["tables"].items():
     mapping_results[table_name] = mapped_columns
 
 # ==== SAVE RESULTS ====
-with open("backend/Bank_column_mapping.json", "w", encoding="utf-8") as f:
+with open("backend/schemas/bank_column_mapping.json", "w", encoding="utf-8") as f:
     json.dump(mapping_results, f, indent=2, ensure_ascii=False)
 
-print(f"✅ Column mapping results saved to Bank_column_mapping.json")
-print("Hi")
+print(f"✅ Column mapping results saved to bank_column_mapping.json")

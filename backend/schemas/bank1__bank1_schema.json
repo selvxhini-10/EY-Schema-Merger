@@ -1,1273 +1,624 @@
 {
   "bank": "Bank1",
-  "source_file": "Bank1_Schema.xlsx",
   "tables": {
     "Customer": [
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "phoneNumber",
+        "description": "The phone number of the customer or prospect."
       },
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "smsNumber",
+        "description": "The mobile SMS number of the customer."
       },
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "email",
+        "description": "Email Identifier of the Customer."
       },
       {
-        "name": "description",
-        "displayName": "description",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "street",
+        "description": "Contains the street name of the customer or the property."
       },
       {
-        "name": "the_phone_number_of_the_customer_or_prospect",
-        "displayName": "The phone number of the customer or prospect",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "addressCity",
+        "description": "The town and/or city component of the base address of a customer."
       },
       {
-        "name": "the_mobile_sms_number_of_the_customer",
-        "displayName": "The mobile SMS number of the customer",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "country",
+        "description": "Identifies the country of the customer or a property or organization."
       },
       {
-        "name": "email_identifier_of_the_customer",
-        "displayName": "Email Identifier of the Customer",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "legalId",
+        "description": "Unique reference number of the legal documents submitted as identification proof."
       },
       {
-        "name": "contains_the_street_name_of_the_customer_or_the_property",
-        "displayName": "Contains the street name of the customer or the property",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "legalDocumentName",
+        "description": "Name of the legal documents such as passport, driving licence etc., provided as identification proof."
       },
       {
-        "name": "the_town_and_or_city_component_of_the_base_address_of_a_customer",
-        "displayName": "The town and/or city component of the base address of a customer",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "legalIssueAuthorised",
+        "description": "Authority who issued the legal document."
       },
       {
-        "name": "identifies_the_country_of_the_customer_or_a_property_or_organization",
-        "displayName": "Identifies the country of the customer or a property or organization",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "legalIssueCountry",
+        "description": "Indicates the country where the authorized legal document is issued."
       },
       {
-        "name": "unique_reference_number_of_the_legal_documents_submitted_as_identification_proof",
-        "displayName": "Unique reference number of the legal documents submitted as identification proof",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "legalIssueDate",
+        "description": "Date of Issue of the legal document."
       },
       {
-        "name": "name_of_the_legal_documents_such_as_passport_driving_licence_etc_provided_as_identification_proof",
-        "displayName": "Name of the legal documents such as passport, driving licence etc., provided as identification proof",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "legalExpiredDate",
+        "description": "Expiry date of the legal document submitted as proof."
       },
       {
-        "name": "authority_who_issued_the_legal_document",
-        "displayName": "Authority who issued the legal document",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "language",
+        "description": "The language that the contents of the field are displayed in."
       },
       {
-        "name": "indicates_the_country_where_the_authorized_legal_document_is_issued",
-        "displayName": "Indicates the country where the authorized legal document is issued",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "dateOfBirth",
+        "description": "The date of birth of an individual customer."
       },
       {
-        "name": "date_of_issue_of_the_legal_document",
-        "displayName": "Date of Issue of the legal document",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "customerStatus",
+        "description": "The internal bank status of a customer."
       },
       {
-        "name": "expiry_date_of_the_legal_document_submitted_as_proof",
-        "displayName": "Expiry date of the legal document submitted as proof",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "accountOfficerId",
+        "description": "The identifier of the department head or specific account officer responsible for the customer."
       },
       {
-        "name": "the_language_that_the_contents_of_the_field_are_displayed_in",
-        "displayName": "The language that the contents of the field are displayed in.",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "gender",
+        "description": "Gender of the Individual Customer."
       },
       {
-        "name": "the_date_of_birth_of_an_individual_customer",
-        "displayName": "The date of birth of an individual customer",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "state",
+        "description": "Represents a subdivision of a country such as province, state, region, country."
       },
       {
-        "name": "the_internal_bank_status_of_a_customer",
-        "displayName": "The internal bank status of a customer",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "postCode",
+        "description": "Identifies the address postal code for the customer or the property."
       },
       {
-        "name": "the_identifier_of_the_department_head_or_specific_account_officer_responsible_for_the_customer",
-        "displayName": "The identifier of the department head or specific account officer responsible for the customer",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "contactDate",
+        "description": "Date that first contact was made with the Customer."
       },
       {
-        "name": "gender_of_the_individual_customer",
-        "displayName": "Gender of the Individual Customer",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "lastName",
+        "description": "The last name of an individual customer."
       },
       {
-        "name": "represents_a_subdivision_of_a_country_such_as_province_state_region_country",
-        "displayName": "Represents a subdivision of a country such as province, state, region, country",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "givenName",
+        "description": "Customer's given name."
       },
       {
-        "name": "identifies_the_address_postal_code_for_the_customer_or_the_property",
-        "displayName": "Identifies the address postal code for the customer or the property",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "customerType",
+        "description": "Identifies the type of customers. Example Personal, Business, Corporate, etc."
       },
       {
-        "name": "date_that_first_contact_was_made_with_the_customer",
-        "displayName": "Date that first contact was made with the Customer.",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "the_last_name_of_an_individual_customer",
-        "displayName": "The last name of an individual customer",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "customer_s_given_name",
-        "displayName": "Customer's given name",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "identifies_the_type_of_customers_example_personal_business_corporate_etc",
-        "displayName": "Identifies the type of customers. Example Personal, Business, Corporate, etc.",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "identifier_of_the_customer",
-        "displayName": "Identifier of the customer",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "customerId",
+        "description": "Identifier of the customer."
       }
     ],
     "CurSav Accounts": [
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "accountId",
+        "description": "Identifier of the account. Often referred to as the account number."
       },
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "displayName",
+        "description": "Contains the name used for display or enrichment purposes."
       },
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "customerId",
+        "description": "Identifier of the customer."
       },
       {
-        "name": "description",
-        "displayName": "description",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "customerRole",
+        "description": "Indicates role of a customer for an arrangement."
       },
       {
-        "name": "identifier_of_the_account_often_referred_to_as_the_account_number",
-        "displayName": "Identifier of the account. Often referred to as the account number",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "productId",
+        "description": "Contains the unique identifier of the product."
       },
       {
-        "name": "contains_the_name_used_for_display_or_enrichment_purposes",
-        "displayName": "Contains the name used for display or enrichment purposes",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "status",
+        "description": "Specifies the status of the agreement."
       },
       {
-        "name": "identifier_of_the_customer",
-        "displayName": "Identifier of the customer",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "currency",
+        "description": "Identifies the currency. E.g. USD."
       },
       {
-        "name": "indicates_role_of_a_customer_for_an_arrangement",
-        "displayName": "Indicates role of a customer for an arrangement",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "branch",
+        "description": "Contains the branch name/code in which the business activity was performed."
       },
       {
-        "name": "contains_the_unique_identifier_of_the_product",
-        "displayName": "Contains the unique identifier of the product",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "accountOpeningDate",
+        "description": "Contains the opening date of the account."
       },
       {
-        "name": "specifies_the_status_of_the_agreement",
-        "displayName": "Specifies the status of the agreement",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "arrangementStartDate",
+        "description": "Indicates the date on which the arrangement was created."
       },
       {
-        "name": "identifies_the_currency_e_g_usd",
-        "displayName": "Identifies the currency. E.g. USD",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "availableBalance",
+        "description": "Available balance of the account which is the projected balance."
       },
       {
-        "name": "contains_the_branch_name_code_in_which_the_business_activity_was_performed",
-        "displayName": "Contains the branch name/code in which the business activity was performed",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "onlineActualBalance",
+        "description": "Real-time balance including all authorised transactions."
       },
       {
-        "name": "contains_the_opening_date_of_the_account",
-        "displayName": "Contains the opening date of the account",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "lockedAmount",
+        "description": "Shows reserved amount for the underlying account."
       },
       {
-        "name": "indicates_the_date_on_which_the_arrangement_was_created",
-        "displayName": "Indicates the date on which the arrangement was created",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "availableLimit",
+        "description": "The portion of an allocated credit limit that is available."
       },
       {
-        "name": "available_balance_of_the_account_which_is_the_projected_balance",
-        "displayName": "Available balance of the account which is the projected balance",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "productDescription",
+        "description": "Indicates the description of the Product."
       },
       {
-        "name": "real_time_balance_including_all_authorised_transactions",
-        "displayName": "Real-time balance including all authorised transactions",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "shows_reserved_amount_for_the_underlying_account",
-        "displayName": "Shows reserved amount for the underlying account",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "the_portion_of_an_allocated_credit_limit_that_is_available",
-        "displayName": "The portion of an allocated credit limit that is available",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "indicates_the_description_of_the_product",
-        "displayName": "Indicates the description of the Product",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "indicates_the_account_or_contract_product_name",
-        "displayName": "Indicates the account or contract product name",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "category",
+        "description": "Indicates the account or contract product name."
       }
     ],
     "Fixed Term Accounts": [
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "accountId",
+        "description": "Identifier of the account."
       },
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "accountTitles",
+        "description": "Short title on an account."
       },
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "productId",
+        "description": "Contains the unique identifier of the product."
       },
       {
-        "name": "description",
-        "displayName": "description",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "currency",
+        "description": "Identifies the currency (e.g. USD."
       },
       {
-        "name": "identifier_of_the_account",
-        "displayName": "Identifier of the account",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "customerId",
+        "description": "Identifier of the customer."
       },
       {
-        "name": "short_title_on_an_account",
-        "displayName": "Short title on an account",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "customerRole",
+        "description": "Indicates role of a customer for an arrangement."
       },
       {
-        "name": "contains_the_unique_identifier_of_the_product",
-        "displayName": "Contains the unique identifier of the product",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "branch",
+        "description": "Contains the branch name/code."
       },
       {
-        "name": "identifies_the_currency_e_g_usd",
-        "displayName": "Identifies the currency (e.g. USD",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "reason",
+        "description": "Contains the reason for performing the current activity."
       },
       {
-        "name": "identifier_of_the_customer",
-        "displayName": "Identifier of the customer",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "maturityDate",
+        "description": "Indicates maturity date of the contract."
       },
       {
-        "name": "indicates_role_of_a_customer_for_an_arrangement",
-        "displayName": "Indicates role of a customer for an arrangement",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "arrangementEffectiveDate",
+        "description": "It is a date on/upon which an account is considered to take effect."
       },
       {
-        "name": "contains_the_branch_name_code",
-        "displayName": "Contains the branch name/code",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "expiryDate",
+        "description": "Indicates the date on which the arrangement expires."
       },
       {
-        "name": "contains_the_reason_for_performing_the_current_activity",
-        "displayName": "Contains the reason for performing the current activity",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "agentCustomerId",
+        "description": "The id of the 3rd party who sold the product."
       },
       {
-        "name": "indicates_maturity_date_of_the_contract",
-        "displayName": "Indicates maturity date of the contract",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "expectedBalance",
+        "description": "Indicates the amount expected to be deposited by the customer."
       },
       {
-        "name": "it_is_a_date_on_upon_which_an_account_is_considered_to_take_effect",
-        "displayName": "It is a date on/upon which an account is considered to take effect",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "currentBalance",
+        "description": "An accounts availableBalance plus any authorized credit."
       },
       {
-        "name": "indicates_the_date_on_which_the_arrangement_expires",
-        "displayName": "Indicates the date on which the arrangement expires",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "accruedInterest",
+        "description": "The amount of interest that has been accrued."
       },
       {
-        "name": "the_id_of_the_3rd_party_who_sold_the_product",
-        "displayName": "The id of the 3rd party who sold the product",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "jointCustomerName",
+        "description": "Name of Joint Customer."
       },
       {
-        "name": "indicates_the_amount_expected_to_be_deposited_by_the_customer",
-        "displayName": "Indicates the amount expected to be deposited by the customer",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "category",
+        "description": "Indicates the account or contract product name."
       },
       {
-        "name": "an_accounts_availablebalance_plus_any_authorized_credit",
-        "displayName": "An accounts availableBalance plus any authorized credit",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "interestRate",
+        "description": "Identifies the bid rate of the related currency for the defined time period."
       },
       {
-        "name": "the_amount_of_interest_that_has_been_accrued",
-        "displayName": "The amount of interest that has been accrued",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "interestStatement",
+        "description": "Indicates the category of the interest statement (e.g. Monthly."
       },
       {
-        "name": "name_of_joint_customer",
-        "displayName": "Name of Joint Customer",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "indicates_the_account_or_contract_product_name",
-        "displayName": "Indicates the account or contract product name",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "identifies_the_bid_rate_of_the_related_currency_for_the_defined_time_period",
-        "displayName": "Identifies the bid rate of the related currency for the defined time period",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "indicates_the_category_of_the_interest_statement_e_g_monthly",
-        "displayName": "Indicates the category of the interest statement (e.g. Monthly",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "specifies_the_status_of_the_agreement",
-        "displayName": "Specifies the status of the agreement",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "status",
+        "description": "Specifies the status of the agreement."
       }
     ],
     "Loan Accounts": [
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "accountId",
+        "description": "Identifier of the account."
       },
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "accountName",
+        "description": "Display name or short name of the account specified."
       },
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "productId",
+        "description": "Contains the unique identifier of the product."
       },
       {
-        "name": "description",
-        "displayName": "description",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "currency",
+        "description": "Identifies the currency (e.g. USD."
       },
       {
-        "name": "identifier_of_the_account",
-        "displayName": "Identifier of the account",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "customerId",
+        "description": "Contains the customer identifier."
       },
       {
-        "name": "display_name_or_short_name_of_the_account_specified",
-        "displayName": "Display name or short name of the account specified",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "customerRole",
+        "description": "Indicates role of a customer for an arrangement."
       },
       {
-        "name": "contains_the_unique_identifier_of_the_product",
-        "displayName": "Contains the unique identifier of the product",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "branch",
+        "description": "Contains the branch name/code."
       },
       {
-        "name": "identifies_the_currency_e_g_usd",
-        "displayName": "Identifies the currency (e.g. USD",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "reason",
+        "description": "Contains the reason for performing the current activity."
       },
       {
-        "name": "contains_the_customer_identifier",
-        "displayName": "Contains the customer identifier",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "maturityDate",
+        "description": "Indicates maturity date of the contract."
       },
       {
-        "name": "indicates_role_of_a_customer_for_an_arrangement",
-        "displayName": "Indicates role of a customer for an arrangement",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "arrangementEffectiveDate",
+        "description": "It is a date on/upon which an account is considered to take effect."
       },
       {
-        "name": "contains_the_branch_name_code",
-        "displayName": "Contains the branch name/code",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "expiryDate",
+        "description": "Indicates the date on which the arrangement expires."
       },
       {
-        "name": "contains_the_reason_for_performing_the_current_activity",
-        "displayName": "Contains the reason for performing the current activity",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "agentCustomerIds",
+        "description": "The id of the 3rd party who sold the product."
       },
       {
-        "name": "indicates_maturity_date_of_the_contract",
-        "displayName": "Indicates maturity date of the contract",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "loanBalance",
+        "description": "Indicates the outstanding balance of the loan."
       },
       {
-        "name": "it_is_a_date_on_upon_which_an_account_is_considered_to_take_effect",
-        "displayName": "It is a date on/upon which an account is considered to take effect",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "availableBalance",
+        "description": "Available balance of the account."
       },
       {
-        "name": "indicates_the_date_on_which_the_arrangement_expires",
-        "displayName": "Indicates the date on which the arrangement expires",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "loanInterestRate",
+        "description": "Indicates the interest rate of the loan."
       },
       {
-        "name": "the_id_of_the_3rd_party_who_sold_the_product",
-        "displayName": "The id of the 3rd party who sold the product",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "loanInterestType",
+        "description": "Indicates the interest rate type (Fixed."
       },
       {
-        "name": "indicates_the_outstanding_balance_of_the_loan",
-        "displayName": "Indicates the outstanding balance of the loan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "compoundType",
+        "description": "Contains the frequency type of compound in loan."
       },
       {
-        "name": "available_balance_of_the_account",
-        "displayName": "Available balance of the account",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "effectiveRate",
+        "description": "Indicates the actual interest rate applied for the account after adjustment/tier calculation."
       },
       {
-        "name": "indicates_the_interest_rate_of_the_loan",
-        "displayName": "Indicates the interest rate of the loan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "gracePeriod",
+        "description": "The grace period for loan repayment."
       },
       {
-        "name": "indicates_the_interest_rate_type_fixed",
-        "displayName": "Indicates the interest rate type (Fixed",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "periodicPayment",
+        "description": "The periodic payment value."
       },
       {
-        "name": "contains_the_frequency_type_of_compound_in_loan",
-        "displayName": "Contains the frequency type of compound in loan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "numberPayments",
+        "description": "Specifies the number of coupon or interest payments in a year."
       },
       {
-        "name": "indicates_the_actual_interest_rate_applied_for_the_account_after_adjustment_tier_calculation",
-        "displayName": "Indicates the actual interest rate applied for the account after adjustment/tier calculation",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "paymentFrequency",
+        "description": "The frequency at which a payment is required to be generated."
       },
       {
-        "name": "the_grace_period_for_loan_repayment",
-        "displayName": "The grace period for loan repayment",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "fixedDaysOfMonth",
+        "description": "The days of the month."
       },
       {
-        "name": "the_periodic_payment_value",
-        "displayName": "The periodic payment value",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "numberPayments",
+        "description": "Specifies the number of coupon or interest payments in a year."
       },
       {
-        "name": "specifies_the_number_of_coupon_or_interest_payments_in_a_year",
-        "displayName": "Specifies the number of coupon or interest payments in a year",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "amortisationTerm",
+        "description": "Indicates the amortisation term."
       },
       {
-        "name": "the_frequency_at_which_a_payment_is_required_to_be_generated",
-        "displayName": "The frequency at which a payment is required to be generated",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "principalAmount",
+        "description": "Specifies the price for the first leg of the repo contract in specified currency."
       },
       {
-        "name": "the_days_of_the_month",
-        "displayName": "The days of the month",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "principalBalance",
+        "description": "The principal balance due when pay off the account in a future date."
       },
       {
-        "name": "specifies_the_number_of_coupon_or_interest_payments_in_a_year",
-        "displayName": "Specifies the number of coupon or interest payments in a year",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "interestAmount",
+        "description": "The accrued Interest due or accrued."
       },
       {
-        "name": "indicates_the_amortisation_term",
-        "displayName": "Indicates the amortisation term",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "chargeAmount",
+        "description": "Retrieves the charge amount after redeem."
       },
       {
-        "name": "specifies_the_price_for_the_first_leg_of_the_repo_contract_in_specified_currency",
-        "displayName": "Specifies the price for the first leg of the repo contract in specified currency",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "interestBalance",
+        "description": "The interest balance due when pay off the account in a future date."
       },
       {
-        "name": "the_principal_balance_due_when_pay_off_the_account_in_a_future_date",
-        "displayName": "The principal balance due when pay off the account in a future date",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "interestFromArrearsBalance",
+        "description": "The interest from arrears balance due when pay off the account in a future date."
       },
       {
-        "name": "the_accrued_interest_due_or_accrued",
-        "displayName": "The accrued Interest due or accrued",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "loanBalance",
+        "description": "Indicates the outstanding balance of the loan."
       },
       {
-        "name": "retrieves_the_charge_amount_after_redeem",
-        "displayName": "Retrieves the charge amount after redeem",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "interestAmount",
+        "description": "The accrued Interest due or accrued."
       },
       {
-        "name": "the_interest_balance_due_when_pay_off_the_account_in_a_future_date",
-        "displayName": "The interest balance due when pay off the account in a future date",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "the_interest_from_arrears_balance_due_when_pay_off_the_account_in_a_future_date",
-        "displayName": "The interest from arrears balance due when pay off the account in a future date",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "indicates_the_outstanding_balance_of_the_loan",
-        "displayName": "Indicates the outstanding balance of the loan",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "the_accrued_interest_due_or_accrued",
-        "displayName": "The accrued Interest due or accrued",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "groups_the_products_based_on_their_type",
-        "displayName": "Groups the products based on their type",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "accountType",
+        "description": "Groups the products based on their type."
       }
     ],
     "CurSav Account Transactions": [
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "transactionReference",
+        "description": "Contains the identifier for the transaction in the core system."
       },
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "activity",
+        "description": "The activity (e.g. CREDIT DEBIT FEE_APPLIED)."
       },
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "transactionAmount",
+        "description": "Contains the transaction amount."
       },
       {
-        "name": "description",
-        "displayName": "description",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "currency",
+        "description": "Type of currency."
       },
       {
-        "name": "contains_the_identifier_for_the_transaction_in_the_core_system",
-        "displayName": "Contains the identifier for the transaction in the core system",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "effectiveDate",
+        "description": "Indicates the value date on which the underlying accounting entry is to be given value."
       },
       {
-        "name": "the_activity_e_g_credit_debit_fee_applied",
-        "displayName": "the activity (e.g. CREDIT DEBIT FEE_APPLIED)",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "transactionDate",
+        "description": "Contains the identifier for the transaction date."
       },
       {
-        "name": "contains_the_transaction_amount",
-        "displayName": "Contains the transaction amount",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "bookingDate",
+        "description": "Indicates the date on which this business activity is booked in the underlying system."
       },
       {
-        "name": "type_of_currency",
-        "displayName": "type of currency",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "narrative",
+        "description": "The additional text printed on descriptive statements in addition to the standard narrative and/or reference."
       },
       {
-        "name": "indicates_the_value_date_on_which_the_underlying_accounting_entry_is_to_be_given_value",
-        "displayName": "Indicates the value date on which the underlying accounting entry is to be given value",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "externalEventStatus",
+        "description": "Determines the status of events sent to external system."
       },
       {
-        "name": "contains_the_identifier_for_the_transaction_date",
-        "displayName": "Contains the identifier for the transaction date",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "userRole",
+        "description": "User who initiated the transaction."
       },
       {
-        "name": "indicates_the_date_on_which_this_business_activity_is_booked_in_the_underlying_system",
-        "displayName": "Indicates the date on which this business activity is booked in the underlying system",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "branch",
+        "description": "Contains the branch name/code."
       },
       {
-        "name": "the_additional_text_printed_on_descriptive_statements_in_addition_to_the_standard_narrative_and_or_reference",
-        "displayName": "The additional text printed on descriptive statements in addition to the standard narrative and/or reference",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "accountId",
+        "description": "Identifier of the account."
       },
       {
-        "name": "determines_the_status_of_events_sent_to_external_system",
-        "displayName": "Determines the status of events sent to external system",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "chargesPaymentTypeName",
+        "description": "Indicates Payment type set to an account."
       },
       {
-        "name": "user_who_initiated_the_transaction",
-        "displayName": "User who initiated the transaction",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "chargesPropertyName",
+        "description": "Indicates the property description to which benefit has been applied."
       },
       {
-        "name": "contains_the_branch_name_code",
-        "displayName": "Contains the branch name/code",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "chargesChargeAmount",
+        "description": "The charges or fees for this transaction."
       },
       {
-        "name": "identifier_of_the_account",
-        "displayName": "Identifier of the account",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "taxRate",
+        "description": "Indicates tax charged to an account."
       },
       {
-        "name": "indicates_payment_type_set_to_an_account",
-        "displayName": "Indicates Payment type set to an account",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "availableBalance",
+        "description": "Available balance of the account."
       },
       {
-        "name": "indicates_the_property_description_to_which_benefit_has_been_applied",
-        "displayName": "Indicates the property description to which benefit has been applied",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "lockedAmount",
+        "description": "Shows reserved amount for the underlying account for a given balance reservation event."
       },
       {
-        "name": "the_charges_or_fees_for_this_transaction",
-        "displayName": "The charges or fees for this transaction",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "approvedOverdraftLimit",
+        "description": "Contains the approved overdraft limit."
       },
       {
-        "name": "indicates_tax_charged_to_an_account",
-        "displayName": "Indicates tax charged to an account",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "accrualAmount",
+        "description": "Indicates interest accumulated for an account for the defined time period."
       },
       {
-        "name": "available_balance_of_the_account",
-        "displayName": "Available balance of the account",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "effectiveRate",
+        "description": "Indicates the actual interest rate applied for the account after adjustment/tier calculation."
       },
       {
-        "name": "shows_reserved_amount_for_the_underlying_account_for_a_given_balance_reservation_event",
-        "displayName": "Shows reserved amount for the underlying account for a given balance reservation event",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "availableOverdraftLimit",
+        "description": "Contains the overdraft limit still available to be utilized."
       },
       {
-        "name": "contains_the_approved_overdraft_limit",
-        "displayName": "Contains the approved overdraft limit",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "indicates_interest_accumulated_for_an_account_for_the_defined_time_period",
-        "displayName": "Indicates interest accumulated for an account for the defined time period",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "indicates_the_actual_interest_rate_applied_for_the_account_after_adjustment_tier_calculation",
-        "displayName": "Indicates the actual interest rate applied for the account after adjustment/tier calculation",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "contains_the_overdraft_limit_still_available_to_be_utilized",
-        "displayName": "Contains the overdraft limit still available to be utilized",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "contains_the_channel_in_which_the_activity_was_performed",
-        "displayName": "Contains the channel in which the activity was performed",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "channel",
+        "description": "Contains the channel in which the activity was performed."
       }
     ],
     "Fixed Term Account Transactions": [
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "transactionReference",
+        "description": "Contains the identifier for the transaction in the core system."
       },
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "activity",
+        "description": "The activity (e.g. DEPOSIT WITHDRAWAL FEE_APPLIED)."
       },
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "transactionAmount",
+        "description": "Contains the transaction amount."
       },
       {
-        "name": "description",
-        "displayName": "description",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "currency",
+        "description": "Identifier of the currency."
       },
       {
-        "name": "contains_the_identifier_for_the_transaction_in_the_core_system",
-        "displayName": "Contains the identifier for the transaction in the core system",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "effectiveDate",
+        "description": "Indicates the value date on which the underlying accounting entry is to be given value."
       },
       {
-        "name": "the_activity_e_g_deposit_withdrawal_fee_applied",
-        "displayName": "the activity (e.g. DEPOSIT WITHDRAWAL FEE_APPLIED)",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "transactionDate",
+        "description": "Contains the identifier for the transaction date."
       },
       {
-        "name": "contains_the_transaction_amount",
-        "displayName": "Contains the transaction amount",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "reason",
+        "description": "Contains the reason for performing the current activity."
       },
       {
-        "name": "identifier_of_the_currency",
-        "displayName": "Identifier of the currency",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "externalEventStatus",
+        "description": "Determines the status of events sent to external system."
       },
       {
-        "name": "indicates_the_value_date_on_which_the_underlying_accounting_entry_is_to_be_given_value",
-        "displayName": "Indicates the value date on which the underlying accounting entry is to be given value",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "userRole",
+        "description": "User who initiated the transaction."
       },
       {
-        "name": "contains_the_identifier_for_the_transaction_date",
-        "displayName": "Contains the identifier for the transaction date",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "branch",
+        "description": "Contains the branch name/code."
       },
       {
-        "name": "contains_the_reason_for_performing_the_current_activity",
-        "displayName": "Contains the reason for performing the current activity",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "chargesChargeAmount",
+        "description": "Retrieves the charge amount after redeem."
       },
       {
-        "name": "determines_the_status_of_events_sent_to_external_system",
-        "displayName": "Determines the status of events sent to external system",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "interestAmount",
+        "description": "Indicates the amount of interest for a payment type."
       },
       {
-        "name": "user_who_initiated_the_transaction",
-        "displayName": "User who initiated the transaction",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "taxRate",
+        "description": "Indicates tax charged to an account."
       },
       {
-        "name": "contains_the_branch_name_code",
-        "displayName": "Contains the branch name/code",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "currentBalance",
+        "description": "An accounts availableBalance plus any authorized credit and debit movements for the day plus forward movements minus funds in hold."
       },
       {
-        "name": "retrieves_the_charge_amount_after_redeem",
-        "displayName": "Retrieves the charge amount after redeem",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "interestRate",
+        "description": "Identifies the bid rate of the related currency for the defined time period."
       },
       {
-        "name": "indicates_the_amount_of_interest_for_a_payment_type",
-        "displayName": "Indicates the amount of interest for a payment type",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "channel",
+        "description": "Contains the channel in which the activity was performed."
       },
       {
-        "name": "indicates_tax_charged_to_an_account",
-        "displayName": "Indicates tax charged to an account",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "an_accounts_availablebalance_plus_any_authorized_credit_and_debit_movements_for_the_day_plus_forward_movements_minus_funds_in_hold",
-        "displayName": "An accounts availableBalance plus any authorized credit and debit movements for the day plus forward movements minus funds in hold",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "identifies_the_bid_rate_of_the_related_currency_for_the_defined_time_period",
-        "displayName": "Identifies the bid rate of the related currency for the defined time period",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "contains_the_channel_in_which_the_activity_was_performed",
-        "displayName": "Contains the channel in which the activity was performed",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "identifier_of_the_account",
-        "displayName": "Identifier of the account",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "accountId",
+        "description": "Identifier of the account."
       }
     ],
     "Loan Account Transactions": [
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "transactionReference",
+        "description": "Contains the identifier for the transaction in the core system."
       },
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "activity",
+        "description": "Id of the activity (e.g. DISBURSEMENT, REPAYMENT)."
       },
       {
-        "name": "nan",
-        "displayName": "nan",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "transactionAmount",
+        "description": "Contains the transaction amount."
       },
       {
-        "name": "description",
-        "displayName": "description",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "currency",
+        "description": "Identifier of the currency."
       },
       {
-        "name": "contains_the_identifier_for_the_transaction_in_the_core_system",
-        "displayName": "Contains the identifier for the transaction in the core system",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "effectiveDate",
+        "description": "Contains the identifier for the transaction date."
       },
       {
-        "name": "id_of_the_activity_e_g_disbursement_repayment",
-        "displayName": "Id of the activity (e.g. DISBURSEMENT, REPAYMENT)",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "reason",
+        "description": "Contains the reason for performing the current activity."
       },
       {
-        "name": "contains_the_transaction_amount",
-        "displayName": "Contains the transaction amount",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "externalEventStatus",
+        "description": "Determines the status of events sent to external system."
       },
       {
-        "name": "identifier_of_the_currency",
-        "displayName": "Identifier of the currency",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "userRole",
+        "description": "User who initiated the transaction."
       },
       {
-        "name": "contains_the_identifier_for_the_transaction_date",
-        "displayName": "Contains the identifier for the transaction date",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "branch",
+        "description": "Contains the branch name/code."
       },
       {
-        "name": "contains_the_reason_for_performing_the_current_activity",
-        "displayName": "Contains the reason for performing the current activity",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "principalAmount",
+        "description": "Specifies the price for the first leg of the repo contract in specified currency."
       },
       {
-        "name": "determines_the_status_of_events_sent_to_external_system",
-        "displayName": "Determines the status of events sent to external system",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "interestAmount",
+        "description": "The accrued Interest due or accrued."
       },
       {
-        "name": "user_who_initiated_the_transaction",
-        "displayName": "User who initiated the transaction",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "chargeAmount",
+        "description": "Retrieves the charge amount after redeem."
       },
       {
-        "name": "contains_the_branch_name_code",
-        "displayName": "Contains the branch name/code",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "balanceAmount",
+        "description": "Amount of the balance."
       },
       {
-        "name": "specifies_the_price_for_the_first_leg_of_the_repo_contract_in_specified_currency",
-        "displayName": "Specifies the price for the first leg of the repo contract in specified currency",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "principalAmount",
+        "description": "Specifies the price for the first leg of the repo contract in specified currency."
       },
       {
-        "name": "the_accrued_interest_due_or_accrued",
-        "displayName": "The accrued Interest due or accrued",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "interestRate",
+        "description": "Identifies the bid rate of the related currency for the defined time period."
       },
       {
-        "name": "retrieves_the_charge_amount_after_redeem",
-        "displayName": "Retrieves the charge amount after redeem",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "channelName",
+        "description": "Name of the (digital) channel registered by the Customer."
       },
       {
-        "name": "amount_of_the_balance",
-        "displayName": "Amount of the balance",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "specifies_the_price_for_the_first_leg_of_the_repo_contract_in_specified_currency",
-        "displayName": "Specifies the price for the first leg of the repo contract in specified currency",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "identifies_the_bid_rate_of_the_related_currency_for_the_defined_time_period",
-        "displayName": "Identifies the bid rate of the related currency for the defined time period",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "name_of_the_digital_channel_registered_by_the_customer",
-        "displayName": "Name of the (digital) channel registered by the Customer",
-        "type": "",
-        "description": "",
-        "sample": ""
-      },
-      {
-        "name": "identifier_of_the_account",
-        "displayName": "Identifier of the account",
-        "type": "",
-        "description": "",
-        "sample": ""
+        "label": "accountId",
+        "description": "Identifier of the account."
       }
     ]
-  }
+  },
+  "source_file": "Bank1_Schema.xlsx"
 }

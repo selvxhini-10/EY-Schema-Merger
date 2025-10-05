@@ -21,6 +21,57 @@ const [isDragOver, setIsDragOver] = useState(false);
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+
+  // Upload file to backend /upload endpoint
+  const uploadFile = async (file: File) => {
+    if (!file) return;
+    const formData = new FormData();
+    formData.append("file", file);
+    // Ensure bank param is a or b for backend
+    let bankParam = bank.toLowerCase();
+    if (bankParam === "a" || bankParam === "b") {
+      formData.append("bank", bankParam);
+    } else if (bankParam === "banka") {
+      formData.append("bank", "a");
+    } else if (bankParam === "bankb") {
+      formData.append("bank", "b");
+    } else {
+      formData.append("bank", bank);
+    }
+    setVisible(true);
+    setProgress(0);
+    try {
+      await axios.post("http://localhost:8000/upload", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+        onUploadProgress: (progressEvent) => {
+          const percent = progressEvent.total ? Math.round((progressEvent.loaded * 100) / progressEvent.total) : 0;
+          setProgress(percent);
+          onUploadProgress?.(percent);
+        },
+      });
+      setProgress(100);
+      onUploadProgress?.(100);
+      alert(`File \"${file.name}\" uploaded successfully!`);
+    } catch (error: any) {
+      console.error("Upload failed:", error);
+      let message = "Upload failed.";
+      if (error.response) {
+        message += ` Server responded with status ${error.response.status}: ${error.response.data}`;
+      } else if (error.request) {
+        message += " No response received from server.";
+      } else if (error.message) {
+        message += ` ${error.message}`;
+      }
+      alert(message);
+    } finally {
+      setTimeout(() => {
+        setVisible(false);
+        setProgress(0);
+        onUploadVisible?.(false);
+      }, 2000);
+    }
+  };
+
   const handleFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -28,6 +79,7 @@ const [isDragOver, setIsDragOver] = useState(false);
       uploadFile(file);
     }
   };
+
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -40,47 +92,8 @@ const [isDragOver, setIsDragOver] = useState(false);
   };
 
 
-  // New: Master schema upload handler
-  const handleMasterSchemaUpload = async (bank: string) => {
-    const input = document.createElement("input");
-    input.type = "file";
-    input.accept = ".xlsx,.xls";
-    input.onchange = async () => {
-      if (!input.files || input.files.length === 0) return;
-      const file = input.files[0];
-      const formData = new FormData();
-      formData.append("file", file);
-      formData.append("bank", bank);
-      try {
-        setVisible(true);
-        setProgress(0);
-        const response = await axios.post(
-          "http://localhost:8000/schemas/schemas/parse",
-          formData,
-          { headers: { "Content-Type": "multipart/form-data" } }
-        );
-        console.log("Master schema uploaded:", response.data);
-        alert(`File "${file.name}" uploaded successfully!`);
-      } catch (error: any) {
-        console.error("Upload failed:", error);
-        let message = "Upload failed.";
-        if (error.response) {
-          message += ` Server responded with status ${error.response.status}: ${error.response.data}`;
-        } else if (error.request) {
-          message += " No response received from server.";
-        } else if (error.message) {
-          message += ` ${error.message}`;
-        }
-        alert(message);
-      } finally {
-        setTimeout(() => {
-          setVisible(false);
-          setProgress(0);
-        }, 2000);
-      }
-    };
-    input.click();
-  };
+
+  // Removed unused handleMasterSchemaUpload (use drag/drop or file input instead)
 
   return (
     <Card

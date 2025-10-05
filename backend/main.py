@@ -21,10 +21,8 @@ app.add_middleware(
 # ✅ Correct import for your schema parser
 from schema_parser import parse_schema_workbook, save_schema_json
 
-
 # ✅ Directory to store parsed JSON files
 SCHEMA_DIR = Path(__file__).parent / "schemas"
-SCHEMA_DIR.mkdir(parents=True, exist_ok=True)
 
 @app.post("/schemas/parse")
 async def parse_schemas(files: List[UploadFile] = File(...)) -> Dict[str, Any]:
@@ -86,46 +84,21 @@ def run_auto_mapping():
     result = auto_map(BANK1_FILE, BANK2_FILE, "backend/schemas")
     return result
 
+@app.post("/upload")
+async def upload_file(bank: str = Form(...), file: UploadFile = File(...)):
+    bank_map = {"a": "BankA", "b": "BankB", "banka": "BankA", "bankb": "BankB"}
+    bank_folder = bank_map.get(bank.lower())
+    if not bank_folder:
+        return {"error": f"Invalid bank name: {bank}"}
 
-@app.post("/schemas/parse")
-async def parse_schemas(
-    files: List[UploadFile] = File(...),
-    banks: List[str] = Form(...)
-) -> Dict[str, Any]:
-    """
-    Accept schema Excel files, parse them into JSON, save to disk with predictable names,
-    and return a summary of what was parsed.
-    """
-    print(f"[schemas/parse] Received {len(files)} file(s) for parsing.")
-    results = []
-    if len(files) != len(banks):
-        print("[schemas/parse] ERROR: Number of files and banks must match.")
-        raise HTTPException(status_code=400, detail="Number of files and banks must match.")
-    for f, bank in zip(files, banks):
-        try:
-            content = await f.read()
-            parsed = parse_schema_workbook(content, f.filename)
-            parsed["source_file"] = f.filename
-            # Save as bank1__bank1_schema.json or bank2__bank2_schema.json
-            bank_key = bank.strip().lower()
-            if bank_key in ["a", "b", "banka", "bankb", "bank1", "bank2"]:
-                if bank_key in ["a", "banka", "bank1"]:
-                    out_name = "bank1__bank1_schema.json"
-                else:
-                    out_name = "bank2__bank2_schema.json"
-            else:
-                out_name = f"{bank_key}_schema.json"
-            out_path = SCHEMA_DIR / out_name
-            with open(out_path, "w", encoding="utf-8") as out_f:
-                json.dump(parsed, out_f, indent=2, ensure_ascii=False)
-            print(f"[schemas/parse] Saved {f.filename} as {out_path}")
-            results.append({
-                "file": f.filename,
-                "saved_to": out_name,
-                "bank": bank,
-            })
-        except Exception as e:
-            print(f"[schemas/parse] ERROR saving {f.filename}: {e}")
-            raise HTTPException(status_code=400, detail=f"{f.filename}: {e}")
-    print(f"[schemas/parse] All files processed. Results: {results}")
-    return {"parsed": results}
+    base_dir = Path(__file__).resolve().parent
+    upload_dir = base_dir / bank_folder / "uploads"
+    upload_dir.mkdir(parents=True, exist_ok=True)
+
+    file_path = upload_dir / file.filename
+
+    with open(file_path, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+
+    print(f"✅ File saved to: {file_path}")
+    return {"message": f"File uploaded successfully to {upload_dir}", "filename": file.filename}

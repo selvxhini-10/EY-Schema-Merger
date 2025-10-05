@@ -26,10 +26,24 @@ export default function Home() {
 
 
           <TabsContent value="mapping" className="mt-0">
-            <UploadContainerCard
-              onUploadProgress={setUploadProgress}
-              onUploadVisible={setUploadVisible}
-            />
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="flex-1 border rounded-lg p-4 bg-muted">
+                <h2 className="font-semibold mb-2">Upload Bank A Data</h2>
+                <UploadContainerCard
+                  bank="A"
+                  onUploadProgress={setUploadProgress}
+                  onUploadVisible={setUploadVisible}
+                />
+              </div>
+              <div className="flex-1 border rounded-lg p-4 bg-muted">
+                <h2 className="font-semibold mb-2">Upload Bank B Data</h2>
+                <UploadContainerCard
+                  bank="B"
+                  onUploadProgress={setUploadProgress}
+                  onUploadVisible={setUploadVisible}
+                />
+              </div>
+            </div>
             <div className="mt-8">
               <SchemaMappingWorkspace />
             </div>

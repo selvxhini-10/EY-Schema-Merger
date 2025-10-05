@@ -1,0 +1,431 @@
+[
+  {
+    "logical_table": "Customer",
+    "bankA_table": "BankA_Bank1_Mock_Customer_Sheet1",
+    "bankB_table": "BankB_Bank2_Mock_Customer_Sheet1",
+    "columns": [
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "logical_table": "Loan Accounts",
+    "bankA_table": "BankA_Bank1_Mock_Loan_Accounts_Sheet1",
+    "bankB_table": "BankB_Bank2_Mock_Loan_Accounts_Sheet1",
+    "columns": [
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "logical_table": "Loan Account Transactions",
+    "bankA_table": "BankA_Bank1_Mock_Loan_Transactions",
+    "bankB_table": "BankB_Bank2_Mock_Loan_Transactions_Sheet1",
+    "columns": [
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      },
+      {
+        "bankA": "",
+        "bankB": "",
+        "unified": "UNIFIED",
+        "type": "string"
+      }
+    ]
+  }
+]

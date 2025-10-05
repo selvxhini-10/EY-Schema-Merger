@@ -5,99 +5,516 @@
     "bankB_table": "BankB_Bank2_Mock_Customer_Sheet1",
     "columns": [
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "lastName",
+        "bankB": "lastName",
+        "unified": "lastName",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "email",
+        "bankB": "migrationEventKey",
+        "unified": "email",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "language",
+        "bankB": "preferredLanguage",
+        "unified": "language",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "customerId",
+        "bankB": "notes",
+        "unified": "customerId",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "gender",
+        "bankB": "gender",
+        "unified": "gender",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "email",
+        "bankB": "emailAddress",
+        "unified": "email",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "customerId",
+        "bankB": "encodedKey",
+        "unified": "customerId",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "customerId",
+        "bankB": "id",
+        "unified": "customerId",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "country",
+        "bankB": "state",
+        "unified": "country",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "customerId",
+        "bankB": "assignedUserKey",
+        "unified": "customerId",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "phoneNumber",
+        "bankB": "homePhone",
+        "unified": "phoneNumber",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "contactDate",
+        "bankB": "creationDate",
+        "unified": "contactDate",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "dateOfBirth",
+        "bankB": "birthDate",
+        "unified": "dateOfBirth",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "lastName",
+        "bankB": "firstName",
+        "unified": "lastName",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "smsNumber",
+        "bankB": "mobilePhone",
+        "unified": "smsNumber",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "customerType",
+        "bankB": "clientType",
+        "unified": "customerType",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "logical_table": "Customer",
+    "bankA_table": "BankA_Bank1_Mock_Customer_Sheet1",
+    "bankB_table": "BankB_Bank2_Mock_Addresses_Sheet1",
+    "columns": [
+      {
+        "bankA": "lastName",
+        "bankB": "lastName",
+        "unified": "lastName",
+        "type": "string"
+      },
+      {
+        "bankA": "email",
+        "bankB": "migrationEventKey",
+        "unified": "email",
+        "type": "string"
+      },
+      {
+        "bankA": "language",
+        "bankB": "preferredLanguage",
+        "unified": "language",
+        "type": "string"
+      },
+      {
+        "bankA": "customerId",
+        "bankB": "notes",
+        "unified": "customerId",
+        "type": "string"
+      },
+      {
+        "bankA": "gender",
+        "bankB": "gender",
+        "unified": "gender",
+        "type": "string"
+      },
+      {
+        "bankA": "email",
+        "bankB": "emailAddress",
+        "unified": "email",
+        "type": "string"
+      },
+      {
+        "bankA": "customerId",
+        "bankB": "encodedKey",
+        "unified": "customerId",
+        "type": "string"
+      },
+      {
+        "bankA": "customerId",
+        "bankB": "id",
+        "unified": "customerId",
+        "type": "string"
+      },
+      {
+        "bankA": "country",
+        "bankB": "state",
+        "unified": "country",
+        "type": "string"
+      },
+      {
+        "bankA": "customerId",
+        "bankB": "assignedUserKey",
+        "unified": "customerId",
+        "type": "string"
+      },
+      {
+        "bankA": "phoneNumber",
+        "bankB": "homePhone",
+        "unified": "phoneNumber",
+        "type": "string"
+      },
+      {
+        "bankA": "contactDate",
+        "bankB": "creationDate",
+        "unified": "contactDate",
+        "type": "string"
+      },
+      {
+        "bankA": "dateOfBirth",
+        "bankB": "birthDate",
+        "unified": "dateOfBirth",
+        "type": "string"
+      },
+      {
+        "bankA": "lastName",
+        "bankB": "firstName",
+        "unified": "lastName",
+        "type": "string"
+      },
+      {
+        "bankA": "smsNumber",
+        "bankB": "mobilePhone",
+        "unified": "smsNumber",
+        "type": "string"
+      },
+      {
+        "bankA": "customerType",
+        "bankB": "clientType",
+        "unified": "customerType",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "logical_table": "Customer",
+    "bankA_table": "BankA_Bank1_Mock_Customer_Sheet1",
+    "bankB_table": "BankB_Bank2_Mock_Identifications_Sheet1",
+    "columns": [
+      {
+        "bankA": "lastName",
+        "bankB": "lastName",
+        "unified": "lastName",
+        "type": "string"
+      },
+      {
+        "bankA": "email",
+        "bankB": "migrationEventKey",
+        "unified": "email",
+        "type": "string"
+      },
+      {
+        "bankA": "language",
+        "bankB": "preferredLanguage",
+        "unified": "language",
+        "type": "string"
+      },
+      {
+        "bankA": "customerId",
+        "bankB": "notes",
+        "unified": "customerId",
+        "type": "string"
+      },
+      {
+        "bankA": "gender",
+        "bankB": "gender",
+        "unified": "gender",
+        "type": "string"
+      },
+      {
+        "bankA": "email",
+        "bankB": "emailAddress",
+        "unified": "email",
+        "type": "string"
+      },
+      {
+        "bankA": "customerId",
+        "bankB": "encodedKey",
+        "unified": "customerId",
+        "type": "string"
+      },
+      {
+        "bankA": "customerId",
+        "bankB": "id",
+        "unified": "customerId",
+        "type": "string"
+      },
+      {
+        "bankA": "country",
+        "bankB": "state",
+        "unified": "country",
+        "type": "string"
+      },
+      {
+        "bankA": "customerId",
+        "bankB": "assignedUserKey",
+        "unified": "customerId",
+        "type": "string"
+      },
+      {
+        "bankA": "phoneNumber",
+        "bankB": "homePhone",
+        "unified": "phoneNumber",
+        "type": "string"
+      },
+      {
+        "bankA": "contactDate",
+        "bankB": "creationDate",
+        "unified": "contactDate",
+        "type": "string"
+      },
+      {
+        "bankA": "dateOfBirth",
+        "bankB": "birthDate",
+        "unified": "dateOfBirth",
+        "type": "string"
+      },
+      {
+        "bankA": "lastName",
+        "bankB": "firstName",
+        "unified": "lastName",
+        "type": "string"
+      },
+      {
+        "bankA": "smsNumber",
+        "bankB": "mobilePhone",
+        "unified": "smsNumber",
+        "type": "string"
+      },
+      {
+        "bankA": "customerType",
+        "bankB": "clientType",
+        "unified": "customerType",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "logical_table": "Loan Accounts",
+    "bankA_table": "BankA_Bank1_Mock_Loan_Accounts_Sheet1",
+    "bankB_table": "BankB_Bank2_Mock_Deposit_Accounts_Sheet1",
+    "columns": [
+      {
+        "bankA": "accountId",
+        "bankB": "id",
+        "unified": "accountId",
+        "type": "string"
+      },
+      {
+        "bankA": "loanBalance",
+        "bankB": "loanName",
+        "unified": "loanBalance",
+        "type": "string"
+      },
+      {
+        "bankA": "compoundType",
+        "bankB": "productTypeKey",
+        "unified": "compoundType",
+        "type": "string"
+      },
+      {
+        "bankA": "currency",
+        "bankB": "currencyCode",
+        "unified": "currency",
+        "type": "string"
+      },
+      {
+        "bankA": "accountId",
+        "bankB": "accountHolderKey",
+        "unified": "accountId",
+        "type": "string"
+      },
+      {
+        "bankA": "accountId",
+        "bankB": "accountHolderType",
+        "unified": "accountId",
+        "type": "string"
+      },
+      {
+        "bankA": "loanBalance",
+        "bankB": "assignedBranchKey",
+        "unified": "loanBalance",
+        "type": "string"
+      },
+      {
+        "bankA": "loanBalance",
+        "bankB": "notes",
+        "unified": "loanBalance",
+        "type": "string"
+      },
+      {
+        "bankA": "arrangementEffectiveDate",
+        "bankB": "maturityDate",
+        "unified": "arrangementEffectiveDate",
+        "type": "string"
+      },
+      {
+        "bankA": "gracePeriod",
+        "bankB": "creationDate",
+        "unified": "gracePeriod",
+        "type": "string"
+      },
+      {
+        "bankA": "gracePeriod",
+        "bankB": "closedDate",
+        "unified": "gracePeriod",
+        "type": "string"
+      },
+      {
+        "bankA": "accountId",
+        "bankB": "assignedUserKey",
+        "unified": "accountId",
+        "type": "string"
+      },
+      {
+        "bankA": "availableBalance",
+        "bankB": "totalBalance",
+        "unified": "availableBalance",
+        "type": "string"
+      },
+      {
+        "bankA": "availableBalance",
+        "bankB": "availableBalance",
+        "unified": "availableBalance",
+        "type": "string"
+      },
+      {
+        "bankA": "loanInterestRate",
+        "bankB": "interestRate",
+        "unified": "loanInterestRate",
+        "type": "string"
+      },
+      {
+        "bankA": "interestAmount",
+        "bankB": "interestType",
+        "unified": "interestAmount",
+        "type": "string"
+      },
+      {
+        "bankA": "interestAmount",
+        "bankB": "interestApplicationMethod",
+        "unified": "interestAmount",
+        "type": "string"
+      },
+      {
+        "bankA": "loanInterestRate",
+        "bankB": "effectiveInterestRate",
+        "unified": "loanInterestRate",
+        "type": "string"
+      },
+      {
+        "bankA": "gracePeriod",
+        "bankB": "gracePeriod",
+        "unified": "gracePeriod",
+        "type": "string"
+      },
+      {
+        "bankA": "periodicPayment",
+        "bankB": "periodicPayment",
+        "unified": "periodicPayment",
+        "type": "string"
+      },
+      {
+        "bankA": "gracePeriod",
+        "bankB": "repaymentInstallments",
+        "unified": "gracePeriod",
+        "type": "string"
+      },
+      {
+        "bankA": "gracePeriod",
+        "bankB": "repaymentPeriodUnit",
+        "unified": "gracePeriod",
+        "type": "string"
+      },
+      {
+        "bankA": "gracePeriod",
+        "bankB": "fixedDaysOfMonth",
+        "unified": "gracePeriod",
+        "type": "string"
+      },
+      {
+        "bankA": "gracePeriod",
+        "bankB": "repaymentPeriodCount",
+        "unified": "gracePeriod",
+        "type": "string"
+      },
+      {
+        "bankA": "loanInterestRate",
+        "bankB": "amortizationPeriod",
+        "unified": "loanInterestRate",
+        "type": "string"
+      },
+      {
+        "bankA": "principalBalance",
+        "bankB": "principalDue",
+        "unified": "principalBalance",
+        "type": "string"
+      },
+      {
+        "bankA": "customerRole",
+        "bankB": "principalBalance",
+        "unified": "customerRole",
+        "type": "string"
+      },
+      {
+        "bankA": "interestAmount",
+        "bankB": "interestDue",
+        "unified": "interestAmount",
+        "type": "string"
+      },
+      {
+        "bankA": "principalBalance",
+        "bankB": "feesDue",
+        "unified": "principalBalance",
+        "type": "string"
+      },
+      {
+        "bankA": "loanInterestRate",
+        "bankB": "interestBalance",
+        "unified": "loanInterestRate",
+        "type": "string"
+      },
+      {
+        "bankA": "interestFromArrearsBalance",
+        "bankB": "interestFromArrearsBalance",
+        "unified": "interestFromArrearsBalance",
+        "type": "string"
+      },
+      {
+        "bankA": "availableBalance",
+        "bankB": "totalBalance",
+        "unified": "availableBalance",
+        "type": "string"
+      },
+      {
+        "bankA": "interestAmount",
+        "bankB": "interestAccrued",
+        "unified": "interestAmount",
+        "type": "string"
+      },
+      {
+        "bankA": "accountId",
+        "bankB": "accountType",
+        "unified": "accountId",
         "type": "string"
       }
     ]
@@ -108,207 +525,322 @@
     "bankB_table": "BankB_Bank2_Mock_Loan_Accounts_Sheet1",
     "columns": [
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "accountId",
+        "bankB": "id",
+        "unified": "accountId",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "loanBalance",
+        "bankB": "loanName",
+        "unified": "loanBalance",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "compoundType",
+        "bankB": "productTypeKey",
+        "unified": "compoundType",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "currency",
+        "bankB": "currencyCode",
+        "unified": "currency",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "accountId",
+        "bankB": "accountHolderKey",
+        "unified": "accountId",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "accountId",
+        "bankB": "accountHolderType",
+        "unified": "accountId",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "loanBalance",
+        "bankB": "assignedBranchKey",
+        "unified": "loanBalance",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "loanBalance",
+        "bankB": "notes",
+        "unified": "loanBalance",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "arrangementEffectiveDate",
+        "bankB": "maturityDate",
+        "unified": "arrangementEffectiveDate",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "gracePeriod",
+        "bankB": "creationDate",
+        "unified": "gracePeriod",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "gracePeriod",
+        "bankB": "closedDate",
+        "unified": "gracePeriod",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "accountId",
+        "bankB": "assignedUserKey",
+        "unified": "accountId",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "availableBalance",
+        "bankB": "totalBalance",
+        "unified": "availableBalance",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "availableBalance",
+        "bankB": "availableBalance",
+        "unified": "availableBalance",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "loanInterestRate",
+        "bankB": "interestRate",
+        "unified": "loanInterestRate",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "interestAmount",
+        "bankB": "interestType",
+        "unified": "interestAmount",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "interestAmount",
+        "bankB": "interestApplicationMethod",
+        "unified": "interestAmount",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "loanInterestRate",
+        "bankB": "effectiveInterestRate",
+        "unified": "loanInterestRate",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "gracePeriod",
+        "bankB": "gracePeriod",
+        "unified": "gracePeriod",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "periodicPayment",
+        "bankB": "periodicPayment",
+        "unified": "periodicPayment",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "gracePeriod",
+        "bankB": "repaymentInstallments",
+        "unified": "gracePeriod",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "gracePeriod",
+        "bankB": "repaymentPeriodUnit",
+        "unified": "gracePeriod",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "gracePeriod",
+        "bankB": "fixedDaysOfMonth",
+        "unified": "gracePeriod",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "gracePeriod",
+        "bankB": "repaymentPeriodCount",
+        "unified": "gracePeriod",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "loanInterestRate",
+        "bankB": "amortizationPeriod",
+        "unified": "loanInterestRate",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "principalBalance",
+        "bankB": "principalDue",
+        "unified": "principalBalance",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "customerRole",
+        "bankB": "principalBalance",
+        "unified": "customerRole",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "interestAmount",
+        "bankB": "interestDue",
+        "unified": "interestAmount",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "principalBalance",
+        "bankB": "feesDue",
+        "unified": "principalBalance",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "loanInterestRate",
+        "bankB": "interestBalance",
+        "unified": "loanInterestRate",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "interestFromArrearsBalance",
+        "bankB": "interestFromArrearsBalance",
+        "unified": "interestFromArrearsBalance",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "availableBalance",
+        "bankB": "totalBalance",
+        "unified": "availableBalance",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "interestAmount",
+        "bankB": "interestAccrued",
+        "unified": "interestAmount",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "accountId",
+        "bankB": "accountType",
+        "unified": "accountId",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "logical_table": "Loan Account Transactions",
+    "bankA_table": "BankA_Bank1_Mock_Loan_Transactions",
+    "bankB_table": "BankB_Bank2_Mock_Deposit_Transactions_Sheet1",
+    "columns": [
+      {
+        "bankA": "transactionReference",
+        "bankB": "encodedKey",
+        "unified": "transactionReference",
+        "type": "string"
+      },
+      {
+        "bankA": "activity",
+        "bankB": "id",
+        "unified": "activity",
+        "type": "string"
+      },
+      {
+        "bankA": "activity",
+        "bankB": "type",
+        "unified": "activity",
+        "type": "string"
+      },
+      {
+        "bankA": "interestAmount",
+        "bankB": "amount",
+        "unified": "interestAmount",
+        "type": "string"
+      },
+      {
+        "bankA": "currency",
+        "bankB": "originalCurrencyCode",
+        "unified": "currency",
+        "type": "string"
+      },
+      {
+        "bankA": "effectiveDate",
+        "bankB": "valueDate",
+        "unified": "effectiveDate",
+        "type": "string"
+      },
+      {
+        "bankA": "activity",
+        "bankB": "notes",
+        "unified": "activity",
+        "type": "string"
+      },
+      {
+        "bankA": "activity",
+        "bankB": "externalId",
+        "unified": "activity",
+        "type": "string"
+      },
+      {
+        "bankA": "userRole",
+        "bankB": "userKey",
+        "unified": "userRole",
+        "type": "string"
+      },
+      {
+        "bankA": "branch",
+        "bankB": "branchKey",
+        "unified": "branch",
+        "type": "string"
+      },
+      {
+        "bankA": "accountId",
+        "bankB": "principalAmount",
+        "unified": "accountId",
+        "type": "string"
+      },
+      {
+        "bankA": "interestAmount",
+        "bankB": "interestAmount",
+        "unified": "interestAmount",
+        "type": "string"
+      },
+      {
+        "bankA": "chargeAmount",
+        "bankB": "feesAmount",
+        "unified": "chargeAmount",
+        "type": "string"
+      },
+      {
+        "bankA": "balanceAmount",
+        "bankB": "totalBalance",
+        "unified": "balanceAmount",
+        "type": "string"
+      },
+      {
+        "bankA": "chargeAmount",
+        "bankB": "principalBalance",
+        "unified": "chargeAmount",
+        "type": "string"
+      },
+      {
+        "bankA": "interestAmount",
+        "bankB": "interestRate",
+        "unified": "interestAmount",
+        "type": "string"
+      },
+      {
+        "bankA": "transactionReference",
+        "bankB": "transactionChannel",
+        "unified": "transactionReference",
+        "type": "string"
+      },
+      {
+        "bankA": "accountId",
+        "bankB": "parentAccountKey",
+        "unified": "accountId",
         "type": "string"
       }
     ]
@@ -319,111 +851,111 @@
     "bankB_table": "BankB_Bank2_Mock_Loan_Transactions_Sheet1",
     "columns": [
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "transactionReference",
+        "bankB": "encodedKey",
+        "unified": "transactionReference",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "activity",
+        "bankB": "id",
+        "unified": "activity",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "activity",
+        "bankB": "type",
+        "unified": "activity",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "interestAmount",
+        "bankB": "amount",
+        "unified": "interestAmount",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "currency",
+        "bankB": "originalCurrencyCode",
+        "unified": "currency",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "effectiveDate",
+        "bankB": "valueDate",
+        "unified": "effectiveDate",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "activity",
+        "bankB": "notes",
+        "unified": "activity",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "activity",
+        "bankB": "externalId",
+        "unified": "activity",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "userRole",
+        "bankB": "userKey",
+        "unified": "userRole",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "branch",
+        "bankB": "branchKey",
+        "unified": "branch",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "accountId",
+        "bankB": "principalAmount",
+        "unified": "accountId",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "interestAmount",
+        "bankB": "interestAmount",
+        "unified": "interestAmount",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "chargeAmount",
+        "bankB": "feesAmount",
+        "unified": "chargeAmount",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "balanceAmount",
+        "bankB": "totalBalance",
+        "unified": "balanceAmount",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "chargeAmount",
+        "bankB": "principalBalance",
+        "unified": "chargeAmount",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "interestAmount",
+        "bankB": "interestRate",
+        "unified": "interestAmount",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "transactionReference",
+        "bankB": "transactionChannel",
+        "unified": "transactionReference",
         "type": "string"
       },
       {
-        "bankA": "",
-        "bankB": "",
-        "unified": "UNIFIED",
+        "bankA": "accountId",
+        "bankB": "parentAccountKey",
+        "unified": "accountId",
         "type": "string"
       }
     ]

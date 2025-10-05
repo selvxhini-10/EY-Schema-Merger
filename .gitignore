@@ -28,6 +28,11 @@ pip-delete-this-directory.txt
 .DS_Store
 Thumbs.db
 
+# Ignore Python bytecode files
+*.pyc
+__pycache__/
+
+
 git add .gitignore
 git rm --cached backend/merged_banks.db  # ok if says it's already gone
 git commit -m "chore: ignore SQLite DB artifacts"  # ok if 'nothing to commit'

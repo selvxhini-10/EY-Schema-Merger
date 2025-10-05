@@ -1,27 +1,27 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { read, utils } from "xlsx"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { SchemaPanel } from "@/components/schema-panel"
-import { UnifiedSchemaPanel } from "@/components/unified-schema-panel"
-import { MappingSummary } from "@/components/mapping-summary"
-import { TopBar } from "@/components/top-bar"
+import { useState } from "react";
+import { read, utils } from "xlsx";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BankSchemaPanel } from "@/components/bank-schema-panel";
+import { UnifiedSchemaPanel } from "@/components/unified-schema-panel";
+import { MappingSummary } from "@/components/mapping-summary";
+import { TopBar } from "@/components/top-bar";
 
 export type SchemaField = {
-  id: string
-  name: string
-  type: string
-  sampleValue: string
-}
+  id: string;
+  name: string;
+  type: string;
+  sampleValue: string;
+};
 
 export type Mapping = {
-  id: string
-  sourceField: string
-  targetField: string
-  confidence: "high" | "medium" | "low"
-  approved: boolean
-}
+  id: string;
+  sourceField: string;
+  targetField: string;
+  confidence: "high" | "medium" | "low";
+  approved: boolean;
+};
 
 // Mock data for demonstration
 const mockBankASchema: SchemaField[] = [
@@ -31,7 +31,7 @@ const mockBankASchema: SchemaField[] = [
   { id: "a4", name: "acct_type", type: "string", sampleValue: "CHECKING" },
   { id: "a5", name: "balance_amt", type: "number", sampleValue: "15000.00" },
   { id: "a6", name: "branch_code", type: "string", sampleValue: "BR-NYC-01" },
-]
+];
 
 const mockBankBSchema: SchemaField[] = [
   { id: "b1", name: "ClientID", type: "string", sampleValue: "CLI-2001" },
@@ -41,7 +41,7 @@ const mockBankBSchema: SchemaField[] = [
   { id: "b5", name: "AccountType", type: "string", sampleValue: "Savings" },
   { id: "b6", name: "CurrentBalance", type: "number", sampleValue: "25000" },
   { id: "b7", name: "Region", type: "string", sampleValue: "Northeast" },
-]
+];
 
 const mockUnifiedSchema: SchemaField[] = [
   { id: "u1", name: "CustomerID", type: "string", sampleValue: "" },
@@ -51,23 +51,101 @@ const mockUnifiedSchema: SchemaField[] = [
   { id: "u5", name: "AccountType", type: "string", sampleValue: "" },
   { id: "u6", name: "Balance", type: "number", sampleValue: "" },
   { id: "u7", name: "Location", type: "string", sampleValue: "" },
-]
+];
 
 const mockMappings: Mapping[] = [
-  { id: "m1", sourceField: "customer_id", targetField: "CustomerID", confidence: "high", approved: false },
-  { id: "m2", sourceField: "ClientID", targetField: "CustomerID", confidence: "high", approved: false },
-  { id: "m3", sourceField: "full_name", targetField: "FirstName", confidence: "medium", approved: false },
-  { id: "m4", sourceField: "FirstName", targetField: "FirstName", confidence: "high", approved: false },
-  { id: "m5", sourceField: "LastName", targetField: "LastName", confidence: "high", approved: false },
-  { id: "m6", sourceField: "birth_date", targetField: "DateOfBirth", confidence: "high", approved: false },
-  { id: "m7", sourceField: "DOB", targetField: "DateOfBirth", confidence: "high", approved: false },
-  { id: "m8", sourceField: "acct_type", targetField: "AccountType", confidence: "medium", approved: false },
-  { id: "m9", sourceField: "AccountType", targetField: "AccountType", confidence: "high", approved: false },
-  { id: "m10", sourceField: "balance_amt", targetField: "Balance", confidence: "high", approved: false },
-  { id: "m11", sourceField: "CurrentBalance", targetField: "Balance", confidence: "high", approved: false },
-  { id: "m12", sourceField: "branch_code", targetField: "Location", confidence: "low", approved: false },
-  { id: "m13", sourceField: "Region", targetField: "Location", confidence: "medium", approved: false },
-]
+  {
+    id: "m1",
+    sourceField: "customer_id",
+    targetField: "CustomerID",
+    confidence: "high",
+    approved: false,
+  },
+  {
+    id: "m2",
+    sourceField: "ClientID",
+    targetField: "CustomerID",
+    confidence: "high",
+    approved: false,
+  },
+  {
+    id: "m3",
+    sourceField: "full_name",
+    targetField: "FirstName",
+    confidence: "medium",
+    approved: false,
+  },
+  {
+    id: "m4",
+    sourceField: "FirstName",
+    targetField: "FirstName",
+    confidence: "high",
+    approved: false,
+  },
+  {
+    id: "m5",
+    sourceField: "LastName",
+    targetField: "LastName",
+    confidence: "high",
+    approved: false,
+  },
+  {
+    id: "m6",
+    sourceField: "birth_date",
+    targetField: "DateOfBirth",
+    confidence: "high",
+    approved: false,
+  },
+  {
+    id: "m7",
+    sourceField: "DOB",
+    targetField: "DateOfBirth",
+    confidence: "high",
+    approved: false,
+  },
+  {
+    id: "m8",
+    sourceField: "acct_type",
+    targetField: "AccountType",
+    confidence: "medium",
+    approved: false,
+  },
+  {
+    id: "m9",
+    sourceField: "AccountType",
+    targetField: "AccountType",
+    confidence: "high",
+    approved: false,
+  },
+  {
+    id: "m10",
+    sourceField: "balance_amt",
+    targetField: "Balance",
+    confidence: "high",
+    approved: false,
+  },
+  {
+    id: "m11",
+    sourceField: "CurrentBalance",
+    targetField: "Balance",
+    confidence: "high",
+    approved: false,
+  },
+  {
+    id: "m12",
+    sourceField: "branch_code",
+    targetField: "Location",
+    confidence: "low",
+    approved: false,
+  },
+  {
+    id: "m13",
+    sourceField: "Region",
+    targetField: "Location",
+    confidence: "medium",
+    approved: false,
+  },
+];
 
 interface SchemaMappingWorkspaceProps {
   bankASchema: SchemaField[];
@@ -75,12 +153,16 @@ interface SchemaMappingWorkspaceProps {
 }
 
 export function SchemaMappingWorkspace({ bankASchema, bankBSchema }: SchemaMappingWorkspaceProps) {
-  const [unifiedSchema] = useState<SchemaField[]>(mockUnifiedSchema)
-  const [mappings, setMappings] = useState<Mapping[]>(mockMappings)
+  const [unifiedSchema] = useState<SchemaField[]>(mockUnifiedSchema);
+  const [mappings, setMappings] = useState<Mapping[]>(mockMappings);
 
   const handleApproveMapping = (mappingId: string) => {
-    setMappings((prev) => prev.map((m) => (m.id === mappingId ? { ...m, approved: !m.approved } : m)))
-  }
+    setMappings((prev) =>
+      prev.map((m) =>
+        m.id === mappingId ? { ...m, approved: !m.approved } : m
+      )
+    );
+  };
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -92,11 +174,17 @@ export function SchemaMappingWorkspace({ bankASchema, bankBSchema }: SchemaMappi
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
-                <SchemaPanel title="Bank A Schema" fields={bankASchema} color="blue" />
+                <BankSchemaPanel bankName="Bank A" color="blue" />
               </div>
-              <UnifiedSchemaPanel fields={unifiedSchema} mappings={mappings} onApproveMapping={handleApproveMapping} />
               <div>
-                <SchemaPanel title="Bank B Schema" fields={bankBSchema} color="purple" />
+                <UnifiedSchemaPanel
+                  fields={unifiedSchema}
+                  mappings={mappings}
+                  onApproveMapping={handleApproveMapping}
+                />
+              </div>
+              <div>
+                <BankSchemaPanel bankName="Bank B" color="purple" />
               </div>
             </div>
           </CardContent>
@@ -106,5 +194,5 @@ export function SchemaMappingWorkspace({ bankASchema, bankBSchema }: SchemaMappi
         <MappingSummary mappings={mappings} />
       </div>
     </div>
-  )
+  );
 }

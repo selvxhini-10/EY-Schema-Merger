@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
-import axios, { AxiosProgressEvent } from "axios";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import axios from "axios";
 import { UploadProgressBar } from "@/components/upload-progress-bar";
+// Removed duplicate import of axios
 
 export function UploadContainerCard({
   bank,
@@ -38,38 +39,47 @@ const [isDragOver, setIsDragOver] = useState(false);
     }
   };
 
-  const uploadFile = async (file: File) => {
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("bank", bank);
 
-    try {
-      setVisible(true);
-      setProgress(0);
-
-  await axios.post("http://localhost:8000/upload", formData, {
-    headers: { "Content-Type": "multipart/form-data" },
-  });
-
- console.log("Upload success:", formData);
-      alert(`File "${file.name}" uploaded successfully!`);
-    } catch (error: any) {
-      console.error("Upload failed:", error);
-      let message = "Upload failed.";
-      if (error.response) {
-        message += ` Server responded with status ${error.response.status}: ${error.response.data}`;
-      } else if (error.request) {
-        message += " No response received from server.";
-      } else if (error.message) {
-        message += ` ${error.message}`;
-      }
-      alert(message);
-    } finally {
-      setTimeout(() => {
-        setVisible(false);
+  // New: Master schema upload handler
+  const handleMasterSchemaUpload = async (bank: string) => {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = ".xlsx,.xls";
+    input.onchange = async () => {
+      if (!input.files || input.files.length === 0) return;
+      const file = input.files[0];
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("bank", bank);
+      try {
+        setVisible(true);
         setProgress(0);
-      }, 2000);
-    }
+        const response = await axios.post(
+          "http://localhost:8000/schemas/schemas/parse",
+          formData,
+          { headers: { "Content-Type": "multipart/form-data" } }
+        );
+        console.log("Master schema uploaded:", response.data);
+        alert(`File "${file.name}" uploaded successfully!`);
+      } catch (error: any) {
+        console.error("Upload failed:", error);
+        let message = "Upload failed.";
+        if (error.response) {
+          message += ` Server responded with status ${error.response.status}: ${error.response.data}`;
+        } else if (error.request) {
+          message += " No response received from server.";
+        } else if (error.message) {
+          message += ` ${error.message}`;
+        }
+        alert(message);
+      } finally {
+        setTimeout(() => {
+          setVisible(false);
+          setProgress(0);
+        }, 2000);
+      }
+    };
+    input.click();
   };
 
   return (
@@ -95,23 +105,10 @@ const [isDragOver, setIsDragOver] = useState(false);
         <UploadProgressBar progress={progress} visible={visible} />
 
         <div className="text-muted-foreground text-center py-8">
-          Drag and drop your file here or click below
+          Drag and drop your file here or use the buttons below to upload master schemas.
         </div>
 
-        <button
-          className="mt-4 px-4 py-2 bg-primary text-white rounded"
-          onClick={() => fileInputRef.current?.click()}
-        >
-          Select File
-        </button>
 
-        <input
-          ref={fileInputRef}
-          type="file"
-          style={{ display: "none" }}
-          onChange={handleFileInputChange}
-          accept=".csv, .xlsx, .xls"
-        />
 
         {uploadedFile && (
           <div className="mt-4 text-sm text-center">

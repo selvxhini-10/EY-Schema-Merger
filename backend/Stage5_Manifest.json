@@ -1,0 +1,523 @@
+{
+  "timestamp": "2025-10-05T01:26:12.056313",
+  "db_path": "C:\\Users\\anush\\OneDrive\\Documents\\GitHub\\ASL-AR-Project\\backend\\merged_banks.db",
+  "created": [
+    {
+      "logical_table": "Customer",
+      "table": "Unified_Customer",
+      "rows": 20000,
+      "cols": 3
+    },
+    {
+      "logical_table": "Loan Accounts",
+      "table": "Unified_Loan_Accounts",
+      "rows": 29715,
+      "cols": 9
+    },
+    {
+      "logical_table": "Loan Account Transactions",
+      "table": "Unified_Loan_Account_Transactions",
+      "rows": 148234,
+      "cols": 3
+    }
+  ],
+  "auto_inferred_tables": [
+    "Customer",
+    "Loan Accounts",
+    "Loan Account Transactions"
+  ],
+  "empty_outputs": [],
+  "dropped_unresolved_columns": [
+    {
+      "logical_table": "Customer",
+      "dropped": [
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        }
+      ]
+    },
+    {
+      "logical_table": "Loan Accounts",
+      "dropped": [
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        }
+      ]
+    },
+    {
+      "logical_table": "Loan Account Transactions",
+      "dropped": [
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        },
+        {
+          "bankA": "",
+          "bankB": "",
+          "unified": "UNIFIED",
+          "type": "string",
+          "reason": "placeholder_unified"
+        }
+      ]
+    }
+  ]
+}

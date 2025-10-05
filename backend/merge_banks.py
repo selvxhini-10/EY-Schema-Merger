@@ -6,8 +6,8 @@ from datetime import datetime
 
 # === CONFIG ===
 BASE_DIR = Path(__file__).parent  # folder where merge_banks.py lives
-BANK_A_DIR = BASE_DIR / "BankA" / "testing"
-BANK_B_DIR = BASE_DIR / "BankB" / "testing"
+BANK_A_DIR = BASE_DIR / "BankA" / "uploads"
+BANK_B_DIR = BASE_DIR / "BankB" / "uploads"
 DB_PATH = BASE_DIR / "merged_banks.db"
 MAPPING_FILE = BASE_DIR / "Table_name_mapping.json"  # your mapping JSON
 MANIFEST_FILE = BASE_DIR / "manifest.json"

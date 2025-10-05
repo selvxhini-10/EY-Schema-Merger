@@ -1,79 +1,110 @@
+# ai_mapping.py
 from sentence_transformers import SentenceTransformer, util
 import torch
 import json
+import os
 
-# ==== CONFIG ====
-FILE1 = "backend/Bank1_Schema_EYExample.json"
-FILE2 = "backend/Bank2_Schema_EYExample.json"
-CONF_THRESHOLD = 20.0
 MODEL_NAME = "all-MiniLM-L6-v2"
+CONF_THRESHOLD = 73.0
+TEXT_KEY = "description"
 
-# ==== LOAD MODEL ====
 model = SentenceTransformer(MODEL_NAME)
 
-# ==== LOAD JSON FILES ====
-with open(FILE1, "r", encoding="utf-8") as f:
-    data1 = json.load(f)
+def load_json(file_path):
+    with open(file_path, "r", encoding="utf-8") as f:
+        return json.load(f)
 
-with open(FILE2, "r", encoding="utf-8") as f:
-    data2 = json.load(f)
+def save_json(data, file_path):
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    with open(file_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
 
-# ==== EXTRACT TABLE NAMES ====
-tables1 = list(data1["tables"].keys())
-tables2 = list(data2["tables"].keys())
+def map_table_names(bank1_json, bank2_json):
+    tables1 = list(bank1_json["tables"].keys())
+    tables2 = list(bank2_json["tables"].keys())
 
-# ==== ENCODE ====
-embeddings1 = model.encode(tables1, convert_to_tensor=True)
-embeddings2 = model.encode(tables2, convert_to_tensor=True)
+    embeddings1 = model.encode(tables1, convert_to_tensor=True)
+    embeddings2 = model.encode(tables2, convert_to_tensor=True)
+    cosine_scores = util.cos_sim(embeddings2, embeddings1)
 
-# ==== COSINE SIMILARITY ====
-cosine_scores = util.cos_sim(embeddings2, embeddings1)
+    results = []
+    rename_dict = {}
+    for i, table2 in enumerate(tables2):
+        best_idx = cosine_scores[i].argmax().item()
+        best_score = cosine_scores[i][best_idx].item()
+        confidence = best_score * 100
+        status = "Needs Review" if confidence < CONF_THRESHOLD else "Confident Match"
+        table1 = tables1[best_idx]
 
-# ==== MATCHING LOOP ====
-results = []
+        results.append({
+            "bank2_table": table2,
+            "best_match_bank1_table": table1,
+            "cosine_similarity": round(best_score, 4),
+            "confidence_rating": round(confidence, 2),
+            "status": status
+        })
 
-for i, table2 in enumerate(tables2):
-    probs = torch.softmax(cosine_scores[i], dim=0)
-    best_idx = probs.argmax().item()
-    best_score = cosine_scores[i][best_idx].item()
-    confidence = probs[best_idx].item() * 100
-    status = "Needs Review" if confidence < CONF_THRESHOLD else "Confident Match"
-    table1 = tables1[best_idx]
+        if status == "Confident Match":
+            rename_dict[table2] = table1
 
-    results.append({
-        "bank2_table": table2,
-        "best_match_bank1_table": table1,
-        "cosine_similarity": round(best_score, 4),
-        "confidence_rating": round(confidence, 2),
-        "status": status
-    })
+    return results, rename_dict
 
-# ==== RENAME TABLES IN Bank2 JSON ====
-table_mapping = [r for r in results if r["status"] == "Confident Match"]
-rename_dict = {m["bank2_table"]: m["best_match_bank1_table"] for m in table_mapping}
+def rename_bank2_tables(bank2_json, rename_dict):
+    tables2 = bank2_json["tables"]
+    renamed_tables = {rename_dict.get(k, k): v for k, v in tables2.items()}
+    bank2_json["tables"] = renamed_tables
+    return bank2_json
 
-# Original tables dict in Bank2
-tables2 = data2["tables"]
+def map_columns(list1, list2, text_key=TEXT_KEY, conf_threshold=CONF_THRESHOLD):
+    lines1 = [col[text_key] for col in list1]
+    lines2 = [col[text_key] for col in list2]
 
-# Create a new dict with renamed keys
-renamed_tables = {}
-for old_name, columns in tables2.items():
-    new_name = rename_dict.get(old_name, old_name)  # default to old name if no match
-    renamed_tables[new_name] = columns
+    embeddings1 = model.encode(lines1, convert_to_tensor=True)
+    embeddings2 = model.encode(lines2, convert_to_tensor=True)
 
-# Replace tables in Bank2
-data2["tables"] = renamed_tables
+    cosine_scores = util.cos_sim(embeddings2, embeddings1)
+    results = []
 
+    for i, col2 in enumerate(list2):
+        best_idx = cosine_scores[i].argmax().item()
+        best_score = cosine_scores[i][best_idx].item()
+        confidence = best_score * 100
+        status = "Needs Review" if confidence < conf_threshold else "Confident Match"
+        col1 = list1[best_idx]
 
-# ==== SAVE RESULTS ====
-with open("backend/Bank2_Renamed_Schema.json", "w", encoding="utf-8") as f:
-    json.dump(data2, f, indent=2, ensure_ascii=False)
+        results.append({
+            "bank2_column": col2,
+            "best_match_bank1_column": col1,
+            "cosine_similarity": round(best_score, 4),
+            "confidence_rating": round(confidence, 2),
+            "status": status
+        })
+    return results
 
-print("Bank2 tables renamed and saved to Bank2_Renamed_Schema.json")
+def auto_map(bank1_file, bank2_file, save_folder):
+    # Load schemas
+    bank1_json = load_json(bank1_file)
+    bank2_json = load_json(bank2_file)
 
-with open("backend/Table_name_mapping.json", "w", encoding="utf-8") as f:
-    json.dump(results, f, indent=2, ensure_ascii=False)
+    # Table mapping
+    table_mapping, rename_dict = map_table_names(bank1_json, bank2_json)
+    renamed_bank2 = rename_bank2_tables(bank2_json, rename_dict)
 
-print("Table name mapping saved to Table_name_mapping.json")
+    # Column mapping
+    column_mapping_results = {}
+    for table_name, columns2 in renamed_bank2["tables"].items():
+        columns1 = bank1_json["tables"].get(table_name)
+        if not columns1:
+            continue
+        mapped_columns = map_columns(columns1, columns2)
+        column_mapping_results[table_name] = mapped_columns
 
+    # Save outputs
+    save_json(renamed_bank2, os.path.join(save_folder, "bank2_renamed_schema.json"))
+    save_json(table_mapping, os.path.join(save_folder, "table_name_mapping.json"))
+    save_json(column_mapping_results, os.path.join(save_folder, "bank_column_mapping.json"))
+        
 
+    return {
+        "column_mapping": column_mapping_results
+    }

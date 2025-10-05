@@ -1,0 +1,892 @@
+{
+  "Customer": [
+    {
+      "bank2_column": {
+        "label": "lastName",
+        "description": "The last name, surname, or family name of the client."
+      },
+      "best_match_bank1_column": {
+        "label": "lastName",
+        "description": "The last name of an individual customer."
+      },
+      "cosine_similarity": 0.7205,
+      "confidence_rating": 72.05,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "migrationEventKey",
+        "description": "The migration event encoded key associated with a client."
+      },
+      "best_match_bank1_column": {
+        "label": "email",
+        "description": "Email Identifier of the Customer."
+      },
+      "cosine_similarity": 0.2995,
+      "confidence_rating": 29.95,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "preferredLanguage",
+        "description": "The client's preferred language. This will determine the language for the reports, schedules, and account statements you generate for the client."
+      },
+      "best_match_bank1_column": {
+        "label": "language",
+        "description": "The language that the contents of the field are displayed in."
+      },
+      "cosine_similarity": 0.5987,
+      "confidence_rating": 59.87,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "notes",
+        "description": "The additional notes about a client."
+      },
+      "best_match_bank1_column": {
+        "label": "customerId",
+        "description": "Identifier of the customer."
+      },
+      "cosine_similarity": 0.4677,
+      "confidence_rating": 46.77,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "gender",
+        "description": "The client's gender."
+      },
+      "best_match_bank1_column": {
+        "label": "gender",
+        "description": "Gender of the Individual Customer."
+      },
+      "cosine_similarity": 0.7776,
+      "confidence_rating": 77.76,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "emailAddress",
+        "description": "The client's email address."
+      },
+      "best_match_bank1_column": {
+        "label": "email",
+        "description": "Email Identifier of the Customer."
+      },
+      "cosine_similarity": 0.7164,
+      "confidence_rating": 71.64,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "encodedKey",
+        "description": "The encoded key of the client, which is unique and generated."
+      },
+      "best_match_bank1_column": {
+        "label": "customerId",
+        "description": "Identifier of the customer."
+      },
+      "cosine_similarity": 0.4098,
+      "confidence_rating": 40.98,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "id",
+        "description": "The ID of the client, which can be generated and customized - but must be unique."
+      },
+      "best_match_bank1_column": {
+        "label": "customerId",
+        "description": "Identifier of the customer."
+      },
+      "cosine_similarity": 0.4938,
+      "confidence_rating": 49.38,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "state",
+        "description": "The state of a client. It shows where the client is in the client life cycle."
+      },
+      "best_match_bank1_column": {
+        "label": "country",
+        "description": "Identifies the country of the customer or a property or organization."
+      },
+      "cosine_similarity": 0.4958,
+      "confidence_rating": 49.58,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "assignedUserKey",
+        "description": "The encoded key of the user a client is assigned to."
+      },
+      "best_match_bank1_column": {
+        "label": "customerId",
+        "description": "Identifier of the customer."
+      },
+      "cosine_similarity": 0.4342,
+      "confidence_rating": 43.42,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "homePhone",
+        "description": "The client's home phone number."
+      },
+      "best_match_bank1_column": {
+        "label": "phoneNumber",
+        "description": "The phone number of the customer or prospect."
+      },
+      "cosine_similarity": 0.6508,
+      "confidence_rating": 65.08,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "creationDate",
+        "description": "The date a client was created."
+      },
+      "best_match_bank1_column": {
+        "label": "contactDate",
+        "description": "Date that first contact was made with the Customer."
+      },
+      "cosine_similarity": 0.6953,
+      "confidence_rating": 69.53,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "birthDate",
+        "description": "The client's date of birth."
+      },
+      "best_match_bank1_column": {
+        "label": "dateOfBirth",
+        "description": "The date of birth of an individual customer."
+      },
+      "cosine_similarity": 0.777,
+      "confidence_rating": 77.7,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "firstName",
+        "description": "The first name, personal name, given name, or forename of the client."
+      },
+      "best_match_bank1_column": {
+        "label": "lastName",
+        "description": "The last name of an individual customer."
+      },
+      "cosine_similarity": 0.6613,
+      "confidence_rating": 66.13,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "mobilePhone",
+        "description": "The client's mobile phone number."
+      },
+      "best_match_bank1_column": {
+        "label": "smsNumber",
+        "description": "The mobile SMS number of the customer."
+      },
+      "cosine_similarity": 0.6897,
+      "confidence_rating": 68.97,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "clientType",
+        "description": "The type of client."
+      },
+      "best_match_bank1_column": {
+        "label": "customerType",
+        "description": "Identifies the type of customers. Example Personal, Business, Corporate, etc."
+      },
+      "cosine_similarity": 0.569,
+      "confidence_rating": 56.9,
+      "status": "Needs Review"
+    }
+  ],
+  "Loan Accounts": [
+    {
+      "bank2_column": {
+        "label": "id",
+        "description": "The ID of the loan account."
+      },
+      "best_match_bank1_column": {
+        "label": "accountId",
+        "description": "Identifier of the account."
+      },
+      "cosine_similarity": 0.7248,
+      "confidence_rating": 72.48,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "loanName",
+        "description": "The name of the loan account."
+      },
+      "best_match_bank1_column": {
+        "label": "loanBalance",
+        "description": "Indicates the outstanding balance of the loan."
+      },
+      "cosine_similarity": 0.705,
+      "confidence_rating": 70.5,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "productTypeKey",
+        "description": "The key for the type of loan product that this loan account is based on."
+      },
+      "best_match_bank1_column": {
+        "label": "compoundType",
+        "description": "Contains the frequency type of compound in loan."
+      },
+      "cosine_similarity": 0.5416,
+      "confidence_rating": 54.16,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "currencyCode",
+        "description": "Fiat(ISO-4217) currency code."
+      },
+      "best_match_bank1_column": {
+        "label": "currency",
+        "description": "Identifies the currency (e.g. USD."
+      },
+      "cosine_similarity": 0.6338,
+      "confidence_rating": 63.38,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "accountHolderKey",
+        "description": "The encoded key of the account holder."
+      },
+      "best_match_bank1_column": {
+        "label": "accountId",
+        "description": "Identifier of the account."
+      },
+      "cosine_similarity": 0.7235,
+      "confidence_rating": 72.35,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "accountHolderType",
+        "description": "The type of the account holder."
+      },
+      "best_match_bank1_column": {
+        "label": "accountId",
+        "description": "Identifier of the account."
+      },
+      "cosine_similarity": 0.7311,
+      "confidence_rating": 73.11,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "assignedBranchKey",
+        "description": "The key of the branch this loan account is assigned to."
+      },
+      "best_match_bank1_column": {
+        "label": "loanBalance",
+        "description": "Indicates the outstanding balance of the loan."
+      },
+      "cosine_similarity": 0.6174,
+      "confidence_rating": 61.74,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "notes",
+        "description": "The notes about this loan account."
+      },
+      "best_match_bank1_column": {
+        "label": "loanBalance",
+        "description": "Indicates the outstanding balance of the loan."
+      },
+      "cosine_similarity": 0.6402,
+      "confidence_rating": 64.02,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "maturityDate",
+        "description": "The date when the account matures."
+      },
+      "best_match_bank1_column": {
+        "label": "arrangementEffectiveDate",
+        "description": "It is a date on/upon which an account is considered to take effect."
+      },
+      "cosine_similarity": 0.7291,
+      "confidence_rating": 72.91,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "creationDate",
+        "description": "The date the loan account was created."
+      },
+      "best_match_bank1_column": {
+        "label": "gracePeriod",
+        "description": "The grace period for loan repayment."
+      },
+      "cosine_similarity": 0.6009,
+      "confidence_rating": 60.09,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "closedDate",
+        "description": "The date the loan was closed."
+      },
+      "best_match_bank1_column": {
+        "label": "gracePeriod",
+        "description": "The grace period for loan repayment."
+      },
+      "cosine_similarity": 0.5748,
+      "confidence_rating": 57.48,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "assignedUserKey",
+        "description": "The key of the user this loan account is assigned to."
+      },
+      "best_match_bank1_column": {
+        "label": "accountId",
+        "description": "Identifier of the account."
+      },
+      "cosine_similarity": 0.6045,
+      "confidence_rating": 60.45,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "totalBalance",
+        "description": "The current balance of the account."
+      },
+      "best_match_bank1_column": {
+        "label": "availableBalance",
+        "description": "Available balance of the account."
+      },
+      "cosine_similarity": 0.8666,
+      "confidence_rating": 86.66,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "availableBalance",
+        "description": "The available balance of a deposit or credit account."
+      },
+      "best_match_bank1_column": {
+        "label": "availableBalance",
+        "description": "Available balance of the account."
+      },
+      "cosine_similarity": 0.792,
+      "confidence_rating": 79.2,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "interestRate",
+        "description": "The interest rate for the loan account."
+      },
+      "best_match_bank1_column": {
+        "label": "loanInterestRate",
+        "description": "Indicates the interest rate of the loan."
+      },
+      "cosine_similarity": 0.8518,
+      "confidence_rating": 85.18,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "interestType",
+        "description": "The possible values for how we compute and apply the interest."
+      },
+      "best_match_bank1_column": {
+        "label": "interestAmount",
+        "description": "The accrued Interest due or accrued."
+      },
+      "cosine_similarity": 0.5179,
+      "confidence_rating": 51.79,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "interestApplicationMethod",
+        "description": "The interest application method."
+      },
+      "best_match_bank1_column": {
+        "label": "interestAmount",
+        "description": "The accrued Interest due or accrued."
+      },
+      "cosine_similarity": 0.5627,
+      "confidence_rating": 56.27,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "effectiveInterestRate",
+        "description": "Adjustable interest rates settings for loan account."
+      },
+      "best_match_bank1_column": {
+        "label": "loanInterestRate",
+        "description": "Indicates the interest rate of the loan."
+      },
+      "cosine_similarity": 0.5823,
+      "confidence_rating": 58.23,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "gracePeriod",
+        "description": "The grace period for loan repayment."
+      },
+      "best_match_bank1_column": {
+        "label": "gracePeriod",
+        "description": "The grace period for loan repayment."
+      },
+      "cosine_similarity": 1.0,
+      "confidence_rating": 100.0,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "periodicPayment",
+        "description": "The periodic payment amount."
+      },
+      "best_match_bank1_column": {
+        "label": "periodicPayment",
+        "description": "The periodic payment value."
+      },
+      "cosine_similarity": 0.9333,
+      "confidence_rating": 93.33,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "repaymentInstallments",
+        "description": "The repayment installments."
+      },
+      "best_match_bank1_column": {
+        "label": "gracePeriod",
+        "description": "The grace period for loan repayment."
+      },
+      "cosine_similarity": 0.7479,
+      "confidence_rating": 74.79,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "repaymentPeriodUnit",
+        "description": "The repayment period unit."
+      },
+      "best_match_bank1_column": {
+        "label": "gracePeriod",
+        "description": "The grace period for loan repayment."
+      },
+      "cosine_similarity": 0.7663,
+      "confidence_rating": 76.63,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "fixedDaysOfMonth",
+        "description": "Specifies the days of the month when the repayment due dates should be."
+      },
+      "best_match_bank1_column": {
+        "label": "gracePeriod",
+        "description": "The grace period for loan repayment."
+      },
+      "cosine_similarity": 0.6138,
+      "confidence_rating": 61.38,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "repaymentPeriodCount",
+        "description": "The repayment period count."
+      },
+      "best_match_bank1_column": {
+        "label": "gracePeriod",
+        "description": "The grace period for loan repayment."
+      },
+      "cosine_similarity": 0.766,
+      "confidence_rating": 76.6,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "amortizationPeriod",
+        "description": "The PMT is calculated as the loan would have [amortizationPeriod] installments."
+      },
+      "best_match_bank1_column": {
+        "label": "loanInterestRate",
+        "description": "Indicates the interest rate of the loan."
+      },
+      "cosine_similarity": 0.5579,
+      "confidence_rating": 55.79,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "principalDue",
+        "description": "The principal due."
+      },
+      "best_match_bank1_column": {
+        "label": "principalBalance",
+        "description": "The principal balance due when pay off the account in a future date."
+      },
+      "cosine_similarity": 0.5607,
+      "confidence_rating": 56.07,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "principalBalance",
+        "description": "The total principal owned by the client."
+      },
+      "best_match_bank1_column": {
+        "label": "customerRole",
+        "description": "Indicates role of a customer for an arrangement."
+      },
+      "cosine_similarity": 0.5208,
+      "confidence_rating": 52.08,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "interestDue",
+        "description": "The interest due."
+      },
+      "best_match_bank1_column": {
+        "label": "interestAmount",
+        "description": "The accrued Interest due or accrued."
+      },
+      "cosine_similarity": 0.625,
+      "confidence_rating": 62.5,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "feesDue",
+        "description": "The fees due"
+      },
+      "best_match_bank1_column": {
+        "label": "principalBalance",
+        "description": "The principal balance due when pay off the account in a future date."
+      },
+      "cosine_similarity": 0.4711,
+      "confidence_rating": 47.11,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "interestBalance",
+        "description": "Represents the total interest owed by the client."
+      },
+      "best_match_bank1_column": {
+        "label": "loanInterestRate",
+        "description": "Indicates the interest rate of the loan."
+      },
+      "cosine_similarity": 0.6729,
+      "confidence_rating": 67.29,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "interestFromArrearsBalance",
+        "description": "The interest from arrears balance."
+      },
+      "best_match_bank1_column": {
+        "label": "interestFromArrearsBalance",
+        "description": "The interest from arrears balance due when pay off the account in a future date."
+      },
+      "cosine_similarity": 0.7958,
+      "confidence_rating": 79.58,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "totalBalance",
+        "description": "The current balance of the account."
+      },
+      "best_match_bank1_column": {
+        "label": "availableBalance",
+        "description": "Available balance of the account."
+      },
+      "cosine_similarity": 0.8666,
+      "confidence_rating": 86.66,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "interestAccrued",
+        "description": "The amount of positive interest that has been accrued in the account."
+      },
+      "best_match_bank1_column": {
+        "label": "interestAmount",
+        "description": "The accrued Interest due or accrued."
+      },
+      "cosine_similarity": 0.7771,
+      "confidence_rating": 77.71,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "accountType",
+        "description": "The deposit account type and the product that it belongs to."
+      },
+      "best_match_bank1_column": {
+        "label": "accountId",
+        "description": "Identifier of the account."
+      },
+      "cosine_similarity": 0.5889,
+      "confidence_rating": 58.89,
+      "status": "Needs Review"
+    }
+  ],
+  "Loan Account Transactions": [
+    {
+      "bank2_column": {
+        "label": "encodedKey",
+        "description": "The encoded key of the loan transaction."
+      },
+      "best_match_bank1_column": {
+        "label": "transactionReference",
+        "description": "Contains the identifier for the transaction in the core system."
+      },
+      "cosine_similarity": 0.5396,
+      "confidence_rating": 53.96,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "id",
+        "description": "The ID of the loan transaction."
+      },
+      "best_match_bank1_column": {
+        "label": "activity",
+        "description": "Id of the activity (e.g. DISBURSEMENT, REPAYMENT)."
+      },
+      "cosine_similarity": 0.694,
+      "confidence_rating": 69.4,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "type",
+        "description": "The type of loan transaction (e.g. DISBURSEMENT, REPAYMENT)."
+      },
+      "best_match_bank1_column": {
+        "label": "activity",
+        "description": "Id of the activity (e.g. DISBURSEMENT, REPAYMENT)."
+      },
+      "cosine_similarity": 0.6644,
+      "confidence_rating": 66.44,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "amount",
+        "description": "The amount that was added or removed on the loan account."
+      },
+      "best_match_bank1_column": {
+        "label": "interestAmount",
+        "description": "The accrued Interest due or accrued."
+      },
+      "cosine_similarity": 0.5807,
+      "confidence_rating": 58.07,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "originalCurrencyCode",
+        "description": "The currency in which this transaction was posted."
+      },
+      "best_match_bank1_column": {
+        "label": "currency",
+        "description": "Identifier of the currency."
+      },
+      "cosine_similarity": 0.6493,
+      "confidence_rating": 64.93,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "valueDate",
+        "description": "The date of the entry in the organization time format and timezone."
+      },
+      "best_match_bank1_column": {
+        "label": "effectiveDate",
+        "description": "Contains the identifier for the transaction date."
+      },
+      "cosine_similarity": 0.5108,
+      "confidence_rating": 51.08,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "notes",
+        "description": "The notes or description for the loan transaction."
+      },
+      "best_match_bank1_column": {
+        "label": "activity",
+        "description": "Id of the activity (e.g. DISBURSEMENT, REPAYMENT)."
+      },
+      "cosine_similarity": 0.6009,
+      "confidence_rating": 60.09,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "externalId",
+        "description": "The external ID of the loan transaction."
+      },
+      "best_match_bank1_column": {
+        "label": "activity",
+        "description": "Id of the activity (e.g. DISBURSEMENT, REPAYMENT)."
+      },
+      "cosine_similarity": 0.6622,
+      "confidence_rating": 66.22,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "userKey",
+        "description": "The user that performed the transaction."
+      },
+      "best_match_bank1_column": {
+        "label": "userRole",
+        "description": "User who initiated the transaction."
+      },
+      "cosine_similarity": 0.9322,
+      "confidence_rating": 93.22,
+      "status": "Confident Match"
+    },
+    {
+      "bank2_column": {
+        "label": "branchKey",
+        "description": "The branch where the transaction was performed."
+      },
+      "best_match_bank1_column": {
+        "label": "branch",
+        "description": "Contains the branch name/code."
+      },
+      "cosine_similarity": 0.6171,
+      "confidence_rating": 61.71,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "principalAmount",
+        "description": "How much principal was added/removed in account."
+      },
+      "best_match_bank1_column": {
+        "label": "accountId",
+        "description": "Identifier of the account."
+      },
+      "cosine_similarity": 0.4282,
+      "confidence_rating": 42.82,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "interestAmount",
+        "description": "How much interest was added/removed in account."
+      },
+      "best_match_bank1_column": {
+        "label": "interestAmount",
+        "description": "The accrued Interest due or accrued."
+      },
+      "cosine_similarity": 0.6305,
+      "confidence_rating": 63.05,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "feesAmount",
+        "description": "How much fees was added/removed in account."
+      },
+      "best_match_bank1_column": {
+        "label": "chargeAmount",
+        "description": "Retrieves the charge amount after redeem."
+      },
+      "cosine_similarity": 0.42,
+      "confidence_rating": 42.0,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "totalBalance",
+        "description": "The running balance still owed for the loan."
+      },
+      "best_match_bank1_column": {
+        "label": "balanceAmount",
+        "description": "Amount of the balance."
+      },
+      "cosine_similarity": 0.5478,
+      "confidence_rating": 54.78,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "principalBalance",
+        "description": "The account redraw balance captured after the transaction update."
+      },
+      "best_match_bank1_column": {
+        "label": "chargeAmount",
+        "description": "Retrieves the charge amount after redeem."
+      },
+      "cosine_similarity": 0.5754,
+      "confidence_rating": 57.54,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "interestRate",
+        "description": "The interest rate for the loan transaction."
+      },
+      "best_match_bank1_column": {
+        "label": "interestAmount",
+        "description": "The accrued Interest due or accrued."
+      },
+      "cosine_similarity": 0.5735,
+      "confidence_rating": 57.35,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "transactionChannel",
+        "description": "The id of the transaction channel."
+      },
+      "best_match_bank1_column": {
+        "label": "transactionReference",
+        "description": "Contains the identifier for the transaction in the core system."
+      },
+      "cosine_similarity": 0.6846,
+      "confidence_rating": 68.46,
+      "status": "Needs Review"
+    },
+    {
+      "bank2_column": {
+        "label": "parentAccountKey",
+        "description": "The key of the parent loan account."
+      },
+      "best_match_bank1_column": {
+        "label": "accountId",
+        "description": "Identifier of the account."
+      },
+      "cosine_similarity": 0.4884,
+      "confidence_rating": 48.84,
+      "status": "Needs Review"
+    }
+  ]
+}

@@ -1,0 +1,556 @@
+{
+  "bank": "Bank2",
+  "tables": {
+    "Customer": [
+      {
+        "label": "lastName",
+        "description": "The last name, surname, or family name of the client."
+      },
+      {
+        "label": "migrationEventKey",
+        "description": "The migration event encoded key associated with a client."
+      },
+      {
+        "label": "preferredLanguage",
+        "description": "The client's preferred language. This will determine the language for the reports, schedules, and account statements you generate for the client."
+      },
+      {
+        "label": "notes",
+        "description": "The additional notes about a client."
+      },
+      {
+        "label": "gender",
+        "description": "The client's gender."
+      },
+      {
+        "label": "emailAddress",
+        "description": "The client's email address."
+      },
+      {
+        "label": "encodedKey",
+        "description": "The encoded key of the client, which is unique and generated."
+      },
+      {
+        "label": "id",
+        "description": "The ID of the client, which can be generated and customized - but must be unique."
+      },
+      {
+        "label": "state",
+        "description": "The state of a client. It shows where the client is in the client life cycle."
+      },
+      {
+        "label": "assignedUserKey",
+        "description": "The encoded key of the user a client is assigned to."
+      },
+      {
+        "label": "homePhone",
+        "description": "The client's home phone number."
+      },
+      {
+        "label": "creationDate",
+        "description": "The date a client was created."
+      },
+      {
+        "label": "birthDate",
+        "description": "The client's date of birth."
+      },
+      {
+        "label": "firstName",
+        "description": "The first name, personal name, given name, or forename of the client."
+      },
+      {
+        "label": "mobilePhone",
+        "description": "The client's mobile phone number."
+      },
+      {
+        "label": "clientType",
+        "description": "The type of client."
+      }
+    ],
+    "Addresses": [
+      {
+        "label": "city",
+        "description": "The city for the address."
+      },
+      {
+        "label": "country",
+        "description": "The country."
+      },
+      {
+        "label": "encodedKey",
+        "description": "The address encoded key, which is unique and generated."
+      },
+      {
+        "label": "line1",
+        "description": "The first line of the address."
+      },
+      {
+        "label": "parentKey",
+        "description": "The address parent key indicating the client owning this address."
+      },
+      {
+        "label": "postcode",
+        "description": "The post code."
+      },
+      {
+        "label": "region",
+        "description": "The region for the address."
+      }
+    ],
+    "Identifications": [
+      {
+        "label": "clientKey",
+        "description": "The encoded key of the client that owns this document."
+      },
+      {
+        "label": "documentId",
+        "description": "The id of the document."
+      },
+      {
+        "label": "documentType",
+        "description": "The type of the document, Passport, Id card Drivers license, etc."
+      },
+      {
+        "label": "encodedKey",
+        "description": "The encoded key of the document, generated, unique."
+      },
+      {
+        "label": "issuingAuthority",
+        "description": "The authority who issued the document."
+      },
+      {
+        "label": "issuingCountry",
+        "description": "The country where the document was issued."
+      },
+      {
+        "label": "issuingDate",
+        "description": "The date when the document was issued."
+      },
+      {
+        "label": "validUntil",
+        "description": "Date when the validity of the document ends."
+      }
+    ],
+    "Deposit Accounts": [
+      {
+        "label": "encodedKey",
+        "description": "The encoded key of the deposit account."
+      },
+      {
+        "label": "id",
+        "description": "The ID of the deposit account."
+      },
+      {
+        "label": "accountHolderKey",
+        "description": "The encoded key of the account holder."
+      },
+      {
+        "label": "accountHolderType",
+        "description": "The account holder type."
+      },
+      {
+        "label": "productTypeKey",
+        "description": "The key to the product type that this account is based on."
+      },
+      {
+        "label": "accountState",
+        "description": "The state of the deposit account."
+      },
+      {
+        "label": "currencyCode",
+        "description": "The currency code."
+      },
+      {
+        "label": "assignedBranchKey",
+        "description": "The key of the branch that this deposit account is assigned to."
+      },
+      {
+        "label": "creationDate",
+        "description": "The date this deposit account was created."
+      },
+      {
+        "label": "availableBalance",
+        "description": "The current available balance for deposit transactions."
+      },
+      {
+        "label": "totalBalance",
+        "description": "The current balance of the account."
+      },
+      {
+        "label": "lockedBalance",
+        "description": "The locked amount that is not available for withdrawal in the account."
+      },
+      {
+        "label": "overdraftAmount",
+        "description": "The overdraft amount that has been taken out in the account."
+      },
+      {
+        "label": "productDescription",
+        "description": "Indicates the description of the Product."
+      },
+      {
+        "label": "beneficialOwner",
+        "description": "Indicates the customer who is the legal owner of the arrangement and is the responsible customer of the contract with bank."
+      },
+      {
+        "label": "notes",
+        "description": "The notes or description attached to this object."
+      },
+      {
+        "label": "maturityDate",
+        "description": "The date when the account matures."
+      },
+      {
+        "label": "closedDate",
+        "description": "The date when the deposit account was closed."
+      },
+      {
+        "label": "assignedUserKey",
+        "description": "The key of the user that this deposit is assigned to."
+      },
+      {
+        "label": "availableBalance",
+        "description": "The current available balance for deposit transactions."
+      },
+      {
+        "label": "interestAccrued",
+        "description": "The amount of positive interest that has been accrued in the account."
+      },
+      {
+        "label": "accountType",
+        "description": "The deposit account type and the product that it belongs to."
+      },
+      {
+        "label": "interestRate",
+        "description": "The interest rate for the deposit account."
+      },
+      {
+        "label": "interestPaymentPoint",
+        "description": "The interest payment point."
+      }
+    ],
+    "Loan Accounts": [
+      {
+        "label": "id",
+        "description": "The ID of the loan account."
+      },
+      {
+        "label": "loanName",
+        "description": "The name of the loan account."
+      },
+      {
+        "label": "productTypeKey",
+        "description": "The key for the type of loan product that this loan account is based on."
+      },
+      {
+        "label": "currencyCode",
+        "description": "Fiat(ISO-4217) currency code."
+      },
+      {
+        "label": "accountHolderKey",
+        "description": "The encoded key of the account holder."
+      },
+      {
+        "label": "accountHolderType",
+        "description": "The type of the account holder."
+      },
+      {
+        "label": "assignedBranchKey",
+        "description": "The key of the branch this loan account is assigned to."
+      },
+      {
+        "label": "notes",
+        "description": "The notes about this loan account."
+      },
+      {
+        "label": "maturityDate",
+        "description": "The date when the account matures."
+      },
+      {
+        "label": "creationDate",
+        "description": "The date the loan account was created."
+      },
+      {
+        "label": "closedDate",
+        "description": "The date the loan was closed."
+      },
+      {
+        "label": "assignedUserKey",
+        "description": "The key of the user this loan account is assigned to."
+      },
+      {
+        "label": "totalBalance",
+        "description": "The current balance of the account."
+      },
+      {
+        "label": "availableBalance",
+        "description": "The available balance of a deposit or credit account."
+      },
+      {
+        "label": "interestRate",
+        "description": "The interest rate for the loan account."
+      },
+      {
+        "label": "interestType",
+        "description": "The possible values for how we compute and apply the interest."
+      },
+      {
+        "label": "interestApplicationMethod",
+        "description": "The interest application method."
+      },
+      {
+        "label": "effectiveInterestRate",
+        "description": "Adjustable interest rates settings for loan account."
+      },
+      {
+        "label": "gracePeriod",
+        "description": "The grace period for loan repayment."
+      },
+      {
+        "label": "periodicPayment",
+        "description": "The periodic payment amount."
+      },
+      {
+        "label": "repaymentInstallments",
+        "description": "The repayment installments."
+      },
+      {
+        "label": "repaymentPeriodUnit",
+        "description": "The repayment period unit."
+      },
+      {
+        "label": "fixedDaysOfMonth",
+        "description": "Specifies the days of the month when the repayment due dates should be."
+      },
+      {
+        "label": "repaymentPeriodCount",
+        "description": "The repayment period count."
+      },
+      {
+        "label": "amortizationPeriod",
+        "description": "The PMT is calculated as the loan would have [amortizationPeriod] installments."
+      },
+      {
+        "label": "principalDue",
+        "description": "The principal due."
+      },
+      {
+        "label": "principalBalance",
+        "description": "The total principal owned by the client."
+      },
+      {
+        "label": "interestDue",
+        "description": "The interest due."
+      },
+      {
+        "label": "feesDue",
+        "description": "The fees due"
+      },
+      {
+        "label": "interestBalance",
+        "description": "Represents the total interest owed by the client."
+      },
+      {
+        "label": "interestFromArrearsBalance",
+        "description": "The interest from arrears balance."
+      },
+      {
+        "label": "totalBalance",
+        "description": "The current balance of the account."
+      },
+      {
+        "label": "interestAccrued",
+        "description": "The amount of positive interest that has been accrued in the account."
+      },
+      {
+        "label": "accountType",
+        "description": "The deposit account type and the product that it belongs to."
+      }
+    ],
+    "Deposit Account Transactions": [
+      {
+        "label": "id",
+        "description": "The id of the deposit transaction."
+      },
+      {
+        "label": "encodedKey",
+        "description": "The encoded key of the deposit transaction."
+      },
+      {
+        "label": "type",
+        "description": "The type of deposit transaction (e.g. DEPOSIT WITHDRAWAL FEE_APPLIED)."
+      },
+      {
+        "label": "amount",
+        "description": "How much was added/removed in account."
+      },
+      {
+        "label": "currencyCode",
+        "description": "The currency in which this transaction was posted."
+      },
+      {
+        "label": "creationDate",
+        "description": "The date when this deposit transaction was created."
+      },
+      {
+        "label": "valueDate",
+        "description": "Date of the entry (eg date of repayment or disbursal etc.)."
+      },
+      {
+        "label": "notes",
+        "description": "Extra notes about this deposit transaction."
+      },
+      {
+        "label": "externalId",
+        "description": "The external id of the deposit transaction."
+      },
+      {
+        "label": "userKey",
+        "description": "The person that performed the transaction."
+      },
+      {
+        "label": "branchKey",
+        "description": "The branch where the transaction was performed."
+      },
+      {
+        "label": "feesAmount",
+        "description": "Amount of fees involved in a transaction."
+      },
+      {
+        "label": "interestAmount",
+        "description": "Amount of interest involved in a transaction."
+      },
+      {
+        "label": "taxRate",
+        "description": "The tax rate that was set or changed in this transaction."
+      },
+      {
+        "label": "totalBalance",
+        "description": "The running balance owed by deposit."
+      },
+      {
+        "label": "interestRate",
+        "description": "The interest rate for the deposit transaction."
+      },
+      {
+        "label": "transactionChannel",
+        "description": "The id of the transaction channel."
+      },
+      {
+        "label": "bookingDate",
+        "description": "The date when corresponding JE is booked."
+      },
+      {
+        "label": "feesPredefinedFee",
+        "description": "The type of the predefined fee."
+      },
+      {
+        "label": "feesName",
+        "description": "The name of the predefined fee."
+      },
+      {
+        "label": "taxRate",
+        "description": "The tax rate that was set or changed in this transaction."
+      },
+      {
+        "label": "availableBalance",
+        "description": "The available balance after the transaction."
+      },
+      {
+        "label": "lockedBalance",
+        "description": "The locked amount that is not available for withdrawal in the account."
+      },
+      {
+        "label": "overdraftAmount",
+        "description": "The overdraft amount that has been taken out in the account."
+      },
+      {
+        "label": "interestBalance",
+        "description": "Represents the total interest owed by the client."
+      },
+      {
+        "label": "overdraftLimit",
+        "description": "The overdraft limit that was set or changed in this transaction."
+      },
+      {
+        "label": "parentAccountKey",
+        "description": "The key of the parent deposit account."
+      }
+    ],
+    "Loan Account Transactions": [
+      {
+        "label": "encodedKey",
+        "description": "The encoded key of the loan transaction."
+      },
+      {
+        "label": "id",
+        "description": "The ID of the loan transaction."
+      },
+      {
+        "label": "type",
+        "description": "The type of loan transaction (e.g. DISBURSEMENT, REPAYMENT)."
+      },
+      {
+        "label": "amount",
+        "description": "The amount that was added or removed on the loan account."
+      },
+      {
+        "label": "originalCurrencyCode",
+        "description": "The currency in which this transaction was posted."
+      },
+      {
+        "label": "valueDate",
+        "description": "The date of the entry in the organization time format and timezone."
+      },
+      {
+        "label": "notes",
+        "description": "The notes or description for the loan transaction."
+      },
+      {
+        "label": "externalId",
+        "description": "The external ID of the loan transaction."
+      },
+      {
+        "label": "userKey",
+        "description": "The user that performed the transaction."
+      },
+      {
+        "label": "branchKey",
+        "description": "The branch where the transaction was performed."
+      },
+      {
+        "label": "principalAmount",
+        "description": "How much principal was added/removed in account."
+      },
+      {
+        "label": "interestAmount",
+        "description": "How much interest was added/removed in account."
+      },
+      {
+        "label": "feesAmount",
+        "description": "How much fees was added/removed in account."
+      },
+      {
+        "label": "totalBalance",
+        "description": "The running balance still owed for the loan."
+      },
+      {
+        "label": "principalBalance",
+        "description": "The account redraw balance captured after the transaction update."
+      },
+      {
+        "label": "interestRate",
+        "description": "The interest rate for the loan transaction."
+      },
+      {
+        "label": "transactionChannel",
+        "description": "The id of the transaction channel."
+      },
+      {
+        "label": "parentAccountKey",
+        "description": "The key of the parent loan account."
+      }
+    ]
+  },
+  "source_file": "Bank2_Schema.xlsx"
+}

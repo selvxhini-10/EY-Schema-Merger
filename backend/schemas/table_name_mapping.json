@@ -1,0 +1,51 @@
+[
+  {
+    "bank2_table": "Customer",
+    "best_match_bank1_table": "Customer",
+    "cosine_similarity": 1.0,
+    "confidence_rating": 100.0,
+    "status": "Confident Match"
+  },
+  {
+    "bank2_table": "Addresses",
+    "best_match_bank1_table": "Customer",
+    "cosine_similarity": 0.318,
+    "confidence_rating": 31.8,
+    "status": "Needs Review"
+  },
+  {
+    "bank2_table": "Identifications",
+    "best_match_bank1_table": "Customer",
+    "cosine_similarity": 0.3472,
+    "confidence_rating": 34.72,
+    "status": "Needs Review"
+  },
+  {
+    "bank2_table": "Deposit Accounts",
+    "best_match_bank1_table": "Loan Accounts",
+    "cosine_similarity": 0.6516,
+    "confidence_rating": 65.16,
+    "status": "Needs Review"
+  },
+  {
+    "bank2_table": "Loan Accounts",
+    "best_match_bank1_table": "Loan Accounts",
+    "cosine_similarity": 1.0,
+    "confidence_rating": 100.0,
+    "status": "Confident Match"
+  },
+  {
+    "bank2_table": "Deposit Account Transactions",
+    "best_match_bank1_table": "Loan Account Transactions",
+    "cosine_similarity": 0.7251,
+    "confidence_rating": 72.51,
+    "status": "Needs Review"
+  },
+  {
+    "bank2_table": "Loan Account Transactions",
+    "best_match_bank1_table": "Loan Account Transactions",
+    "cosine_similarity": 1.0,
+    "confidence_rating": 100.0,
+    "status": "Confident Match"
+  }
+]

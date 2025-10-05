@@ -25,7 +25,7 @@
     "best_match_bank1_table": "Loan Accounts",
     "cosine_similarity": 0.6516,
     "confidence_rating": 65.16,
-    "status": "Confident Match"
+    "status": "Needs Review"
   },
   {
     "bank2_table": "Loan Accounts",
@@ -39,7 +39,7 @@
     "best_match_bank1_table": "Loan Account Transactions",
     "cosine_similarity": 0.7251,
     "confidence_rating": 72.51,
-    "status": "Confident Match"
+    "status": "Needs Review"
   },
   {
     "bank2_table": "Loan Account Transactions",

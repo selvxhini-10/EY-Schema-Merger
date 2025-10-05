@@ -11,7 +11,7 @@
       },
       "cosine_similarity": 0.7205,
       "confidence_rating": 72.05,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -76,7 +76,7 @@
       },
       "cosine_similarity": 0.7164,
       "confidence_rating": 71.64,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -141,7 +141,7 @@
       },
       "cosine_similarity": 0.6508,
       "confidence_rating": 65.08,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -154,7 +154,7 @@
       },
       "cosine_similarity": 0.6953,
       "confidence_rating": 69.53,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -180,7 +180,7 @@
       },
       "cosine_similarity": 0.6613,
       "confidence_rating": 66.13,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -193,7 +193,7 @@
       },
       "cosine_similarity": 0.6897,
       "confidence_rating": 68.97,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -221,7 +221,7 @@
       },
       "cosine_similarity": 0.7248,
       "confidence_rating": 72.48,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -234,7 +234,7 @@
       },
       "cosine_similarity": 0.705,
       "confidence_rating": 70.5,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -260,7 +260,7 @@
       },
       "cosine_similarity": 0.6338,
       "confidence_rating": 63.38,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -273,7 +273,7 @@
       },
       "cosine_similarity": 0.7235,
       "confidence_rating": 72.35,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -299,7 +299,7 @@
       },
       "cosine_similarity": 0.6174,
       "confidence_rating": 61.74,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -312,7 +312,7 @@
       },
       "cosine_similarity": 0.6402,
       "confidence_rating": 64.02,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -325,7 +325,7 @@
       },
       "cosine_similarity": 0.7291,
       "confidence_rating": 72.91,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -338,7 +338,7 @@
       },
       "cosine_similarity": 0.6009,
       "confidence_rating": 60.09,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -364,7 +364,7 @@
       },
       "cosine_similarity": 0.6045,
       "confidence_rating": 60.45,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -507,7 +507,7 @@
       },
       "cosine_similarity": 0.6138,
       "confidence_rating": 61.38,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -572,7 +572,7 @@
       },
       "cosine_similarity": 0.625,
       "confidence_rating": 62.5,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -598,7 +598,7 @@
       },
       "cosine_similarity": 0.6729,
       "confidence_rating": 67.29,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -678,7 +678,7 @@
       },
       "cosine_similarity": 0.694,
       "confidence_rating": 69.4,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -691,7 +691,7 @@
       },
       "cosine_similarity": 0.6644,
       "confidence_rating": 66.44,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -717,7 +717,7 @@
       },
       "cosine_similarity": 0.6493,
       "confidence_rating": 64.93,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -743,7 +743,7 @@
       },
       "cosine_similarity": 0.6009,
       "confidence_rating": 60.09,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -756,7 +756,7 @@
       },
       "cosine_similarity": 0.6622,
       "confidence_rating": 66.22,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -782,7 +782,7 @@
       },
       "cosine_similarity": 0.6171,
       "confidence_rating": 61.71,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -808,7 +808,7 @@
       },
       "cosine_similarity": 0.6305,
       "confidence_rating": 63.05,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {
@@ -873,7 +873,7 @@
       },
       "cosine_similarity": 0.6846,
       "confidence_rating": 68.46,
-      "status": "Confident Match"
+      "status": "Needs Review"
     },
     {
       "bank2_column": {

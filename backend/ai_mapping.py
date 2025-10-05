@@ -1,95 +1,61 @@
+# ai_mapping.py
 from sentence_transformers import SentenceTransformer, util
 import torch
 import json
+import os
 
-# *** COMPARING TABLE NAMES ***
-# ==== CONFIG ====
-FILE1 = "backend/schemas/bank1__bank1_schema.json"
-FILE2 = "backend/schemas/bank2__bank2_schema.json"
-CONF_THRESHOLD = 75.0
 MODEL_NAME = "all-MiniLM-L6-v2"
+CONF_THRESHOLD = 73.0
+TEXT_KEY = "description"
 
-# ==== LOAD MODEL ====
 model = SentenceTransformer(MODEL_NAME)
 
-# ==== LOAD JSON FILES ====
-with open(FILE1, "r", encoding="utf-8") as f:
-    data1 = json.load(f)
+def load_json(file_path):
+    with open(file_path, "r", encoding="utf-8") as f:
+        return json.load(f)
 
-with open(FILE2, "r", encoding="utf-8") as f:
-    data2 = json.load(f)
+def save_json(data, file_path):
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    with open(file_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
 
-# ==== EXTRACT TABLE NAMES ====
-tables1 = list(data1["tables"].keys())
-tables2 = list(data2["tables"].keys())
+def map_table_names(bank1_json, bank2_json):
+    tables1 = list(bank1_json["tables"].keys())
+    tables2 = list(bank2_json["tables"].keys())
 
-# ==== ENCODE ====
-embeddings1 = model.encode(tables1, convert_to_tensor=True)
-embeddings2 = model.encode(tables2, convert_to_tensor=True)
+    embeddings1 = model.encode(tables1, convert_to_tensor=True)
+    embeddings2 = model.encode(tables2, convert_to_tensor=True)
+    cosine_scores = util.cos_sim(embeddings2, embeddings1)
 
-# ==== COSINE SIMILARITY ====
-cosine_scores = util.cos_sim(embeddings2, embeddings1)
+    results = []
+    rename_dict = {}
+    for i, table2 in enumerate(tables2):
+        best_idx = cosine_scores[i].argmax().item()
+        best_score = cosine_scores[i][best_idx].item()
+        confidence = best_score * 100
+        status = "Needs Review" if confidence < CONF_THRESHOLD else "Confident Match"
+        table1 = tables1[best_idx]
 
-# ==== MATCHING LOOP ====
-results = []
+        results.append({
+            "bank2_table": table2,
+            "best_match_bank1_table": table1,
+            "cosine_similarity": round(best_score, 4),
+            "confidence_rating": round(confidence, 2),
+            "status": status
+        })
 
-for i, table2 in enumerate(tables2):
-    probs = torch.softmax(cosine_scores[i], dim=0)
-    best_idx = probs.argmax().item()
-    best_score = cosine_scores[i][best_idx].item()
-    confidence = best_score * 100
-    status = "Needs Review" if confidence < CONF_THRESHOLD else "Confident Match"
-    table1 = tables1[best_idx]
+        if status == "Confident Match":
+            rename_dict[table2] = table1
 
-    results.append({
-        "bank2_table": table2,
-        "best_match_bank1_table": table1,
-        "cosine_similarity": round(best_score, 4),
-        "confidence_rating": round(confidence, 2),
-        "status": status
-    })
+    return results, rename_dict
 
-# ==== RENAME TABLES IN Bank2 JSON ====
-table_mapping = [r for r in results if r["status"] == "Confident Match"]
-rename_dict = {m["bank2_table"]: m["best_match_bank1_table"] for m in table_mapping}
+def rename_bank2_tables(bank2_json, rename_dict):
+    tables2 = bank2_json["tables"]
+    renamed_tables = {rename_dict.get(k, k): v for k, v in tables2.items()}
+    bank2_json["tables"] = renamed_tables
+    return bank2_json
 
-# Original tables dict in Bank2
-tables2 = data2["tables"]
-
-# Create a new dict with renamed keys
-renamed_tables = {}
-for old_name, columns in tables2.items():
-    new_name = rename_dict.get(old_name, old_name)  # default to old name if no match
-    renamed_tables[new_name] = columns
-
-# Replace tables in Bank2
-data2["tables"] = renamed_tables
-
-
-# ==== SAVE RESULTS ====
-with open("backend/schemas/bank2_renamed_schema.json", "w", encoding="utf-8") as f:
-    json.dump(data2, f, indent=2, ensure_ascii=False)
-
-print("✅ Bank2 tables renamed and saved to bank2_renamed_schema.json")
-
-with open("backend/schemas/table_name_mapping.json", "w", encoding="utf-8") as f:
-    json.dump(results, f, indent=2, ensure_ascii=False)
-
-print("✅ Table name mapping saved to Table_name_mapping.json")
-
-# *** COMPARING HEADERS WITHIN EACH MATCHING TABLE ***
-
-# ==== CONFIG ====
-BANK1_FILE = "backend/schemas/bank1__bank1_schema.json"
-BANK2_FILE = "backend/schemas/bank2_renamed_schema.json"
-TEXT_KEY = "description"  # field to compare semantically
-
-# ==== HELPER FUNCTION ====
 def map_columns(list1, list2, text_key=TEXT_KEY, conf_threshold=CONF_THRESHOLD):
-    """
-    Map columns from list2 to list1 using SBERT semantic similarity.
-    list1, list2: list of dicts containing 'description' field
-    """
     lines1 = [col[text_key] for col in list1]
     lines2 = [col[text_key] for col in list2]
 
@@ -100,8 +66,7 @@ def map_columns(list1, list2, text_key=TEXT_KEY, conf_threshold=CONF_THRESHOLD):
     results = []
 
     for i, col2 in enumerate(list2):
-        probs = torch.softmax(cosine_scores[i], dim=0)
-        best_idx = probs.argmax().item()
+        best_idx = cosine_scores[i].argmax().item()
         best_score = cosine_scores[i][best_idx].item()
         confidence = best_score * 100
         status = "Needs Review" if confidence < conf_threshold else "Confident Match"
@@ -116,29 +81,30 @@ def map_columns(list1, list2, text_key=TEXT_KEY, conf_threshold=CONF_THRESHOLD):
         })
     return results
 
-# ==== LOAD JSON FILES ====
-with open(BANK1_FILE, "r", encoding="utf-8") as f:
-    bank1 = json.load(f)
+def auto_map(bank1_file, bank2_file, save_folder):
+    # Load schemas
+    bank1_json = load_json(bank1_file)
+    bank2_json = load_json(bank2_file)
 
-with open(BANK2_FILE, "r", encoding="utf-8") as f:
-    bank2 = json.load(f)
+    # Table mapping
+    table_mapping, rename_dict = map_table_names(bank1_json, bank2_json)
+    renamed_bank2 = rename_bank2_tables(bank2_json, rename_dict)
 
-# ==== PROCESS EACH TABLE ====
-mapping_results = {}
+    # Column mapping
+    column_mapping_results = {}
+    for table_name, columns2 in renamed_bank2["tables"].items():
+        columns1 = bank1_json["tables"].get(table_name)
+        if not columns1:
+            continue
+        mapped_columns = map_columns(columns1, columns2)
+        column_mapping_results[table_name] = mapped_columns
 
-for table_name, columns2 in bank2["tables"].items():
-    # Only map if the table exists in bank1
-    columns1 = bank1["tables"].get(table_name)
-    if not columns1:
-        print(f"Warning: Table '{table_name}' not found in Bank1. Skipping...")
-        continue
+    # Save outputs
+    save_json(renamed_bank2, os.path.join(save_folder, "bank2_renamed_schema.json"))
+    save_json(table_mapping, os.path.join(save_folder, "table_name_mapping.json"))
+    save_json(column_mapping_results, os.path.join(save_folder, "bank_column_mapping.json"))
+        
 
-    # Map columns
-    mapped_columns = map_columns(columns1, columns2)
-    mapping_results[table_name] = mapped_columns
-
-# ==== SAVE RESULTS ====
-with open("backend/schemas/bank_column_mapping.json", "w", encoding="utf-8") as f:
-    json.dump(mapping_results, f, indent=2, ensure_ascii=False)
-
-print(f"✅ Column mapping results saved to bank_column_mapping.json")
+    return {
+        "column_mapping": column_mapping_results
+    }

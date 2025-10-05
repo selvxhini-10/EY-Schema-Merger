@@ -36,19 +36,17 @@ def cast_types(df: pd.DataFrame, type_spec: dict[str, str]) -> pd.DataFrame:
     for col, t in type_spec.items():
         if col not in df.columns:
             continue
-        idx = list(df.columns).index(col)
-        s = df.iloc[:, idx]
-
+        s = df[col]
         t = (t or "string").lower()
         if t == "string":
-            s = s.astype("string")
-            s = s.str.strip()
+            s = s.astype("string").str.strip()
         elif t == "float":
             s = pd.to_numeric(s, errors="coerce")
         elif t == "date":
             s = pd.to_datetime(s, errors="coerce", infer_datetime_format=True)
-        df.iloc[:, idx] = s
+        df[col] = s
     return df
+
 def build_mappings_from_resolved(spec: dict, a_cols: list[str], b_cols: list[str]):
     """Return (good, dropped, types) where good is list of (a_phys|None, b_phys|None, unified)."""
     cols_meta = spec.get("columns", [])
@@ -83,10 +81,21 @@ def auto_infer_mappings_using_intersection(a_cols: list[str], b_cols: list[str])
     good = []
     for k in shared_keys:
         a_phys, b_phys = a_map[k], b_map[k]
-        unified = a_phys  
+        unified = a_phys
         good.append((a_phys, b_phys, unified))
     types = {u: "string" for _, _, u in good}
     return good, types
+
+def collapse_rename(d: dict) -> dict:
+    """Keep only the first mapping to a given unified name to avoid duplicate columns after rename()."""
+    out, seen = {}, set()
+    for src, uni in d.items():
+        if uni in seen:
+            continue
+        seen.add(uni)
+        out[src] = uni
+    return out
+
 def main():
     if not DB_PATH.exists():
         raise FileNotFoundError(f"DB not found: {DB_PATH}")
@@ -105,11 +114,14 @@ def main():
             logical = spec.get("logical_table") or "Unknown"
             a_tbl = spec.get("bankA_table")
             b_tbl = spec.get("bankB_table")
+
             if not (a_tbl and b_tbl) or not (table_exists(conn, a_tbl) and table_exists(conn, b_tbl)):
                 print(f"⚠️  {logical}: physical tables missing in SQLite; skipping")
                 continue
+
             a_cols = list_cols(conn, a_tbl)
             b_cols = list_cols(conn, b_tbl)
+
             good, dropped, types = build_mappings_from_resolved(spec, a_cols, b_cols)
             if not good:
                 good, types = auto_infer_mappings_using_intersection(a_cols, b_cols)
@@ -118,30 +130,45 @@ def main():
                     print(f"ℹ️  {logical}: no usable mappings; AUTO-INFER matched {len(good)} columns by name.")
 
             unified_name = UNIFIED_PREFIX + re.sub(r"[^A-Za-z0-9]+", "_", logical).strip("_")
+
             if not good:
                 pd.DataFrame(columns=["bank_origin"]).to_sql(unified_name, conn, if_exists="replace", index=False)
                 print(f"🟡 {logical}: no columns matched — wrote empty marker {unified_name}")
                 empties.append(unified_name)
                 continue
+
             a_sel = [a for (a, _, _) in good if a]
             b_sel = [b for (_, b, _) in good if b]
-            a_rename = {a: u for (a, _, u) in good if a}
-            b_rename = {b: u for (_, b, u) in good if b}
+            a_rename_raw = {a: u for (a, _, u) in good if a}
+            b_rename_raw = {b: u for (_, b, u) in good if b}
+            a_rename = collapse_rename(a_rename_raw)
+            b_rename = collapse_rename(b_rename_raw)
+
             unified_cols = sorted({u for (_, _, u) in good})
+
             dfA = select_cols(conn, a_tbl, a_sel)
             dfB = select_cols(conn, b_tbl, b_sel)
+
             if not dfA.empty:
                 dfA.rename(columns=a_rename, inplace=True)
+                if dfA.columns.duplicated().any():
+                    print(f"ℹ️  {logical}: BankA produced duplicate unified columns; keeping first occurrence.")
+                    dfA = dfA.loc[:, ~dfA.columns.duplicated()].copy()
                 dfA["bank_origin"] = "BankA"
                 dfA = dfA.reindex(columns=unified_cols + ["bank_origin"])
+
             if not dfB.empty:
                 dfB.rename(columns=b_rename, inplace=True)
+                if dfB.columns.duplicated().any():
+                    print(f"ℹ️  {logical}: BankB produced duplicate unified columns; keeping first occurrence.")
+                    dfB = dfB.loc[:, ~dfB.columns.duplicated()].copy()
                 dfB["bank_origin"] = "BankB"
                 dfB = dfB.reindex(columns=unified_cols + ["bank_origin"])
 
             unified_df = pd.concat([dfA, dfB], ignore_index=True)
+
             if unified_df.columns.duplicated().any():
-                print("ℹ️  Deduplicating duplicate unified columns (keeping first).")
+                print(f"ℹ️  {logical}: Deduplicating unified columns after concat; keeping first.")
                 unified_df = unified_df.loc[:, ~unified_df.columns.duplicated()].copy()
 
             if unified_df.empty:
@@ -149,14 +176,27 @@ def main():
                 print(f"🟡 {logical}: no rows found but columns matched — wrote empty structure {unified_name}")
                 empties.append(unified_name)
                 continue
+
             unified_df = cast_types(unified_df, types)
             unified_df.to_sql(unified_name, conn, if_exists="replace", index=False)
-            print(f"✅ {logical}: wrote {unified_name} — rows={len(unified_df)}, cols={len(unified_df.columns)-1}"
-                  f"{' (auto-inferred)' if logical in inferred else ''}"
-                  f"{f', dropped={len(dropped)} unresolved' if dropped else ''}")
+
+            print(
+                f"✅ {logical}: wrote {unified_name} — rows={len(unified_df)}, "
+                f"cols={len(unified_df.columns)-1}"
+                f"{' (auto-inferred)' if logical in inferred else ''}"
+                f"{f', dropped={len(dropped)} unresolved' if dropped else ''}"
+            )
+
             if dropped:
                 dropped_cols.append({"logical_table": logical, "dropped": dropped})
-            created.append({"logical_table": logical, "table": unified_name, "rows": len(unified_df), "cols": len(unified_df.columns)-1})
+
+            created.append({
+                "logical_table": logical,
+                "table": unified_name,
+                "rows": len(unified_df),
+                "cols": len(unified_df.columns) - 1
+            })
+
         manifest = {
             "timestamp": datetime.now().isoformat(),
             "db_path": str(DB_PATH),

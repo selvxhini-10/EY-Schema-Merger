@@ -6,11 +6,11 @@ from datetime import datetime
 
 # === CONFIG ===
 BASE_DIR = Path(__file__).parent  # folder where merge_banks.py lives
-BANK_A_DIR = BASE_DIR / "BankA" / "uploads"
-BANK_B_DIR = BASE_DIR / "BankB" / "uploads"
+BANK_A_DIR = BASE_DIR / "BankA/testing"
+BANK_B_DIR = BASE_DIR / "BankB/testing" 
 DB_PATH = BASE_DIR / "merged_banks.db"
-MAPPING_FILE = BASE_DIR / "Table_name_mapping.json"  # your mapping JSON
-MANIFEST_FILE = BASE_DIR / "manifest.json"
+MAPPING_FILE = BASE_DIR / "schemas/table_name_mapping.json"  # your mapping JSON
+MANIFEST_FILE = BASE_DIR / "mansifest.json"
 
 # === STEP 1: Load the mapping JSON ===
 if not MAPPING_FILE.exists():

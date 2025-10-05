@@ -3,6 +3,31 @@
 #   *.sqlite
 #   *.sqlite3
 #   backend/merged_banks.db
+# Node.js
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Python
+__pycache__/
+.venv/
+venv/
+env/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
 git add .gitignore
 git rm --cached backend/merged_banks.db  # ok if says it's already gone
 git commit -m "chore: ignore SQLite DB artifacts"  # ok if 'nothing to commit'

@@ -69,43 +69,18 @@ const mockMappings: Mapping[] = [
   { id: "m13", sourceField: "Region", targetField: "Location", confidence: "medium", approved: false },
 ]
 
-export function SchemaMappingWorkspace() {
-  const [bankASchema, setBankASchema] = useState<SchemaField[]>([])
-  const [bankBSchema, setBankBSchema] = useState<SchemaField[]>([])
+interface SchemaMappingWorkspaceProps {
+  bankASchema: SchemaField[];
+  bankBSchema: SchemaField[];
+}
+
+export function SchemaMappingWorkspace({ bankASchema, bankBSchema }: SchemaMappingWorkspaceProps) {
   const [unifiedSchema] = useState<SchemaField[]>(mockUnifiedSchema)
   const [mappings, setMappings] = useState<Mapping[]>(mockMappings)
-
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>, setSchema: React.Dispatch<React.SetStateAction<SchemaField[]>>) => {
-    const file = e.target.files?.[0]
-    if (!file) return
-
-    const reader = new FileReader()
-    reader.onload = (event) => {
-      const data = new Uint8Array(event.target?.result as ArrayBuffer)
-      const workbook = read(data, { type: "array" })
-      const sheetName = workbook.SheetNames[0]
-      const sheet = workbook.Sheets[sheetName]
-      const jsonData = utils.sheet_to_json(sheet, { header: 1 })
-
-      const schemaFields: SchemaField[] = jsonData.slice(1).map((row: any, index: number) => ({
-        id: `field-${index}`,
-        name: row[0] || `Column-${index}`,
-        type: typeof row[1],
-        sampleValue: row[1]?.toString() || "",
-      }))
-
-      setSchema(schemaFields)
-    }
-    reader.readAsArrayBuffer(file)
-  }
 
   const handleApproveMapping = (mappingId: string) => {
     setMappings((prev) => prev.map((m) => (m.id === mappingId ? { ...m, approved: !m.approved } : m)))
   }
-
-  // Add console logs to debug state updates
-  console.log("Bank A Schema State:", bankASchema);
-  console.log("Bank B Schema State:", bankBSchema);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -115,7 +90,6 @@ export function SchemaMappingWorkspace() {
             <CardTitle>Schema Mapping Workspace</CardTitle>
           </CardHeader>
           <CardContent>
-            <TopBar setBankASchema={setBankASchema} setBankBSchema={setBankBSchema} />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
                 <SchemaPanel title="Bank A Schema" fields={bankASchema} color="blue" />

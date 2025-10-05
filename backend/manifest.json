@@ -1,0 +1,34 @@
+{
+  "timestamp": "2025-10-05T01:19:46.723354",
+  "db_path": "C:\\Users\\anush\\OneDrive\\Documents\\GitHub\\ASL-AR-Project\\backend\\merged_banks.db",
+  "banks_loaded": [
+    {
+      "bank_name": "BankA",
+      "tables_added": [
+        "BankA_Bank1_Mock_CurSav_Accounts_Sheet1",
+        "BankA_Bank1_Mock_CurSav_Transactions",
+        "BankA_Bank1_Mock_Customer_Sheet1",
+        "BankA_Bank1_Mock_FixedTerm_Accounts_Sheet1",
+        "BankA_Bank1_Mock_FixedTerm_Transactions",
+        "BankA_Bank1_Mock_Loan_Accounts_Sheet1",
+        "BankA_Bank1_Mock_Loan_Transactions"
+      ],
+      "total_tables": 7
+    },
+    {
+      "bank_name": "BankB",
+      "tables_added": [
+        "BankB_Bank2_Mock_Addresses_Sheet1",
+        "BankB_Bank2_Mock_Customer_Sheet1",
+        "BankB_Bank2_Mock_Deposit_Accounts_Sheet1",
+        "BankB_Bank2_Mock_Deposit_Transactions_Sheet1",
+        "BankB_Bank2_Mock_Identifications_Sheet1",
+        "BankB_Bank2_Mock_Loan_Accounts_Sheet1",
+        "BankB_Bank2_Mock_Loan_Transactions_Sheet1"
+      ],
+      "total_tables": 7
+    }
+  ],
+  "merged_tables": [],
+  "skipped_merges": []
+}

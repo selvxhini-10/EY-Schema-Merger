@@ -1,2 +1,8 @@
-# Ignore node_modules
-node_modules/
+# .gitignore should include:
+#   *.db
+#   *.sqlite
+#   *.sqlite3
+#   backend/merged_banks.db
+git add .gitignore
+git rm --cached backend/merged_banks.db  # ok if says it's already gone
+git commit -m "chore: ignore SQLite DB artifacts"  # ok if 'nothing to commit'

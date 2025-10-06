@@ -155,6 +155,8 @@ interface SchemaMappingWorkspaceProps {
 export function SchemaMappingWorkspace({ bankASchema, bankBSchema }: SchemaMappingWorkspaceProps) {
   const [unifiedSchema] = useState<SchemaField[]>(mockUnifiedSchema);
   const [mappings, setMappings] = useState<Mapping[]>(mockMappings);
+  // Approval state for Confirmed Unified Tables
+  const [tableApproval, setTableApproval] = useState<Record<string, "none" | "approved" | "rejected">>({});
 
   const handleApproveMapping = (mappingId: string) => {
     setMappings((prev) =>
@@ -162,7 +164,21 @@ export function SchemaMappingWorkspace({ bankASchema, bankBSchema }: SchemaMappi
         m.id === mappingId ? { ...m, approved: !m.approved } : m
       )
     );
-  };
+  } 
+
+  // For MappingSummary: count approved tables from tableApproval
+  const confirmedTableNames = [
+    "CustomerID",
+    "FirstName",
+    "LastName",
+    "DateOfBirth",
+    "AccountType",
+    "Balance",
+    "Location"
+  ];
+  const totalTables = confirmedTableNames.length;
+  const approvedTables = confirmedTableNames.filter((name) => tableApproval[name] === "approved").length;
+  const tableCompletion = totalTables > 0 ? (approvedTables / totalTables) * 100 : 0;
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -181,6 +197,8 @@ export function SchemaMappingWorkspace({ bankASchema, bankBSchema }: SchemaMappi
                   fields={unifiedSchema}
                   mappings={mappings}
                   onApproveMapping={handleApproveMapping}
+                  tableApproval={tableApproval}
+                  setTableApproval={setTableApproval}
                 />
               </div>
               <div>
@@ -191,7 +209,7 @@ export function SchemaMappingWorkspace({ bankASchema, bankBSchema }: SchemaMappi
         </Card>
       </div>
       <div className="lg:col-span-1">
-        <MappingSummary mappings={mappings} />
+        <MappingSummary mappings={mappings} tableCompletion={tableCompletion} approvedTables={approvedTables} totalTables={totalTables} />
       </div>
     </div>
   );

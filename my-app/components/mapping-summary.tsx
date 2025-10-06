@@ -3,10 +3,13 @@ import { Progress } from "@/components/ui/progress"
 import type { Mapping } from "@/components/schema-mapping-workspace"
 
 type MappingSummaryProps = {
-  mappings: Mapping[]
+  mappings: Mapping[];
+  tableCompletion?: number;
+  approvedTables?: number;
+  totalTables?: number;
 }
 
-export function MappingSummary({ mappings }: MappingSummaryProps) {
+export function MappingSummary({ mappings, tableCompletion, approvedTables, totalTables }: MappingSummaryProps) {
   const totalMappings = mappings.length
   const approvedMappings = mappings.filter((m) => m.approved).length
   const completionPercentage = totalMappings > 0 ? (approvedMappings / totalMappings) * 100 : 0
@@ -31,11 +34,13 @@ export function MappingSummary({ mappings }: MappingSummaryProps) {
         <div>
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-medium text-foreground">Completion</span>
-            <span className="text-sm font-semibold text-foreground">{completionPercentage.toFixed(0)}%</span>
+            <span className="text-sm font-semibold text-foreground">{tableCompletion !== undefined ? tableCompletion.toFixed(0) : completionPercentage.toFixed(0)}%</span>
           </div>
-          <Progress value={completionPercentage} className="h-2" />
+          <Progress value={tableCompletion !== undefined ? tableCompletion : completionPercentage} className="h-2" />
           <p className="text-xs text-muted-foreground mt-1">
-            {approvedMappings} of {totalMappings} mappings approved
+            {approvedTables !== undefined && totalTables !== undefined
+              ? `${approvedTables} of ${totalTables} tables approved`
+              : `${approvedMappings} of ${totalMappings} mappings approved`}
           </p>
         </div>
 

@@ -112,6 +112,29 @@ def parse_schema_workbook(file_bytes: bytes, filename: str) -> Dict[str, Any]:
     return out
 
 
+# --- Pipeline runner for orchestrator ---
+def run_schema_parser(input_files, output_dir):
+    """
+    input_files: list of (file_bytes, filename)
+    output_dir: Path to save JSONs
+    Returns: list of output file paths
+    """
+    print("[schema_parser] Starting schema parsing...")
+    results = []
+    for file_bytes, filename in input_files:
+        try:
+            print(f"[schema_parser] Parsing {filename}...")
+            parsed = parse_schema_workbook(file_bytes, filename)
+            parsed["source_file"] = filename
+            out_path = save_schema_json(parsed, output_dir)
+            print(f"[schema_parser] Saved parsed schema to {out_path}")
+            results.append(str(out_path))
+        except Exception as e:
+            print(f"[schema_parser] Error parsing {filename}: {e}")
+    print("[schema_parser] Done.")
+    return results
+
+
 def save_schema_json(payload: Dict[str, Any], out_dir: Path) -> Path:
     """Save parsed schema JSON to disk."""
     out_dir.mkdir(parents=True, exist_ok=True)

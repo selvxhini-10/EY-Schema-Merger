@@ -51,7 +51,6 @@ const [isDragOver, setIsDragOver] = useState(false);
       });
       setProgress(100);
       onUploadProgress?.(100);
-      alert(`File \"${file.name}\" uploaded successfully!`);
     } catch (error: any) {
       console.error("Upload failed:", error);
       let message = "Upload failed.";

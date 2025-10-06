@@ -1,3 +1,8 @@
+def run_ai_mapping(bank1_file, bank2_file, save_folder):
+    print(f"[ai_mapping] Starting AI mapping...")
+    result = auto_map(bank1_file, bank2_file, save_folder)
+    print(f"[ai_mapping] AI mapping complete. Results saved to {save_folder}")
+    return result
 # ai_mapping.py
 from sentence_transformers import SentenceTransformer, util
 import torch

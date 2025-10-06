@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-10-05T09:36:39.979427",
-  "db_path": "C:\\Users\\anush\\OneDrive\\Documents\\GitHub\\ASL-AR-Project\\backend\\merged_banks.db",
+  "timestamp": "2025-10-05T13:26:30.240146",
+  "db_path": "C:\\Users\\selva\\Documents\\GitHub\\ASL-AR-Project\\backend\\merged_banks.db",
   "banks_loaded": [
     {
       "bank_name": "BankA",

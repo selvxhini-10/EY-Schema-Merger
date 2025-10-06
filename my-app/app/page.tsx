@@ -1,13 +1,17 @@
+
 "use client"
+import { UploadContainerCard } from "@/components/upload-container-card"
 
 import { useState } from "react"
+import axios from "axios"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import TopBar from "@/components/top-bar"
 import type { SchemaField } from "@/components/schema-mapping-workspace"
 import { SchemaMappingWorkspace } from "@/components/schema-mapping-workspace"
 import { MergedDataPreview } from "@/components/merged-data-preview"
 import { AnalyticsDashboard } from "@/components/analytics-dashboard"
-import { UploadContainerCard } from "@/components/upload-container-card"
+
+import PipelineLogConsole from "@/components/pipeline-log-console"
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("mapping")
@@ -31,12 +35,13 @@ export default function Home() {
           headers: { "Content-Type": "multipart/form-data" },
         })
         console.log("Master schema uploaded:", response.data)
-
+        alert(`✅ File '${file.name}' uploaded and parsed successfully!`)
         // Optionally, update state if you want to populate the workspace
         if (bank === "A") setBankASchema(response.data.parsed[0]?.fields || [])
         if (bank === "B") setBankBSchema(response.data.parsed[0]?.fields || [])
       } catch (error) {
         console.error("Failed to upload master schema:", error)
+        alert(`❌ Failed to upload '${file.name}'. Check backend logs and try again.`)
       }
     }
     input.click()
@@ -85,7 +90,10 @@ export default function Home() {
                 />
               </div>
             </div>
-            
+
+            {/* Pipeline log console between upload and workspace */}
+            <PipelineLogConsole />
+
             <div className="mt-8">
               <SchemaMappingWorkspace bankASchema={bankASchema} bankBSchema={bankBSchema} />
             </div>

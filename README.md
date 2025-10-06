@@ -1,5 +1,6 @@
 Schema Sync – AI-Powered Data Integration for Financial Institutions
-<div align="center"> <img src="frontend/images/SchemaSyncLogo.png" alt="Schema Sync Logo" width="120" height="120"> <h3>Schema Sync – The AI Copilot for Data Integration</h3> <p><em>Unifying financial data across institutions with intelligence, transparency, and speed</em></p> <p><strong>Built for the EY Canada Data Integration Challenge – Hack the Valley X</strong></p> </div>
+<div align="center"> <img width="1024" height="1024" alt="raw" src="https://github.com/user-attachments/assets/2c5f2cc8-ab82-4e1e-a257-e69be7cb742d" /><h3>Schema Sync – The AI Copilot for Data Integration</h3> <p><em>Unifying financial data across institutions with intelligence, transparency, and speed</em></p> <p><strong>Built for the EY Canada Data Integration Challenge – Hack the Valley X</strong></p> </div>
+
 🌟 Overview
 
 When two banks merge, data chaos follows. Each system has its own schema, column names, and formats — making integration a long, manual process.

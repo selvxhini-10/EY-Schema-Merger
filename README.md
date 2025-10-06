@@ -1,5 +1,5 @@
-Schema Sync – AI-Powered Data Integration for Financial Institutions
-<div align="center"> <img width="1024" height="1024" alt="raw" src="https://github.com/user-attachments/assets/2c5f2cc8-ab82-4e1e-a257-e69be7cb742d" /><h3>Schema Sync – The AI Copilot for Data Integration</h3> <p><em>Unifying financial data across institutions with intelligence, transparency, and speed</em></p> <p><strong>Built for the EY Canada Data Integration Challenge – Hack the Valley X</strong></p> </div>
+<div align="center">Schema Sync – AI-Powered Data Integration for Financial Institutions
+ <img width="400" height="600" alt="raw" src="https://github.com/user-attachments/assets/2c5f2cc8-ab82-4e1e-a257-e69be7cb742d" /><h3>Schema Sync – The AI Copilot for Data Integration</h3> <p><em>Unifying financial data across institutions with intelligence, transparency, and speed</em></p> <p><strong>Built for the EY Canada Data Integration Challenge – Hack the Valley X</strong></p> </div>
 
 🌟 Overview
 
